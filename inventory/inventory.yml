@@ -23,7 +23,7 @@ all:
       children:
         DC1:
           children:
-            DC1_Spines:
+            Spines:
               vars:
                 type: spine
               hosts:
@@ -35,7 +35,7 @@ all:
                   ansible_host: 192.168.255.13
                 avd-test-Spine4:
                   ansible_host: 192.168.255.14
-            DC1_L3Leafs:
+            L3Leafs:
               vars:
                 type: l3leaf
               hosts:
@@ -47,7 +47,7 @@ all:
                   ansible_host: 192.168.255.17
                 avd-test-Leaf2B:
                   ansible_host: 192.168.255.18
-            DC1_L2Leafs:
+            L2Leafs:
               vars:
                 type: l2leaf
               hosts:

@@ -13,12 +13,12 @@
         name: arista.avd.build_output_folders
 
     - name: generate intended variables
-      tags: [build, generate]
+      tags: [build, generate, deploy]
       import_role:
         name: arista.avd.eos_designs
 
     - name: generate device intended config and documentation
-      tags: [build, generate]
+      tags: [build, generate, deploy]
       import_role:
         name: eos_cli_config_gen
 
@@ -35,8 +35,8 @@
       import_role:
         name: arista.avd.eos_config_deploy_cvp
       vars:
-        container_root: 'redmonds'
-        configlets_prefix: 're'
-        device_filter: 'avd-test-'
+        container_root: "redmonds"
+        configlets_prefix: "re"
+        device_filter: "avd-test-"
         state: present
         cv_collection: v3

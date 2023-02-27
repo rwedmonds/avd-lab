@@ -1,0 +1,52 @@
+---
+port_profiles:
+  exadata:
+    mode: access
+    vlans: 601
+  nutanix:
+    mode: access
+    vlans: 602
+
+servers:
+  ntx02:
+    rack: pod1
+    # NOTE: the server template does not support multiple adapters
+    # just create a server with a different name prefix/postfix instead
+    adapters:
+    - type: nic
+      endpoint_ports: ['ntx01_to_leaf2b', 'ntx01_to_leaf2b']
+      switch_ports: ['Ethernet7', 'Ethernet7']
+      switches: ['avd-test-Leaf2A', 'avd-test-Leaf2B']
+      profile: nutanix
+      port_channel:
+        description: ntx01_to_leaf2b
+        mode: active
+        state: present
+  ntx01:
+    rack: pod1
+    # NOTE: the server template does not support multiple adapters
+    # just create a server with a different name prefix/postfix instead
+    adapters:
+    - type: nic
+      endpoint_ports: ['ntx01_to_leaf1b', 'ntx01_to_leaf1b']
+      switch_ports: ['Ethernet8', 'Ethernet8']
+      switches: ['avd-test-Leaf1A', 'avd-test-Leaf1B']
+      profile: nutanix
+      port_channel:
+        description: ntx01_to_leaf1b
+        mode: active
+        state: present
+  exa01:
+    rack: pod1
+    # NOTE: the server template does not support multiple adapters
+    # just create a server with a different name prefix/postfix instead
+    adapters:
+    - type: nic
+      endpoint_ports: ['ntx01_to_leaf1b', 'ntx01_to_leaf1b']
+      switch_ports: ['Ethernet7', 'Ethernet7']
+      switches: ['avd-test-Leaf1A', 'avd-test-Leaf1A']
+      profile: exadata
+      port_channel:
+        description: ntx01_to_leaf1b
+        mode: active
+        state: present

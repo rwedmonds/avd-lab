@@ -1,0 +1,7 @@
+  {{ name }}:
+    description: {{ description }}
+    {% if allowed_vlans != "" %}
+    vlans: {{ allowed_vlans }}
+    {% endif %}
+    mode: {{ mode }}
+{# #}

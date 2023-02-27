@@ -1,0 +1,50 @@
+---
+all:
+  children:
+    cv_servers:
+      hosts:
+        CV_AVD_FABRIC:
+          ansible_host: 192.168.2.137
+          ansible_user: cvpadmin
+          ansible_password: arista123
+          ansible_python_interpreter: $(which python3)
+          ansible_httpapi_host: 192.168.2.137
+          ansible_connection: httpapi
+          ansible_httpapi_use_ssl: true
+          ansible_httpapi_validate_certs: false
+          ansible_network_os: eos
+          ansible_httpapi_port: 443
+    MY_LAB_AVD:
+      vars:
+        ansible_user: ansible_local
+        ansible_ssh_pass: ansible
+      children:
+        AVD_FABRIC:
+          children:
+            SPINES:
+              hosts:
+                avd-test-Spine1:
+                  ansible_host: 192.168.255.11
+                avd-test-Spine2:
+                  ansible_host: 192.168.255.12
+                avd-test-Spine3:
+                  ansible_host: 192.168.255.13
+                avd-test-Spine4:
+                  ansible_host: 192.168.255.14
+            LEAFS:
+              hosts:
+                avd-test-Leaf1A:
+                  ansible_host: 192.168.255.15
+                avd-test-Leaf1B:
+                  ansible_host: 192.168.255.16
+                avd-test-Leaf2A:
+                  ansible_host: 192.168.255.17
+                avd-test-Leaf2B:
+                  ansible_host: 192.168.255.18
+
+        AVD_FABRIC_TENANTS:
+          children:
+            LEAFS:
+        AVD_FABRIC_SERVERS:
+          children:
+            LEAFS:

@@ -1,0 +1,42 @@
+---
+- name: Manage Arista EOS EVPN/VXLAN Configuration
+  hosts: redmonds
+  connection: local
+  gather_facts: false
+  collections:
+    - arista.avd
+    - arista.cvp
+  tasks:
+    - name: reset local folders for output
+      tags: [generate, reset]
+      import_role:
+        name: arista.avd.build_output_folders
+
+    - name: generate intended variables
+      tags: [build, generate]
+      import_role:
+        name: arista.avd.eos_designs
+
+    - name: generate device intended config and documentation
+      tags: [build, generate]
+      import_role:
+        name: eos_cli_config_gen
+
+- name: Configuration deployment with CVaaS
+  hosts: cvaas
+  connection: local
+  gather_facts: false
+  collections:
+    - arista.avd
+    - arista.cvp
+  tasks:
+    - name: run CvaaS provisioning
+      tags: [deploy]
+      import_role:
+        name: arista.avd.eos_config_deploy_cvp
+      vars:
+        container_root: 'redmonds'
+        configlets_prefix: 're'
+        device_filter: 'avd-test-'
+        state: present
+        cv_collection: v3

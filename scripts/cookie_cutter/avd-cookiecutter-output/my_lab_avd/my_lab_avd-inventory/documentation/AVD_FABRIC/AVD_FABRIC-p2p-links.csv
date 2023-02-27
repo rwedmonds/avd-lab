@@ -1,0 +1,17 @@
+Type,Node,Node Interface,Leaf IP Address,Peer Type,Peer Node,Peer Interface,Peer IP Address
+l3leaf,avd-test-Leaf1A,Ethernet1,192.168.3.9/31,spine,avd-test-Spine1,Ethernet1,192.168.3.8/31
+l3leaf,avd-test-Leaf1A,Ethernet2,192.168.3.11/31,spine,avd-test-Spine2,Ethernet1,192.168.3.10/31
+l3leaf,avd-test-Leaf1A,Ethernet3,192.168.3.13/31,spine,avd-test-Spine3,Ethernet1,192.168.3.12/31
+l3leaf,avd-test-Leaf1A,Ethernet4,192.168.3.15/31,spine,avd-test-Spine4,Ethernet1,192.168.3.14/31
+l3leaf,avd-test-Leaf1B,Ethernet1,192.168.3.25/31,spine,avd-test-Spine1,Ethernet2,192.168.3.24/31
+l3leaf,avd-test-Leaf1B,Ethernet2,192.168.3.27/31,spine,avd-test-Spine2,Ethernet2,192.168.3.26/31
+l3leaf,avd-test-Leaf1B,Ethernet3,192.168.3.29/31,spine,avd-test-Spine3,Ethernet2,192.168.3.28/31
+l3leaf,avd-test-Leaf1B,Ethernet4,192.168.3.31/31,spine,avd-test-Spine4,Ethernet2,192.168.3.30/31
+l3leaf,avd-test-Leaf2A,Ethernet1,192.168.3.41/31,spine,avd-test-Spine1,Ethernet3,192.168.3.40/31
+l3leaf,avd-test-Leaf2A,Ethernet2,192.168.3.43/31,spine,avd-test-Spine2,Ethernet3,192.168.3.42/31
+l3leaf,avd-test-Leaf2A,Ethernet3,192.168.3.45/31,spine,avd-test-Spine3,Ethernet3,192.168.3.44/31
+l3leaf,avd-test-Leaf2A,Ethernet4,192.168.3.47/31,spine,avd-test-Spine4,Ethernet3,192.168.3.46/31
+l3leaf,avd-test-Leaf2B,Ethernet1,192.168.3.57/31,spine,avd-test-Spine1,Ethernet4,192.168.3.56/31
+l3leaf,avd-test-Leaf2B,Ethernet2,192.168.3.59/31,spine,avd-test-Spine2,Ethernet4,192.168.3.58/31
+l3leaf,avd-test-Leaf2B,Ethernet3,192.168.3.61/31,spine,avd-test-Spine3,Ethernet4,192.168.3.60/31
+l3leaf,avd-test-Leaf2B,Ethernet4,192.168.3.63/31,spine,avd-test-Spine4,Ethernet4,192.168.3.62/31

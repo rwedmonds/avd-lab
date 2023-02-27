@@ -1,0 +1,61 @@
+---
+all:
+  children:
+    CVaaS:
+      hosts:
+        cvaas:
+          ansible_host: www.cv-staging.corp.arista.io
+          ansible_user: cvaas # Do not change username; This is required for cvaas auth
+          ansible_password: "{{lookup('file', '../inventory/cvaas.token')}}"
+          ansible_become: True
+          ansible_become_method: enable
+          ansible_connection: httpapi
+          ansible_httpapi_use_ssl: True
+          ansible_httpapi_validate_certs: True
+          ansible_network_os: eos
+          ansible_httpapi_port: 443
+          ansible_python_interpreter: $(which python3)
+
+    # ********************************** Prod ***********************************
+
+    # redmonds Fabric
+    redmonds:
+      children:
+        DC1:
+          children:
+            DC1_Spines:
+              vars:
+                type: spine
+              hosts:
+                avd-test-Spine1:
+                  ansible_host: 192.168.255.11
+                avd-test-Spine2:
+                  ansible_host: 192.168.255.12
+                avd-test-Spine3:
+                  ansible_host: 192.168.255.13
+                avd-test-Spine4:
+                  ansible_host: 192.168.255.14
+            DC1_L3Leafs:
+              vars:
+                type: l3leaf
+              hosts:
+                avd-test-Leaf1A:
+                  ansible_host: 192.168.255.15
+                avd-test-Leaf1B:
+                  ansible_host: 192.168.255.16
+                avd-test-Leaf2A:
+                  ansible_host: 192.168.255.17
+                avd-test-Leaf2B:
+                  ansible_host: 192.168.255.18
+            DC1_L2Leafs:
+              vars:
+                type: l2leaf
+              hosts:
+                avd-test-L2Leaf1A:
+                  ansible_host: 192.168.255.19
+                avd-test-L2Leaf1B:
+                  ansible_host: 192.168.255.20
+                avd-test-L2Leaf2A:
+                  ansible_host: 192.168.255.21
+                avd-test-L2Leaf2B:
+                  ansible_host: 192.168.255.22

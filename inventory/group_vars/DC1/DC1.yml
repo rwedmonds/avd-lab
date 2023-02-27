@@ -1,0 +1,61 @@
+---
+# Validation lab
+# local users
+local_users:
+  admin:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$Df86J4/SFMDE3/1K$Hef4KstdoxNDaami37cBquTWOTplC.miMPjXVgQxMe92.e5wxlnXOLlebgPj8Fz1KO0za/RCO7ZIs4Q6Eiq1g1"
+
+  cvpadmin:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$6PorspAoWf2hUSNp$3CT1iPrvr7uhgCdAN2QBZuO7Aqu..EFjOK5SHUXSP44qJ91OQ/I.88B4iyDufM35wwqS1JhbmS3ejsDAxvOGL/"
+
+  ansible:
+    privilege: 15
+    role: network-admin
+    sha512_password: "$6$Dzu11L7yp9j3nCM9$FSptxMPyIL555OMO.ldnjDXgwZmrfMYwHSr0uznE5Qoqvd9a6UdjiFcJUhGLtvXVZR1r.A/iF5aAt50hf/EK4/"
+
+daemon_terminattr:
+  # Address of the gRPC server on CloudVision
+  # TCP 9910 is used on on-prem
+  # TCP 443 is used on CV as a Service
+  cvaddrs: # For single cluster
+    - apiserver.cv-staging.corp.arista.io:443
+  cvauth:
+    method: "token-secure"
+    token_file: "/tmp/cv-onboarding-token"
+  cvvrf: MGMT
+  # Exclude paths from Sysdb on the ingest side
+  ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+  # Exclude paths from the shared memory table
+  smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
+
+# Cloud Vision server information
+# cvp_instance_ip: 10.255.0.1
+# cvp_ingestauth_key: ""
+# cvp_ingestauth_key: telarista
+
+# OOB Management network default gateway.
+mgmt_interface: Management1
+mgmt_interface_vrf: MGMT
+mgmt_gateway: 192.168.255.1
+mgmt_vrf_routing: true
+
+# dns servers.
+name_servers:
+  - 192.168.2.1
+  - 192.168.255.1
+
+# NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
+custom_structured_configuration_ntp:
+  local_interface:
+    name: Management1
+    vrf: MGMT
+  servers:
+    - name: 0.fr.pool.ntp.org
+      preferred: true
+      vrf: MGMT
+    - name: 1.fr.pool.ntp.org
+      vrf: MGMT

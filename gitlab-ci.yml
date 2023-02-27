@@ -1,0 +1,47 @@
+# Pipeline definition
+stages:
+  - lint
+  - build-config
+  - pre-deployment-test
+  - deploy
+
+# Build the container where the ansible commands will run stage
+lint-job:
+  stage: lint
+  image:
+    name: cytopia/yamllint
+    entrypoint: ["/bin/ash", "-c"]
+  script:
+    - yamllint -c dc-lab/inventory/.yamllint.yml dc-lab/inventory/inventory.yml
+    - yamllint -c dc-lab/inventory/.yamllint.yml dc-lab/inventory/group_vars
+    - yamllint -c dc-lab/inventory/.yamllint.yml dc-lab/playbooks
+
+# Create the new configuration
+build-config-job:
+  stage: build-config
+  image:
+    name: avdteam/avd-all-in-one
+  script:
+    - echo "Building the new configuration in the output directory"
+    - cd dc-lab/playbooks
+    - git clone "http://aristacicd:glpat-Ct2LkAyz6qYu2pnqrdVu@192.168.1.201:9080/root/network-cicd-data.git" output
+    - cd ..
+    - ANSIBLE_JINJA2_EXTENSIONS=jinja2.ext.loopcontrols,jinja2.ext.do,jinja2.ext.i18n ansible-playbook -i inventory/inventory.yml playbooks/pb_build_config.yml --tags build
+    - cd playbooks/output
+    - cp documentation/fabric/dc1_fabric-documentation.md README.md
+    - git add -A
+    - git commit --allow-empty -m "$CI_JOB_NAME $CI_JOB_ID"
+    - git push
+# GitLab Project Access Token glpat-H1th9TyTTmsyLLBfkyS2
+# http://172.17.0.1:9080/gitlab-instance-11d2b295/network-cicd-data.git
+# Deploy to devices - this will deploy the configuration to the devices.
+deploy-config-job:
+  stage: deploy
+  image:
+    name: avdteam/avd-all-in-one
+  script:
+    - echo "Deploying the new configuration from the output directory"
+    - cd dc-lab/
+    - git clone "http://aristacicd:glpat-Ct2LkAyz6qYu2pnqrdVu@192.168.1.201:9080/root/network-cicd-data.git" output
+    - mv -v ./output/* inventory/
+    - ANSIBLE_JINJA2_EXTENSIONS=jinja2.ext.loopcontrols,jinja2.ext.do,jinja2.ext.i18n ansible-playbook -i inventory/inventory.yml playbooks/pb_deploy.yml --tags provision

@@ -1,0 +1,484 @@
+{
+    "port_channel_interfaces": [
+        {
+            "interface": "Port-Channel102",
+            "description": "uplink to CMG01/CMG02",
+            "mode": "trunk",
+            "shutdown": "false",
+            "allowed_vlans": "1905",
+            "access_vlan": "",
+            "channel_group": "",
+            "channel_mode": ""
+        }
+    ],
+    "ethernet_interfaces": [
+        {
+            "interface": "Ethernet1",
+            "description": "AMusaDFW01Csw01-spine",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet2",
+            "description": "AMusaDFW01Csw03-spine",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet3",
+            "description": "AMusaDFW01Esw01-bdrlf",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet4",
+            "description": "AMusaDFW01Oca101",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet5",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet6",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet7",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet8",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet9",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet10",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet11",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet12",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet13",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet14",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet15",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet16",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet17",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet18",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet19",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet20",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet21",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet22",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet23",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet24",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet25",
+            "description": "AMusaDFW02Csw01-DR-spine",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet26",
+            "description": "AMusaDFW02Esw01-DR-bdrlf",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet27",
+            "description": "AMusaDFW02Bsw01-DR-DCI",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet28",
+            "description": "AMusaDFW02Esw03-DR-svclf",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet29",
+            "description": "Esw203",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet30",
+            "description": "ESW103-eor10g",
+            "shutdown": "false",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet31",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet32",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet33",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet34",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet35",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet36",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet37",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet38",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet39",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet40",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet41",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet42",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet43",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet44",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet45",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet46",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet47",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet48",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet49",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet50",
+            "description": "SHUTDOWN WHILE NOT IN USE",
+            "shutdown": "true",
+            "mode": "switchport",
+            "access_vlan": "1905",
+            "channel_group": "",
+            "channel_mode": ""
+        },
+        {
+            "interface": "Ethernet51",
+            "description": "AMusaDFW01Cmg01-mgmt",
+            "shutdown": "false",
+            "mode": "",
+            "access_vlan": "",
+            "channel_group": "101",
+            "channel_mode": "active"
+        },
+        {
+            "interface": "Ethernet52",
+            "description": "AMusaDFW01Cmg02-mgmt",
+            "shutdown": "false",
+            "mode": "",
+            "access_vlan": "",
+            "channel_group": "101",
+            "channel_mode": "active"
+        }
+    ]
+}

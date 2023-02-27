@@ -1,0 +1,61 @@
+  hosts:
+    AMusaDFW01Cmg01-mgmt:
+      ansible_host: 10.68.68.2
+      is_deployed: false
+    AMusaDFW01Cmg02-mgmt:
+      ansible_host: 10.68.68.3
+      is_deployed: false
+    AMusaDFW01Osw101-mgmt:
+      ansible_host: 10.68.68.11
+      is_deployed: false
+    AMusaDFW01Osw102-mgmt:
+      ansible_host: 10.68.68.16
+      is_deployed: false
+    AMusaDFW01Osw103-mgmt:
+      ansible_host: 10.68.68.60
+      is_deployed: false
+    AMusaDFW01Osw104-mgmt:
+      ansible_host: 10.68.68.61
+      is_deployed: false
+    AMusaDFW01Osw107-mgmt:
+      ansible_host: 10.68.68.62
+      is_deployed: false
+    AMusaDFW01Osw110-mgmt:
+      ansible_host: 10.68.68.51
+      is_deployed: false
+    AMusaDFW01Osw111-mgmt:
+      ansible_host: 10.68.68.52
+      is_deployed: false
+    AMusaDFW01Osw112-mgmt:
+      ansible_host: 10.68.68.53
+      is_deployed: false
+    AMusaDFW01Osw120-mgmt:
+      ansible_host: 10.68.68.63
+      is_deployed: false
+    AMusaDFW01Osw121-mgmt:
+      ansible_host: 10.68.68.64
+      is_deployed: false
+    AMusaDFW01Osw122-mgmt:
+      ansible_host: 10.68.68.65
+      is_deployed: false
+    AMusaDFW01Osw123-mgmt:
+      ansible_host: 10.68.68.66
+      is_deployed: false
+    AMusaDFW01Osw124-mgmt:
+      ansible_host: 10.68.68.67
+      is_deployed: false
+    AMusaDFW01Osw125-mgmt:
+      ansible_host: 10.68.68.68
+      is_deployed: false
+    AMusaDFW01Osw126-mgmt:
+      ansible_host: 10.68.68.69
+      is_deployed: false
+    AMusaDFW01Osw127-mgmt:
+      ansible_host: 10.68.68.70
+      is_deployed: false
+    AMusaDFW01Osw128-mgmt:
+      ansible_host: 10.68.68.71
+      is_deployed: false
+    AMusaDFW01Osw129-mgmt:
+      ansible_host: 10.68.68.72
+      is_deployed: false

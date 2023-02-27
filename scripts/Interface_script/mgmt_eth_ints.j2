@@ -1,0 +1,16 @@
+  {{ name }}:
+    description: {{ description }}
+    {% if mode != "" %}
+    mode: {{ mode }}
+    {% endif %}
+    {% if shutdown == "true" %}
+    shutdown: true
+    {% endif %}
+    {% if access_vlan != "" %}
+    vlans: {{ access_vlan }}
+    {% endif %}
+    {% if channel_group != "" %}
+    channel_group:
+      id: {{ channel_group }}
+      mode: {{ channel_mode }}
+    {% endif %}

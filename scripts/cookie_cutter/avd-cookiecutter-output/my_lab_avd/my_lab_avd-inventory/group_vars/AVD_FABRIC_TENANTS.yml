@@ -1,0 +1,57 @@
+tenants:
+  redmonds:
+    mac_vrf_vni_base: 20000
+    vrfs:
+      prod:
+        vrf_vni: 1
+        vtep_diagnostic:
+          loopback: 100
+          loopback_ip_range: 10.1.255.0/24
+        svis:
+          3300:
+            name: DMZ_Non_Prod_VLAN
+            tags: ['l3leaf']
+            enabled: true
+            ip_address_virtual: 10.5.0.1/24
+            
+            
+      nonprod:
+        vrf_vni: 3
+        vtep_diagnostic:
+          loopback: 300
+          loopback_ip_range: 10.3.255.0/24
+        svis:
+          3300:
+            name: DMZ_Non_Prod_VLAN
+            tags: ['l3leaf']
+            enabled: true
+            ip_address_virtual: 10.5.0.1/24
+            
+            
+      pdmz:
+        vrf_vni: 2
+        vtep_diagnostic:
+          loopback: 400
+          loopback_ip_range: 10.4.255.0/24
+        svis:
+          3300:
+            name: DMZ_Non_Prod_VLAN
+            tags: ['l3leaf']
+            enabled: true
+            ip_address_virtual: 10.5.0.1/24
+            
+            
+      npdmz:
+        vrf_vni: 4
+        vtep_diagnostic:
+          loopback: 500
+          loopback_ip_range: 10.5.255.0/24
+        svis:
+          3300:
+            name: DMZ_Non_Prod_VLAN
+            tags: ['l3leaf']
+            enabled: true
+            ip_address_virtual: 10.5.0.1/24
+            
+            
+    l2vlans:

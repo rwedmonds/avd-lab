@@ -1,0 +1,9 @@
+.venv
+inventory/documentation
+inventory/intended
+inventory/config_backup
+inventory/reports
+inventory/snapshots
+ansible-log
+*DS_Store
+ansible-log

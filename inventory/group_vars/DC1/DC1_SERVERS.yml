@@ -27,3 +27,11 @@ servers:
         switch_ports: [Ethernet5, Ethernet5]
         switches: [avd-test-L2Leaf2A, avd-test-L2Leaf2B]
         profile: TENANT_A
+  server03:
+    rack: RackA
+    adapters:
+      - type: nic
+        server_ports: [ens3, ens4]
+        switch_ports: [Ethernet6, Ethernet6]
+        switches: [avd-test-L2Leaf2A, avd-test-L2Leaf2B]
+        profile: TENANT_A

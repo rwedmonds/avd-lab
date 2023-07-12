@@ -1,0 +1,8 @@
+bash sudo python3 -m http.server 80 --bind 10.68.68.41 --directory /mnt/flash/
+
+AMusaDFW01Esw101-eor10g#cli vrf mgmt
+AMusaDFW01Esw101-eor10g(vrf:mgmt)#bash sudo python3 -m http.server 80 --bind 10.68.68.41 --directory /mnt/flash/
+Serving HTTP on 10.68.68.41 port 80 (http://10.68.68.41:80/) ..
+
+
+http://10.68.68.41/EOS-4.28.5.1M.swi

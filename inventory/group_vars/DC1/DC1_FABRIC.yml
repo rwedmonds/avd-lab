@@ -2,7 +2,7 @@
 # L3LS Fabric Values - update these values with caution,
 # SOME CHANGES COULD BE DISRUPTIVE.
 
-fabric_name: redmonds
+fabric_name: DC1
 
 # Enable vlan aware bundles
 vxlan_vlan_aware_bundles: true
@@ -24,7 +24,6 @@ spine:
     bgp_as: 65001
     loopback_ipv4_pool: 192.168.254.0/24
     bgp_defaults:
-      # - "no bgp default ipv4-unicast"
       - "distance bgp 20 200 200"
       - "graceful-restart restart-time 300"
       - "graceful-restart"
@@ -65,7 +64,7 @@ l3leaf:
     mlag_peer_l3_ipv4_pool: 10.255.251.0/24
     virtual_router_mac_address: 00:1c:73:00:dc:01
     bgp_defaults:
-      - "no bgp default ipv4-unicast"
+      # - "no bgp default ipv4-unicast"
       - "distance bgp 20 200 200"
       - "graceful-restart restart-time 300"
       - "graceful-restart"
@@ -122,7 +121,7 @@ l2leaf:
         avd-test-L2Leaf1B:
           id: 20
           mgmt_ip: 192.168.255.20/24
-          uplink_switch_interfaces: [Ethernet8, Ethernet7]
+          uplink_switch_interfaces: [Ethernet8, Ethernet8]
     avd-test_L2Leaf2:
       uplink_switches: [avd-test-Leaf2A, avd-test-Leaf2B]
       filter:
@@ -130,11 +129,11 @@ l2leaf:
         tags: [opzone, web, app]
       nodes:
         avd-test-L2Leaf2A:
-          id: 20
+          id: 21
           mgmt_ip: 192.168.255.21/24
           uplink_switch_interfaces: [Ethernet7, Ethernet7]
         avd-test-L2Leaf2B:
-          id: 20
+          id: 22
           mgmt_ip: 192.168.255.22/24
           uplink_switch_interfaces: [Ethernet8, Ethernet8]
 

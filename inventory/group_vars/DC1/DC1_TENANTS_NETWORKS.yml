@@ -29,6 +29,18 @@ tenants:
             tags: [opzone]
             enabled: true
             ip_address_virtual: 10.1.12.254/24
+          # 113:
+          #   vni_override: 50113
+          #   name: Tenant_A_OP_Zone_3
+          #   tags: [opzone]
+          #   enabled: true
+          #   ip_address_virtual: 10.1.13.254/24
+          # 114:
+          #   vni_override: 50114
+          #   name: Tenant_A_OP_Zone_3
+          #   tags: [opzone]
+          #   enabled: true
+          #   ip_address_virtual: 10.1.14.254/24
       Tenant_A_WEB_Zone:
         vrf_vni: 11
         svis:

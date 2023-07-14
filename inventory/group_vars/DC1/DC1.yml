@@ -63,6 +63,8 @@ mgmt_vrf_routing: true
 name_servers:
   - 192.168.255.1
 
+dns_domain: slacker.net
+
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 custom_structured_configuration_ntp:
   local_interface:
@@ -80,18 +82,24 @@ clock:
 
 # ********************************** Radius ***********************************
 
-# radius_servers:
-#   - host: ubuntu.slacker.net
-#     vrf: MGMT
-#     key: 15331905173E2A1629373C3700
-#     key_type: 7
-#     single_connection: false
+# radius_server:
+#   hosts:
+#     - host: ubuntu.slacker.net
+#       vrf: MGMT
+#       key: 15331905173E2A1629373C3700
+#       key_type: 7
 
 # ip_radius_source_interfaces:
 #   - name: Management1
 #     vrf: MGMT
 
 # ************************************ AAA ************************************
+
+# [aaa_server_groups:
+#   - name: FreeRadius
+#     type: radius
+#     servers:
+#       - server: ubuntu.slacker.net
 
 # aaa_authentication:
 #   login:
@@ -128,7 +136,7 @@ clock:
 #       - commands: 15
 #         type: stop-only
 #         group: FreeRadius
-#         logging: true
+#         logging: true]
 
 # ********************************** Banners **********************************
 

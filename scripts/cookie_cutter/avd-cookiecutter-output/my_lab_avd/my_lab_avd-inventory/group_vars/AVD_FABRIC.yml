@@ -6,15 +6,15 @@ fabric_name: AVD_FABRIC
 underlay_routing_protocol: BGP
 
 # Enable vlan aware bundles
-vxlan_vlan_aware_bundles: True
+evpn_vlan_aware_bundles: True
 
 # bgp peer groups passwords
 bgp_peer_groups:
-  IPv4_UNDERLAY_PEERS:
+  ipv4_underlay_peers:
     password: AQQvKeimxJu+uGQ/yYvv9w==
-  EVPN_OVERLAY_PEERS:
+  evpn_overlay_peers:
     password: AQQvKeimxJu+uGQ/yYvv9w==
-  MLAG_IPv4_UNDERLAY_PEER:
+  mlag_ipv4_underlay_peer:
     password: AQQvKeimxJu+uGQ/yYvv9w==
 
 # Spine Switches
@@ -29,25 +29,25 @@ spine:
       mgmt_ip: 192.168.255.11/24
       platform: vEOS
       bgp_as: 65100
-      mac_address: '0c:1d:c0:1d:62:01'
+      mac_address: "0c:1d:c0:1d:62:01"
     avd-test-Spine2:
       id: 2
       mgmt_ip: 192.168.255.12/24
       platform: vEOS
       bgp_as: 65100
-      mac_address: '0c:1d:c0:1d:62:02'
+      mac_address: "0c:1d:c0:1d:62:02"
     avd-test-Spine3:
       id: 3
       mgmt_ip: 192.168.255.13/24
       platform: vEOS
       bgp_as: 65100
-      mac_address: '0c:1d:c0:1d:62:03'
+      mac_address: "0c:1d:c0:1d:62:03"
     avd-test-Spine4:
       id: 4
       mgmt_ip: 192.168.255.14/24
       platform: vEOS
       bgp_as: 65100
-      mac_address: '0c:1d:c0:1d:62:04'
+      mac_address: "0c:1d:c0:1d:62:04"
 
 # Leaf switch groups
 # A maximum of two nodes can form a leaf group
@@ -79,20 +79,80 @@ l3leaf:
           id: 1
           mgmt_ip: 192.168.255.15/24
           platform: vEOS
-          uplink_switches: ['avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4', 'avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4']
-          uplink_interfaces: ['Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4', 'Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4']
-          uplink_switch_interfaces: ['Ethernet1', 'Ethernet1', 'Ethernet1', 'Ethernet1', 'Ethernet1', 'Ethernet1', 'Ethernet1', 'Ethernet1']
-          mac_address: '0c:1d:c0:1d:62:05'
-          mlag_interfaces: ['Ethernet5']
+          uplink_switches:
+            [
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+            ]
+          uplink_interfaces:
+            [
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+            ]
+          uplink_switch_interfaces:
+            [
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+              "Ethernet1",
+            ]
+          mac_address: "0c:1d:c0:1d:62:05"
+          mlag_interfaces: ["Ethernet5"]
         avd-test-Leaf1B:
           id: 2
           mgmt_ip: 192.168.255.16/24
           platform: vEOS
-          uplink_switches: ['avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4', 'avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4']
-          uplink_interfaces: ['Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4', 'Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4']
-          uplink_switch_interfaces: ['Ethernet2', 'Ethernet2', 'Ethernet2', 'Ethernet2', 'Ethernet2', 'Ethernet2', 'Ethernet2', 'Ethernet2']
-          mac_address: '0c:1d:c0:1d:62:06'
-          mlag_interfaces: ['Ethernet5']
+          uplink_switches:
+            [
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+            ]
+          uplink_interfaces:
+            [
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+            ]
+          uplink_switch_interfaces:
+            [
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+              "Ethernet2",
+            ]
+          mac_address: "0c:1d:c0:1d:62:06"
+          mlag_interfaces: ["Ethernet5"]
     pod1:
       bgp_as: 65002
       nodes:
@@ -100,19 +160,79 @@ l3leaf:
           id: 3
           mgmt_ip: 192.168.255.17/24
           platform: vEOS
-          uplink_switches: ['avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4', 'avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4']
-          uplink_interfaces: ['Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4', 'Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4']
-          uplink_switch_interfaces: ['Ethernet3', 'Ethernet3', 'Ethernet3', 'Ethernet3', 'Ethernet3', 'Ethernet3', 'Ethernet3', 'Ethernet3']
-          mac_address: '0c:1d:c0:1d:62:07'
-          mlag_interfaces: ['Ethernet5']
+          uplink_switches:
+            [
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+            ]
+          uplink_interfaces:
+            [
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+            ]
+          uplink_switch_interfaces:
+            [
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+              "Ethernet3",
+            ]
+          mac_address: "0c:1d:c0:1d:62:07"
+          mlag_interfaces: ["Ethernet5"]
         avd-test-Leaf2B:
           id: 4
           mgmt_ip: 192.168.255.18/24
           platform: vEOS
-          uplink_switches: ['avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4', 'avd-test-Spine1', 'avd-test-Spine2', 'avd-test-Spine3', 'avd-test-Spine4']
-          uplink_interfaces: ['Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4', 'Ethernet1', 'Ethernet2', 'Ethernet3', 'Ethernet4']
-          uplink_switch_interfaces: ['Ethernet4', 'Ethernet4', 'Ethernet4', 'Ethernet4', 'Ethernet4', 'Ethernet4', 'Ethernet4', 'Ethernet4']
-          mac_address: '0c:1d:c0:1d:62:08'
-          mlag_interfaces: ['Ethernet5']
+          uplink_switches:
+            [
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+              "avd-test-Spine1",
+              "avd-test-Spine2",
+              "avd-test-Spine3",
+              "avd-test-Spine4",
+            ]
+          uplink_interfaces:
+            [
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+              "Ethernet1",
+              "Ethernet2",
+              "Ethernet3",
+              "Ethernet4",
+            ]
+          uplink_switch_interfaces:
+            [
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+              "Ethernet4",
+            ]
+          mac_address: "0c:1d:c0:1d:62:08"
+          mlag_interfaces: ["Ethernet5"]
 
 p2p_uplinks_mtu: 9214

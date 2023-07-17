@@ -34,16 +34,16 @@ spine:
     mlag_peer_ipv4_pool: 10.255.252.0/24
     mlag_peer_l3_ipv4_pool: 10.255.251.0/24
   nodes:
-    avd-test-Spine1:
+    - name: avd-test-Spine1
       id: 11
       mgmt_ip: 192.168.255.11/24
-    avd-test-Spine2:
+    - name: avd-test-Spine2
       id: 12
       mgmt_ip: 192.168.255.12/24
-    avd-test-Spine3:
+    - name: avd-test-Spine3
       id: 13
       mgmt_ip: 192.168.255.13/24
-    avd-test-Spine4:
+    - name: avd-test-Spine4
       id: 14
       mgmt_ip: 192.168.255.14/24
 
@@ -75,25 +75,25 @@ l3leaf:
     spanning_tree_mode: mstp
     spanning_tree_priority: 16384
   node_groups:
-    avd-test_Leaf1:
+    - group: avd-test_Leaf1
       bgp_as: 65101
       nodes:
-        avd-test-Leaf1A:
+        - name: avd-test-Leaf1A
           id: 15
           mgmt_ip: 192.168.255.15/24
           uplink_switch_interfaces: [Ethernet1, Ethernet1, Ethernet1, Ethernet1]
-        avd-test-Leaf1B:
+        - name: avd-test-Leaf1B
           id: 16
           mgmt_ip: 192.168.255.16/24
           uplink_switch_interfaces: [Ethernet2, Ethernet2, Ethernet2, Ethernet2]
-    avd-test_Leaf2:
+    - group: avd-test_Leaf2
       bgp_as: 65102
       nodes:
-        avd-test-Leaf2A:
+        - name: avd-test-Leaf2A
           id: 17
           mgmt_ip: 192.168.255.17/24
           uplink_switch_interfaces: [Ethernet3, Ethernet3, Ethernet3, Ethernet3]
-        avd-test-Leaf2B:
+        - name: avd-test-Leaf2B
           id: 18
           mgmt_ip: 192.168.255.18/24
           uplink_switch_interfaces: [Ethernet4, Ethernet4, Ethernet4, Ethernet4]
@@ -112,31 +112,31 @@ l2leaf:
     spanning_tree_priority: 16384
     mlag: true
   node_groups:
-    avd-test_L2Leaf1:
+    - group: avd-test_L2Leaf1
       uplink_switches: [avd-test-Leaf1A, avd-test-Leaf1B]
       filter:
         tenants: [Tenant_A]
         tags: [opzone, web, app]
       nodes:
-        avd-test-L2Leaf1A:
+        - name: avd-test-L2Leaf1A
           id: 19
           mgmt_ip: 192.168.255.19/24
           uplink_switch_interfaces: [Ethernet7, Ethernet7]
-        avd-test-L2Leaf1B:
+        - name: avd-test-L2Leaf1B
           id: 20
           mgmt_ip: 192.168.255.20/24
           uplink_switch_interfaces: [Ethernet8, Ethernet8]
-    avd-test_L2Leaf2:
+    - group: avd-test_L2Leaf2
       uplink_switches: [avd-test-Leaf2A, avd-test-Leaf2B]
       filter:
         tenants: [Tenant_A]
         tags: [opzone, web, app]
       nodes:
-        avd-test-L2Leaf2A:
+        - name: avd-test-L2Leaf2A
           id: 21
           mgmt_ip: 192.168.255.21/24
           uplink_switch_interfaces: [Ethernet7, Ethernet7]
-        avd-test-L2Leaf2B:
+        - name: avd-test-L2Leaf2B
           id: 22
           mgmt_ip: 192.168.255.22/24
           uplink_switch_interfaces: [Ethernet8, Ethernet8]

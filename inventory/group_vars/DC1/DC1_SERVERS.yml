@@ -1,37 +1,52 @@
 ---
 port_profiles:
-  TENANT_A_B:
+  - profile: TENANT_A_B
     mode: trunk
     vlans: "110-111,210-211"
-  TENANT_A:
+  - profile: TENANT_A
     mode: access
     vlans: "110"
-  TENANT_B:
+  - profile: TENANT_B
     mode: trunk
     vlans: "210-211"
 
 servers:
-  server01:
+  - name: server01
     rack: RackA
     adapters:
-      - type: nic
-        server_ports: [ens3, ens4]
-        switch_ports: [Ethernet5, Ethernet5]
-        switches: [avd-test-L2Leaf1A, avd-test-L2Leaf1B]
+      - switch_ports:
+          - Ethernet5
+          - Ethernet5
+        switches:
+          - avd-test-L2Leaf1a
+          - avd-test-L2Leaf1b
+        endpoint_ports:
+          - ens3
+          - ens4
         profile: TENANT_A
-  server02:
+  - name: server02
     rack: RackA
     adapters:
-      - type: nic
-        server_ports: [ens3, ens4]
-        switch_ports: [Ethernet5, Ethernet5]
-        switches: [avd-test-L2Leaf2A, avd-test-L2Leaf2B]
+      - switch_ports:
+          - Ethernet5
+          - Ethernet5
+        switches:
+          - avd-test-L2Leaf2a
+          - avd-test-L2Leaf2b
+        endpoint_ports:
+          - ens3
+          - ens4
         profile: TENANT_A
-  server03:
+  - name: server03
     rack: RackA
     adapters:
-      - type: nic
-        server_ports: [ens3, ens4]
-        switch_ports: [Ethernet6, Ethernet6]
-        switches: [avd-test-L2Leaf2A, avd-test-L2Leaf2B]
+      - switch_ports:
+          - Ethernet6
+          - Ethernet6
+        switches:
+          - avd-test-L2Leaf2a
+          - avd-test-L2Leaf2b
+        endpoint_ports:
+          - ens3
+          - ens4
         profile: TENANT_A

@@ -15,47 +15,59 @@ all:
           ansible_network_os: eos
           ansible_httpapi_port: 443
           ansible_python_interpreter: $(which python3)
+        cvp:
+          ansible_httpapi_host: cvp.slacker.net
+          ansible_host: cvp.slacker.net
+          ansible_user: cvaas
+          ansible_password: "{{lookup('file', '../inventory/cvp.token')}}"
+          ansible_connection: httpapi
+          ansible_httpapi_use_ssl: true
+          ansible_httpapi_validate_certs: false
+          ansible_network_os: eos
+          ansible_httpapi_port: 443
+          # Configuration to get Virtual Env information
+          ansible_python_interpreter: $(which python3)
 
-    # ********************************** Prod ***********************************
-
-    # redmonds Fabric
+    # AVD_Lab Fabric
     redmonds:
       children:
         DC1:
           children:
-            Spines:
-              vars:
-                type: spine
-              hosts:
-                avd-test-Spine1:
-                  ansible_host: 192.168.255.11
-                avd-test-Spine2:
-                  ansible_host: 192.168.255.12
-                avd-test-Spine3:
-                  ansible_host: 192.168.255.13
-                avd-test-Spine4:
-                  ansible_host: 192.168.255.14
-            L3Leafs:
-              vars:
-                type: l3leaf
-              hosts:
-                avd-test-Leaf1A:
-                  ansible_host: 192.168.255.15
-                avd-test-Leaf1B:
-                  ansible_host: 192.168.255.16
-                avd-test-Leaf2A:
-                  ansible_host: 192.168.255.17
-                avd-test-Leaf2B:
-                  ansible_host: 192.168.255.18
-            L2Leafs:
-              vars:
-                type: l2leaf
-              hosts:
-                avd-test-L2Leaf1A:
-                  ansible_host: 192.168.255.19
-                avd-test-L2Leaf1B:
-                  ansible_host: 192.168.255.20
-                avd-test-L2Leaf2A:
-                  ansible_host: 192.168.255.21
-                avd-test-L2Leaf2B:
-                  ansible_host: 192.168.255.22
+            DC1_FABRIC:
+              children:
+                Spines:
+                  vars:
+                    type: spine
+                  hosts:
+                    avd-test-Spine1:
+                      ansible_host: 192.168.255.11
+                    avd-test-Spine2:
+                      ansible_host: 192.168.255.12
+                    avd-test-Spine3:
+                      ansible_host: 192.168.255.13
+                    avd-test-Spine4:
+                      ansible_host: 192.168.255.14
+                L3Leafs:
+                  vars:
+                    type: l3leaf
+                  hosts:
+                    avd-test-Leaf1A:
+                      ansible_host: 192.168.255.15
+                    avd-test-Leaf1B:
+                      ansible_host: 192.168.255.16
+                    avd-test-Leaf2A:
+                      ansible_host: 192.168.255.17
+                    avd-test-Leaf2B:
+                      ansible_host: 192.168.255.18
+                L2Leafs:
+                  vars:
+                    type: l2leaf
+                  hosts:
+                    avd-test-L2Leaf1A:
+                      ansible_host: 192.168.255.19
+                    avd-test-L2Leaf1B:
+                      ansible_host: 192.168.255.20
+                    avd-test-L2Leaf2A:
+                      ansible_host: 192.168.255.21
+                    avd-test-L2Leaf2B:
+                      ansible_host: 192.168.255.22

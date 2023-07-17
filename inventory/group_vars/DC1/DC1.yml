@@ -63,7 +63,7 @@ mgmt_vrf_routing: true
 name_servers:
   - 192.168.255.1
 
-dns_domain: slacker.net
+dns_domain: eve.slacker.net
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 custom_structured_configuration_ntp:

@@ -1,0 +1,151 @@
+ansible-playbook [core 2.13.8]
+  config file = /home/avd/projects/ansible.cfg
+  configured module search path = ['/home/avd/projects/ansible-avd/library']
+  ansible python module location = /home/avd/.local/lib/python3.9/site-packages/ansible
+  ansible collection location = /home/avd/.ansible/collections:/home/avd/projects/ansible-cvp:/home/avd/projects/ansible-avd:/home/avd/ansible-cvp:/home/avd/ansible-avd:/usr/share/ansible/collections:/home/avd/.ansible/collections/ansible_collections:/home/avd/.ansible/collections/ansible_collections/arista/avd:/home/avd/.ansible/collections/ansible_collections/arista/cvp:/home/avd/.ansible/collections/ansible_collections/arista/eos
+  executable location = /home/avd/.local/bin/ansible-playbook
+  python version = 3.9.13 (main, Aug 23 2022, 09:59:57) [GCC 10.2.1 20210110]
+  jinja version = 3.1.2
+  libyaml = True
+Using /home/avd/projects/ansible.cfg as config file
+host_list declined parsing /home/avd/projects/inventory/inventory.yml as it did not pass its verify_file() method
+Parsed /home/avd/projects/inventory/inventory.yml inventory source with yaml plugin
+redirecting (type: callback) ansible.builtin.yaml to community.general.yaml
+redirecting (type: callback) ansible.builtin.yaml to community.general.yaml
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: dc1-fabric-deploy-cvp.yml ********************************************
+2 plays in playbooks/dc1-fabric-deploy-cvp.yml
+
+PLAY [Manage Arista EOS EVPN/VXLAN Configuration] ******************************
+META: ran handlers
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+META: 
+
+TASK [arista.avd.eos_designs : Collection arista.avd version 3.8.4 loaded from /home/avd/.ansible/collections/ansible_collections] ***
+task path: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_designs/tasks/main.yml:2
+ok: [avd-test-Spine1] => changed=false 
+  ansible_facts:
+    avd_collection_version: version
+  failed_when_result: false
+
+TASK [arista.avd.eos_designs : Create required output directories if not present] ***
+task path: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_designs/tasks/main.yml:14
+<localhost> ESTABLISH LOCAL CONNECTION FOR USER: avd
+<localhost> EXEC /bin/sh -c 'echo ~avd && sleep 0'
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/avd/.ansible/tmp `"&& mkdir "` echo /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019 `" && echo ansible-tmp-1689187952.0917056-154-244217644841019="` echo /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019 `" ) && sleep 0'
+Using module file /home/avd/.local/lib/python3.9/site-packages/ansible/modules/file.py
+<localhost> PUT /home/avd/.ansible/tmp/ansible-local-137gtjr3wo0/tmp0dr9fsc3 TO /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019/ /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/local/bin/python /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/avd/.ansible/tmp/ansible-tmp-1689187952.0917056-154-244217644841019/ > /dev/null 2>&1 && sleep 0'
+<localhost> EXEC /bin/sh -c 'echo ~avd && sleep 0'
+ok: [avd-test-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs) => changed=false 
+  ansible_loop_var: item
+  diff:
+    after:
+      path: /home/avd/projects/inventory/intended/structured_configs
+    before:
+      path: /home/avd/projects/inventory/intended/structured_configs
+  gid: 1000
+  group: avd
+  invocation:
+    module_args:
+      _diff_peek: null
+      _original_basename: null
+      access_time: null
+      access_time_format: '%Y%m%d%H%M.%S'
+      attributes: null
+      follow: true
+      force: false
+      group: null
+      mode: 509
+      modification_time: null
+      modification_time_format: '%Y%m%d%H%M.%S'
+      owner: null
+      path: /home/avd/projects/inventory/intended/structured_configs
+      recurse: false
+      selevel: null
+      serole: null
+      setype: null
+      seuser: null
+      src: null
+      state: directory
+      unsafe_writes: false
+  item: /home/avd/projects/inventory/intended/structured_configs
+  mode: '0775'
+  owner: avd
+  path: /home/avd/projects/inventory/intended/structured_configs
+  size: 96
+  state: directory
+  uid: 1000
+<localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/avd/.ansible/tmp `"&& mkdir "` echo /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645 `" && echo ansible-tmp-1689187952.4861977-154-250452306780645="` echo /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645 `" ) && sleep 0'
+Using module file /home/avd/.local/lib/python3.9/site-packages/ansible/modules/file.py
+<localhost> PUT /home/avd/.ansible/tmp/ansible-local-137gtjr3wo0/tmpe60i0e9p TO /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645/AnsiballZ_file.py
+<localhost> EXEC /bin/sh -c 'chmod u+x /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645/ /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c '/usr/local/bin/python /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645/AnsiballZ_file.py && sleep 0'
+<localhost> EXEC /bin/sh -c 'rm -f -r /home/avd/.ansible/tmp/ansible-tmp-1689187952.4861977-154-250452306780645/ > /dev/null 2>&1 && sleep 0'
+ok: [avd-test-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric) => changed=false 
+  ansible_loop_var: item
+  diff:
+    after:
+      path: /home/avd/projects/inventory/documentation/fabric
+    before:
+      path: /home/avd/projects/inventory/documentation/fabric
+  gid: 1000
+  group: avd
+  invocation:
+    module_args:
+      _diff_peek: null
+      _original_basename: null
+      access_time: null
+      access_time_format: '%Y%m%d%H%M.%S'
+      attributes: null
+      follow: true
+      force: false
+      group: null
+      mode: 509
+      modification_time: null
+      modification_time_format: '%Y%m%d%H%M.%S'
+      owner: null
+      path: /home/avd/projects/inventory/documentation/fabric
+      recurse: false
+      selevel: null
+      serole: null
+      setype: null
+      seuser: null
+      src: null
+      state: directory
+      unsafe_writes: false
+  item: /home/avd/projects/inventory/documentation/fabric
+  mode: '0775'
+  owner: avd
+  path: /home/avd/projects/inventory/documentation/fabric
+  size: 160
+  state: directory
+  uid: 1000
+
+TASK [arista.avd.eos_designs : Set eos_designs facts] **************************
+task path: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_designs/tasks/main.yml:26
+The full traceback is:
+NoneType: None
+fatal: [avd-test-Spine1]: FAILED! => changed=false 
+  msg: Invalid/missing 'fabric_name' variable.All hosts in the play must have the same 'fabric_name' valuewhich must point to an Ansible Group containing the hosts.
+
+NO MORE HOSTS LEFT *************************************************************
+
+PLAY RECAP *********************************************************************
+avd-test-Spine1            : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

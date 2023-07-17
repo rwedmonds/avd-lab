@@ -1,6 +1,8 @@
 ---
 # Validation lab
-# local users
+
+# ******************************** Local Users ********************************
+
 local_users:
   admin:
     privilege: 15
@@ -17,36 +19,51 @@ local_users:
     role: network-admin
     sha512_password: "$6$Dzu11L7yp9j3nCM9$FSptxMPyIL555OMO.ldnjDXgwZmrfMYwHSr0uznE5Qoqvd9a6UdjiFcJUhGLtvXVZR1r.A/iF5aAt50hf/EK4/"
 
+# ******************************** TerminAttr *********************************
+
+# daemon_terminattr:
+#   # Address of the gRPC server on CloudVision
+#   # TCP 9910 is used for on-prem CV
+#   # TCP 443 is used on CV as a Service
+#   cvaddrs: # For single cluster
+#     - cvp.slacker.net:9910
+#   cvauth:
+#     method: "token-secure"
+#     token_file: "/tmp/cv-onboarding-token"
+#   cvvrf: MGMT
+#   # Exclude paths from Sysdb on the ingest side
+#   ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+#   # Exclude paths from the shared memory table
+#   smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
+
 daemon_terminattr:
   # Address of the gRPC server on CloudVision
-  # TCP 9910 is used on on-prem
+  # TCP 9910 is used for on-prem CV
   # TCP 443 is used on CV as a Service
   cvaddrs: # For single cluster
-    - apiserver.cv-staging.corp.arista.io:443
+    - cvp.slacker.net:9910
   cvauth:
-    method: "token-secure"
-    token_file: "/tmp/cv-onboarding-token"
+    method: "token"
+    token_file: "/tmp/token"
   cvvrf: MGMT
   # Exclude paths from Sysdb on the ingest side
   ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
   # Exclude paths from the shared memory table
   smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
 
-# Cloud Vision server information
-# cvp_instance_ip: 10.255.0.1
-# cvp_ingestauth_key: ""
-# cvp_ingestauth_key: telarista
+# ******************************* OOB Management ******************************
 
-# OOB Management network default gateway.
 mgmt_interface: Management1
 mgmt_interface_vrf: MGMT
 mgmt_gateway: 192.168.255.1
 mgmt_vrf_routing: true
 
-# dns servers.
+# ********************************** Servers **********************************
+
 name_servers:
-  - 192.168.2.1
   - 192.168.255.1
+
+dns_domain: eve.slacker.net
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
 custom_structured_configuration_ntp:
@@ -59,3 +76,109 @@ custom_structured_configuration_ntp:
       vrf: MGMT
     - name: 1.fr.pool.ntp.org
       vrf: MGMT
+
+clock:
+  timezone: US/Central
+
+# ********************************** Radius ***********************************
+
+# radius_server:
+#   hosts:
+#     - host: ubuntu.slacker.net
+#       vrf: MGMT
+#       key: 15331905173E2A1629373C3700
+#       key_type: 7
+
+# ip_radius_source_interfaces:
+#   - name: Management1
+#     vrf: MGMT
+
+# ************************************ AAA ************************************
+
+# [aaa_server_groups:
+#   - name: FreeRadius
+#     type: radius
+#     servers:
+#       - server: ubuntu.slacker.net
+
+# aaa_authentication:
+#   login:
+#     default: group FreeRadius local
+#   enable:
+#     default: group FreeRadius local
+
+# aaa_authorization:
+#   exec:
+#     default: group FreeRadius
+#   config_commands: false
+#   serial_console: false
+
+# aaa_accounting:
+#   exec:
+#     default:
+#       type: start-stop
+#       group: FreeRadius
+#   system:
+#     default:
+#       type: start-stop
+#       group: FreeRadius
+#   commands:
+#     console:
+#       - commands: 5,15
+#         type: stop-only
+#         group: FreeRadius
+#         logging: true
+#     default:
+#       - commands: 5
+#         type: stop-only
+#         group: FreeRadius
+#         logging: true
+#       - commands: 15
+#         type: stop-only
+#         group: FreeRadius
+#         logging: true]
+
+# ********************************** Banners **********************************
+
+banners:
+  login: |
+    _________________________________________
+    | UNAUTHORIZED ACCESS TO THIS DEVICE IS   \
+    | PROHIBITED!!! You must have explicit,   |
+    | authorized permission to access or      |
+    | configure this device. Unauthorized     |
+    | attempts and actions to access or use   |
+    | this system may result in civil and/or  |
+    | criminal penalties. All activities      |
+    | performed on this device are logged and |
+    \ monitored.                              /
+      ---------------------------------------
+             \   ^__^
+              \  (oo)\_______
+                 (__)\       )\/\
+                     ||----w |
+                     ||     ||
+    EOF
+  motd: |
+    ********************************************************************************
+    *                                                                              *
+    *              /$$$$$$            /$$             /$$                          *
+    *             /$$__  $$          |__/            | $$                          *
+    *            | $$  \ $$  /$$$$$$  /$$  /$$$$$$$ /$$$$$$    /$$$$$$             *
+    *            | $$$$$$$$ /$$__  $$| $$ /$$_____/|_  $$_/   |____  $$            *
+    *            | $$__  $$| $$  \__/| $$|  $$$$$$   | $$      /$$$$$$$            *
+    *            | $$  | $$| $$      | $$ \____  $$  | $$ /$$ /$$__  $$            *
+    *            | $$  | $$| $$      | $$ /$$$$$$$/  |  $$$$/|  $$$$$$$            *
+    *            |__/  |__/|__/      |__/|_______/    \___/   \_______/            *
+    *                                                                              *
+    *                        /$$$$$$  /$$    /$$ /$$$$$$$                          *
+    *                       /$$__  $$| $$   | $$| $$__  $$                         *
+    *                      | $$  \ $$| $$   | $$| $$  \ $$                         *
+    *                      | $$$$$$$$|  $$ / $$/| $$  | $$                         *
+    *                      | $$__  $$ \  $$ $$/ | $$  | $$                         *
+    *                      | $$  | $$  \  $$$/  | $$  | $$                         *
+    *                      | $$  | $$   \  $/   | $$$$$$$/                         *
+    *                      |__/  |__/    \_/    |_______/                          *
+    *                                                                              *
+    ********************************************************************************
+    EOF

@@ -1,0 +1,11 @@
+- name: "Run Fabric states validation"
+  hosts: redmonds
+  connection: httpapi
+  gather_facts: false
+  collections:
+    - arista.avd
+    # - arista.cvp
+  tasks:
+    - name: Validate fabric states
+      ansible.builtin.import_role:
+        name: arista.avd.eos_validate_state

@@ -1,6 +1,6 @@
 ---
 - name: Manage Arista EOS EVPN/VXLAN Configuration
-  hosts: redmonds
+  hosts: DC1
   connection: local
   gather_facts: false
   collections:
@@ -23,7 +23,7 @@
         name: eos_cli_config_gen
 
 - name: Configuration deployment with CVaaS
-  hosts: cvaas
+  hosts: cvp
   connection: local
   gather_facts: false
   collections:
@@ -31,12 +31,12 @@
     - arista.cvp
   tasks:
     - name: run CvaaS provisioning
-      tags: [deploy]
+      tags: [deploy, provision]
       import_role:
         name: arista.avd.eos_config_deploy_cvp
       vars:
-        container_root: "redmonds"
-        configlets_prefix: "re"
+        container_root: "DC1"
+        configlets_prefix: "avd"
         device_filter: "avd-test-"
         state: present
         cv_collection: v3

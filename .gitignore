@@ -7,4 +7,4 @@ inventory/snapshots
 ansible-log
 *DS_Store
 ansible-log
-.*
+.*/

@@ -29,45 +29,43 @@ all:
           ansible_python_interpreter: $(which python3)
 
     # AVD_Lab Fabric
-    redmonds:
+    Tenant:
       children:
-        DC1:
+        AVD_Lab:
           children:
-            DC1_FABRIC:
-              children:
-                Spines:
-                  vars:
-                    type: spine
-                  hosts:
-                    avd-test-Spine1:
-                      ansible_host: 192.168.255.11
-                    avd-test-Spine2:
-                      ansible_host: 192.168.255.12
-                    avd-test-Spine3:
-                      ansible_host: 192.168.255.13
-                    avd-test-Spine4:
-                      ansible_host: 192.168.255.14
-                L3Leafs:
-                  vars:
-                    type: l3leaf
-                  hosts:
-                    avd-test-Leaf1A:
-                      ansible_host: 192.168.255.15
-                    avd-test-Leaf1B:
-                      ansible_host: 192.168.255.16
-                    avd-test-Leaf2A:
-                      ansible_host: 192.168.255.17
-                    avd-test-Leaf2B:
-                      ansible_host: 192.168.255.18
-                L2Leafs:
-                  vars:
-                    type: l2leaf
-                  hosts:
-                    avd-test-L2Leaf1A:
-                      ansible_host: 192.168.255.19
-                    avd-test-L2Leaf1B:
-                      ansible_host: 192.168.255.20
-                    avd-test-L2Leaf2A:
-                      ansible_host: 192.168.255.21
-                    avd-test-L2Leaf2B:
-                      ansible_host: 192.168.255.22
+            Spines:
+              vars:
+                type: spine
+              hosts:
+                avd-test-Spine1:
+                  ansible_host: 192.168.255.11
+                avd-test-Spine2:
+                  ansible_host: 192.168.255.12
+                avd-test-Spine3:
+                  ansible_host: 192.168.255.13
+                avd-test-Spine4:
+                  ansible_host: 192.168.255.14
+            L3Leafs:
+              vars:
+                type: l3leaf
+              hosts:
+                avd-test-Leaf1A:
+                  ansible_host: 192.168.255.15
+                avd-test-Leaf1B:
+                  ansible_host: 192.168.255.16
+                avd-test-Leaf2A:
+                  ansible_host: 192.168.255.17
+                avd-test-Leaf2B:
+                  ansible_host: 192.168.255.18
+            L2Leafs:
+              vars:
+                type: l2leaf
+              hosts:
+                avd-test-L2Leaf1A:
+                  ansible_host: 192.168.255.19
+                avd-test-L2Leaf1B:
+                  ansible_host: 192.168.255.20
+                avd-test-L2Leaf2A:
+                  ansible_host: 192.168.255.21
+                avd-test-L2Leaf2B:
+                  ansible_host: 192.168.255.22

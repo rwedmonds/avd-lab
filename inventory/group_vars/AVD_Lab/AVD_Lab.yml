@@ -21,21 +21,6 @@ local_users:
 
 # ******************************** TerminAttr *********************************
 
-# daemon_terminattr:
-#   # Address of the gRPC server on CloudVision
-#   # TCP 9910 is used for on-prem CV
-#   # TCP 443 is used on CV as a Service
-#   cvaddrs: # For single cluster
-#     - cvp.slacker.net:9910
-#   cvauth:
-#     method: "token-secure"
-#     token_file: "/tmp/cv-onboarding-token"
-#   cvvrf: MGMT
-#   # Exclude paths from Sysdb on the ingest side
-#   ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
-#   # Exclude paths from the shared memory table
-#   smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
-
 daemon_terminattr:
   # Address of the gRPC server on CloudVision
   # TCP 9910 is used for on-prem CV
@@ -65,7 +50,7 @@ name_servers:
 
 dns_domain: eve.slacker.net
 
-# NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment VRF
+# NTP Servers IP or DNS name, first NTP server will be preferred, and sourced from Management VRF
 custom_structured_configuration_ntp:
   local_interface:
     name: Management1
@@ -155,7 +140,7 @@ banners:
       ---------------------------------------
              \   ^__^
               \  (oo)\_______
-                 (__)\       )\/\
+                 (__)\       )/\
                      ||----w |
                      ||     ||
     EOF

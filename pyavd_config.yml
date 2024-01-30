@@ -1,0 +1,9 @@
+---
+inventory:
+  plugin: AnsibleInventory
+  options:
+    hostsfile: "inventory/pyavd_inventory.yml"
+runner:
+  plugin: threaded
+  options:
+    num_workers: 10

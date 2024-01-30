@@ -1,0 +1,44 @@
+---
+all:
+  children:
+    # AVD_Lab Fabric
+    Tenant:
+      children:
+        AVD_Lab:
+          children:
+            Spines:
+              vars:
+                type: spine
+              hosts:
+                "re-avd-Spine1":
+                  ansible_host: 192.168.255.11
+                "re-avd-Spine2":
+                  ansible_host: 192.168.255.12
+                "re-avd-Spine3":
+                  ansible_host: 192.168.255.13
+                "re-avd-Spine4":
+                  ansible_host: 192.168.255.14
+            L3Leafs:
+              vars:
+                type: l3leaf
+              hosts:
+                "re-avd-Leaf1A":
+                  ansible_host: 192.168.255.15
+                "re-avd-Leaf1B":
+                  ansible_host: 192.168.255.16
+                "re-avd-Leaf2A":
+                  ansible_host: 192.168.255.17
+                "re-avd-Leaf2B":
+                  ansible_host: 192.168.255.18
+            L2Leafs:
+              vars:
+                type: l2leaf
+              hosts:
+                "re-avd-L2Leaf1A":
+                  ansible_host: 192.168.255.19
+                "re-avd-L2Leaf1B":
+                  ansible_host: 192.168.255.20
+                "re-avd-L2Leaf2A":
+                  ansible_host: 192.168.255.21
+                "re-avd-L2Leaf2B":
+                  ansible_host: 192.168.255.22

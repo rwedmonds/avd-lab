@@ -1,21 +1,21 @@
 ---
 - name: Manage Arista EOS EVPN/VXLAN Configuration
-  hosts: DC1
+  hosts: AVD_Lab
   connection: local
   gather_facts: false
   collections:
     - arista.avd
     - arista.cvp
   tasks:
-    - name: reset local folders for output
-      tags: [generate, reset]
-      import_role:
-        name: arista.avd.build_output_folders
+    # - name: reset local folders for output
+    #   tags: [generate, reset]
+    #   import_role:
+    #     name: arista.avd.build_output_folders
 
-    - name: generate intended variables
-      tags: [build, generate, deploy]
-      import_role:
-        name: arista.avd.eos_designs
+    # - name: generate intended variables
+    #   tags: [build, generate, deploy]
+    #   import_role:
+    #     name: arista.avd.eos_designs
 
     - name: generate device intended config and documentation
       tags: [build, generate, deploy]
@@ -35,7 +35,7 @@
       import_role:
         name: arista.avd.eos_config_deploy_cvp
       vars:
-        container_root: "redmonds"
+        container_root: "AVD_Lab"
         configlets_prefix: "re-avd"
         device_filter: "re-avd-"
         state: present

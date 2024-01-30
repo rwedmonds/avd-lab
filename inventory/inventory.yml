@@ -37,35 +37,35 @@ all:
               vars:
                 type: spine
               hosts:
-                avd-test-Spine1:
+                "re-avd-Spine1":
                   ansible_host: 192.168.255.11
-                avd-test-Spine2:
+                "re-avd-Spine2":
                   ansible_host: 192.168.255.12
-                avd-test-Spine3:
+                "re-avd-Spine3":
                   ansible_host: 192.168.255.13
-                avd-test-Spine4:
+                "re-avd-Spine4":
                   ansible_host: 192.168.255.14
             L3Leafs:
               vars:
                 type: l3leaf
               hosts:
-                avd-test-Leaf1A:
+                "re-avd-Leaf1A":
                   ansible_host: 192.168.255.15
-                avd-test-Leaf1B:
+                "re-avd-Leaf1B":
                   ansible_host: 192.168.255.16
-                avd-test-Leaf2A:
+                "re-avd-Leaf2A":
                   ansible_host: 192.168.255.17
-                avd-test-Leaf2B:
+                "re-avd-Leaf2B":
                   ansible_host: 192.168.255.18
             L2Leafs:
               vars:
                 type: l2leaf
               hosts:
-                avd-test-L2Leaf1A:
+                "re-avd-L2Leaf1A":
                   ansible_host: 192.168.255.19
-                avd-test-L2Leaf1B:
+                "re-avd-L2Leaf1B":
                   ansible_host: 192.168.255.20
-                avd-test-L2Leaf2A:
+                "re-avd-L2Leaf2A":
                   ansible_host: 192.168.255.21
-                avd-test-L2Leaf2B:
+                "re-avd-L2Leaf2B":
                   ansible_host: 192.168.255.22

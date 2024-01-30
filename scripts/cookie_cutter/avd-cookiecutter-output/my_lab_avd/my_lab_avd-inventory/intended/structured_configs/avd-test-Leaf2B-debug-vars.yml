@@ -2,18 +2,18 @@ ansible_user: ansible_local
 ansible_ssh_pass: ansible
 ansible_python_interpreter: $(which python3)
 output_format:
-- text
-- markdown
-- json
-- yaml
+  - text
+  - markdown
+  - json
+  - yaml
 commands_list:
-- show lldp neighbors
-- show ip interface brief
-- show interfaces description
-- show version
-- show running-config
-- show ip bgp summary
-- show bgp evpn summary
+  - show lldp neighbors
+  - show ip interface brief
+  - show interfaces description
+  - show version
+  - show running-config
+  - show ip bgp summary
+  - show bgp evpn summary
 mgmt_gateway: 192.168.255.1
 local_users:
   admin:
@@ -25,14 +25,14 @@ local_users:
     role: network-admin
     sha512_password: $6$wh5/7CrF9CTrG0nk$RWaK9mq0OvSe1yRnDE6bkYNa6SRHte8Pt3pGa0fxTN0uKuF2TddOGOrkzdwsRul5DTYi1Sr7UYYXkbEuQClXl0
 cvp_instance_ips:
-- 192.168.2.137
+  - 192.168.2.137
 cvp_ingestauth_key: null
 name_servers:
-- 192.168.2.1
-- 192.168.255.1
+  - 192.168.2.1
+  - 192.168.255.1
 ntp_servers:
-- 192.168.2.1
-- 192.168.255.1
+  - 192.168.2.1
+  - 192.168.255.1
 dns_domain: slacker.eve
 fabric_name: AVD_FABRIC
 underlay_routing_protocol: BGP
@@ -48,25 +48,25 @@ spine:
   defaults:
     loopback_ipv4_pool: 192.168.100.0/24
   nodes:
-    avd-test-Spine1:
+    re-avd-Spine1:
       id: 1
       mgmt_ip: 192.168.255.11/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:01
-    avd-test-Spine2:
+    re-avd-Spine2:
       id: 2
       mgmt_ip: 192.168.255.12/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:02
-    avd-test-Spine3:
+    re-avd-Spine3:
       id: 3
       mgmt_ip: 192.168.255.13/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:03
-    avd-test-Spine4:
+    re-avd-Spine4:
       id: 4
       mgmt_ip: 192.168.255.14/24
       platform: vEOS
@@ -86,145 +86,145 @@ l3leaf:
     pod0:
       bgp_as: 65001
       nodes:
-        avd-test-Leaf1A:
+        re-avd-Leaf1A:
           id: 1
           mgmt_ip: 192.168.255.15/24
           platform: vEOS
           uplink_switches:
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
           uplink_interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
           uplink_switch_interfaces:
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
-          - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
+            - Ethernet1
           mac_address: 0c:1d:c0:1d:62:05
           mlag_interfaces:
-          - Ethernet5
-        avd-test-Leaf1B:
+            - Ethernet5
+        re-avd-Leaf1B:
           id: 2
           mgmt_ip: 192.168.255.16/24
           platform: vEOS
           uplink_switches:
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
           uplink_interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
           uplink_switch_interfaces:
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
-          - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
+            - Ethernet2
           mac_address: 0c:1d:c0:1d:62:06
           mlag_interfaces:
-          - Ethernet5
+            - Ethernet5
     pod1:
       bgp_as: 65002
       nodes:
-        avd-test-Leaf2A:
+        re-avd-Leaf2A:
           id: 3
           mgmt_ip: 192.168.255.17/24
           platform: vEOS
           uplink_switches:
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
           uplink_interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
           uplink_switch_interfaces:
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
-          - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
+            - Ethernet3
           mac_address: 0c:1d:c0:1d:62:07
           mlag_interfaces:
-          - Ethernet5
-        avd-test-Leaf2B:
+            - Ethernet5
+        re-avd-Leaf2B:
           id: 4
           mgmt_ip: 192.168.255.18/24
           platform: vEOS
           uplink_switches:
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
-          - avd-test-Spine1
-          - avd-test-Spine2
-          - avd-test-Spine3
-          - avd-test-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
+            - re-avd-Spine1
+            - re-avd-Spine2
+            - re-avd-Spine3
+            - re-avd-Spine4
           uplink_interfaces:
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
-          - Ethernet1
-          - Ethernet2
-          - Ethernet3
-          - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
+            - Ethernet1
+            - Ethernet2
+            - Ethernet3
+            - Ethernet4
           uplink_switch_interfaces:
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
-          - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
+            - Ethernet4
           mac_address: 0c:1d:c0:1d:62:08
           mlag_interfaces:
-          - Ethernet5
+            - Ethernet5
 p2p_uplinks_mtu: 9214
 port_profiles:
   exadata:
@@ -237,57 +237,57 @@ servers:
   ntx02:
     rack: pod1
     adapters:
-    - type: nic
-      endpoint_ports:
-      - ntx01_to_leaf2b
-      - ntx01_to_leaf2b
-      switch_ports:
-      - Ethernet7
-      - Ethernet7
-      switches:
-      - avd-test-Leaf2A
-      - avd-test-Leaf2B
-      profile: nutanix
-      port_channel:
-        description: ntx01_to_leaf2b
-        mode: active
-        state: present
+      - type: nic
+        endpoint_ports:
+          - ntx01_to_leaf2b
+          - ntx01_to_leaf2b
+        switch_ports:
+          - Ethernet7
+          - Ethernet7
+        switches:
+          - re-avd-Leaf2A
+          - re-avd-Leaf2B
+        profile: nutanix
+        port_channel:
+          description: ntx01_to_leaf2b
+          mode: active
+          state: present
   ntx01:
     rack: pod1
     adapters:
-    - type: nic
-      endpoint_ports:
-      - ntx01_to_leaf1b
-      - ntx01_to_leaf1b
-      switch_ports:
-      - Ethernet8
-      - Ethernet8
-      switches:
-      - avd-test-Leaf1A
-      - avd-test-Leaf1B
-      profile: nutanix
-      port_channel:
-        description: ntx01_to_leaf1b
-        mode: active
-        state: present
+      - type: nic
+        endpoint_ports:
+          - ntx01_to_leaf1b
+          - ntx01_to_leaf1b
+        switch_ports:
+          - Ethernet8
+          - Ethernet8
+        switches:
+          - re-avd-Leaf1A
+          - re-avd-Leaf1B
+        profile: nutanix
+        port_channel:
+          description: ntx01_to_leaf1b
+          mode: active
+          state: present
   exa01:
     rack: pod1
     adapters:
-    - type: nic
-      endpoint_ports:
-      - ntx01_to_leaf1b
-      - ntx01_to_leaf1b
-      switch_ports:
-      - Ethernet7
-      - Ethernet7
-      switches:
-      - avd-test-Leaf1A
-      - avd-test-Leaf1A
-      profile: exadata
-      port_channel:
-        description: ntx01_to_leaf1b
-        mode: active
-        state: present
+      - type: nic
+        endpoint_ports:
+          - ntx01_to_leaf1b
+          - ntx01_to_leaf1b
+        switch_ports:
+          - Ethernet7
+          - Ethernet7
+        switches:
+          - re-avd-Leaf1A
+          - re-avd-Leaf1A
+        profile: exadata
+        port_channel:
+          description: ntx01_to_leaf1b
+          mode: active
+          state: present
 tenants:
   redmonds:
     mac_vrf_vni_base: 20000
@@ -301,7 +301,7 @@ tenants:
           3300:
             name: DMZ_Non_Prod_VLAN
             tags:
-            - l3leaf
+              - l3leaf
             enabled: true
             ip_address_virtual: 10.5.0.1/24
       nonprod:
@@ -313,7 +313,7 @@ tenants:
           3300:
             name: DMZ_Non_Prod_VLAN
             tags:
-            - l3leaf
+              - l3leaf
             enabled: true
             ip_address_virtual: 10.5.0.1/24
       pdmz:
@@ -325,7 +325,7 @@ tenants:
           3300:
             name: DMZ_Non_Prod_VLAN
             tags:
-            - l3leaf
+              - l3leaf
             enabled: true
             ip_address_virtual: 10.5.0.1/24
       npdmz:
@@ -337,7 +337,7 @@ tenants:
           3300:
             name: DMZ_Non_Prod_VLAN
             tags:
-            - l3leaf
+              - l3leaf
             enabled: true
             ip_address_virtual: 10.5.0.1/24
     l2vlans: null
@@ -345,19 +345,19 @@ type: l3leaf
 inventory_file: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory/inventory.yml
 inventory_dir: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory
 ansible_host: 192.168.255.18
-inventory_hostname: avd-test-Leaf2B
-inventory_hostname_short: avd-test-Leaf2B
+inventory_hostname: re-avd-Leaf2B
+inventory_hostname_short: re-avd-Leaf2B
 group_names:
-- AVD_FABRIC
-- AVD_FABRIC_SERVERS
-- AVD_FABRIC_TENANTS
-- LEAFS
-- MY_LAB_AVD
+  - AVD_FABRIC
+  - AVD_FABRIC_SERVERS
+  - AVD_FABRIC_TENANTS
+  - LEAFS
+  - MY_LAB_AVD
 ansible_facts:
   avd_switch_facts:
-    avd-test-Spine1:
+    re-avd-Spine1:
       switch:
-        bgp_as: '65100'
+        bgp_as: "65100"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -390,7 +390,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         endpoint_trunk_groups: []
@@ -398,7 +398,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: avd-test-Spine1
+        hostname: re-avd-Spine1
         id: 1
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -439,7 +439,7 @@ ansible_facts:
         network_services_l3: false
         node_type_key: spine
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.100.1
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -447,10 +447,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -468,11 +468,11 @@ ansible_facts:
         uplink_switch_interfaces: []
         uplink_type: p2p
         uplinks: []
-        vlans: ''
+        vlans: ""
         vtep: false
-    avd-test-Spine2:
+    re-avd-Spine2:
       switch:
-        bgp_as: '65100'
+        bgp_as: "65100"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -505,7 +505,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         endpoint_trunk_groups: []
@@ -513,7 +513,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: avd-test-Spine2
+        hostname: re-avd-Spine2
         id: 2
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -554,7 +554,7 @@ ansible_facts:
         network_services_l3: false
         node_type_key: spine
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.100.2
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -562,10 +562,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -583,11 +583,11 @@ ansible_facts:
         uplink_switch_interfaces: []
         uplink_type: p2p
         uplinks: []
-        vlans: ''
+        vlans: ""
         vtep: false
-    avd-test-Spine3:
+    re-avd-Spine3:
       switch:
-        bgp_as: '65100'
+        bgp_as: "65100"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -620,7 +620,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         endpoint_trunk_groups: []
@@ -628,7 +628,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: avd-test-Spine3
+        hostname: re-avd-Spine3
         id: 3
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -669,7 +669,7 @@ ansible_facts:
         network_services_l3: false
         node_type_key: spine
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.100.3
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -677,10 +677,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -698,11 +698,11 @@ ansible_facts:
         uplink_switch_interfaces: []
         uplink_type: p2p
         uplinks: []
-        vlans: ''
+        vlans: ""
         vtep: false
-    avd-test-Spine4:
+    re-avd-Spine4:
       switch:
-        bgp_as: '65100'
+        bgp_as: "65100"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -735,7 +735,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         endpoint_trunk_groups: []
@@ -743,7 +743,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: avd-test-Spine4
+        hostname: re-avd-Spine4
         id: 4
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -784,7 +784,7 @@ ansible_facts:
         network_services_l3: false
         node_type_key: spine
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.100.4
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -792,10 +792,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -813,11 +813,11 @@ ansible_facts:
         uplink_switch_interfaces: []
         uplink_type: p2p
         uplinks: []
-        vlans: ''
+        vlans: ""
         vtep: false
-    avd-test-Leaf1A:
+    re-avd-Leaf1A:
       switch:
-        bgp_as: '65001'
+        bgp_as: "65001"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -850,7 +850,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         enable_trunk_groups: false
@@ -860,22 +860,22 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
-        - all
-        - pod0
+          - all
+          - pod0
         filter_tenants:
-        - all
+          - all
         group: pod0
-        hostname: avd-test-Leaf1A
+        hostname: re-avd-Leaf1A
         id: 1
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -911,11 +911,11 @@ ansible_facts:
         mlag_dual_primary_detection: false
         mlag_ibgp_origin_incomplete: true
         mlag_interfaces:
-        - Ethernet5
+          - Ethernet5
         mlag_ip: 192.168.255.0
         mlag_l3: true
         mlag_l3_ip: 192.168.254.0
-        mlag_peer: avd-test-Leaf1B
+        mlag_peer: re-avd-Leaf1B
         mlag_peer_ip: 192.168.255.1
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.1
@@ -924,7 +924,7 @@ ansible_facts:
         mlag_peer_link_allowed_vlans: 2-4094
         mlag_peer_mgmt_ip: 192.168.255.16
         mlag_peer_vlan: 4094
-        mlag_port_channel_id: '5'
+        mlag_port_channel_id: "5"
         mlag_role: primary
         mlag_support: true
         mlag_switch_ids:
@@ -938,7 +938,7 @@ ansible_facts:
         network_services_l3: true
         node_type_key: l3leaf
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.0.1
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -946,10 +946,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -964,125 +964,125 @@ ansible_facts:
         underlay_router: true
         underlay_routing_protocol: ebgp
         uplink_interfaces:
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_switch_interfaces:
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
-        - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
+          - Ethernet1
         uplink_switches:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_type: p2p
         uplinks:
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.1
-          peer_ip_address: 192.168.3.0
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.3
-          peer_ip_address: 192.168.3.2
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.5
-          peer_ip_address: 192.168.3.4
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.7
-          peer_ip_address: 192.168.3.6
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.9
-          peer_ip_address: 192.168.3.8
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.11
-          peer_ip_address: 192.168.3.10
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.13
-          peer_ip_address: 192.168.3.12
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet1
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.15
-          peer_ip_address: 192.168.3.14
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.1
+            peer_ip_address: 192.168.3.0
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.3
+            peer_ip_address: 192.168.3.2
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.5
+            peer_ip_address: 192.168.3.4
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.7
+            peer_ip_address: 192.168.3.6
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.9
+            peer_ip_address: 192.168.3.8
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.11
+            peer_ip_address: 192.168.3.10
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.13
+            peer_ip_address: 192.168.3.12
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet1
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.15
+            peer_ip_address: 192.168.3.14
         virtual_router_mac_address: 00:1c:73:00:dc:01
         vlans: 3300,3300,3300,3300
         vtep: true
         vtep_ip: 192.168.1.1
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    avd-test-Leaf1B:
+    re-avd-Leaf1B:
       switch:
-        bgp_as: '65001'
+        bgp_as: "65001"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -1115,7 +1115,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         enable_trunk_groups: false
@@ -1125,22 +1125,22 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
-        - all
-        - pod0
+          - all
+          - pod0
         filter_tenants:
-        - all
+          - all
         group: pod0
-        hostname: avd-test-Leaf1B
+        hostname: re-avd-Leaf1B
         id: 2
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1176,11 +1176,11 @@ ansible_facts:
         mlag_dual_primary_detection: false
         mlag_ibgp_origin_incomplete: true
         mlag_interfaces:
-        - Ethernet5
+          - Ethernet5
         mlag_ip: 192.168.255.1
         mlag_l3: true
         mlag_l3_ip: 192.168.254.1
-        mlag_peer: avd-test-Leaf1A
+        mlag_peer: re-avd-Leaf1A
         mlag_peer_ip: 192.168.255.0
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.0
@@ -1189,7 +1189,7 @@ ansible_facts:
         mlag_peer_link_allowed_vlans: 2-4094
         mlag_peer_mgmt_ip: 192.168.255.15
         mlag_peer_vlan: 4094
-        mlag_port_channel_id: '5'
+        mlag_port_channel_id: "5"
         mlag_role: secondary
         mlag_support: true
         mlag_switch_ids:
@@ -1203,7 +1203,7 @@ ansible_facts:
         network_services_l3: true
         node_type_key: l3leaf
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.0.2
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -1211,10 +1211,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -1229,125 +1229,125 @@ ansible_facts:
         underlay_router: true
         underlay_routing_protocol: ebgp
         uplink_interfaces:
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_switch_interfaces:
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
-        - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
+          - Ethernet2
         uplink_switches:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_type: p2p
         uplinks:
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.17
-          peer_ip_address: 192.168.3.16
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.19
-          peer_ip_address: 192.168.3.18
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.21
-          peer_ip_address: 192.168.3.20
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.23
-          peer_ip_address: 192.168.3.22
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.25
-          peer_ip_address: 192.168.3.24
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.27
-          peer_ip_address: 192.168.3.26
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.29
-          peer_ip_address: 192.168.3.28
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet2
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.31
-          peer_ip_address: 192.168.3.30
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.17
+            peer_ip_address: 192.168.3.16
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.19
+            peer_ip_address: 192.168.3.18
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.21
+            peer_ip_address: 192.168.3.20
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.23
+            peer_ip_address: 192.168.3.22
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.25
+            peer_ip_address: 192.168.3.24
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.27
+            peer_ip_address: 192.168.3.26
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.29
+            peer_ip_address: 192.168.3.28
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet2
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.31
+            peer_ip_address: 192.168.3.30
         virtual_router_mac_address: 00:1c:73:00:dc:01
         vlans: 3300,3300,3300,3300
         vtep: true
         vtep_ip: 192.168.1.1
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    avd-test-Leaf2A:
+    re-avd-Leaf2A:
       switch:
-        bgp_as: '65002'
+        bgp_as: "65002"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -1380,7 +1380,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         enable_trunk_groups: false
@@ -1390,22 +1390,22 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
-        - all
-        - pod1
+          - all
+          - pod1
         filter_tenants:
-        - all
+          - all
         group: pod1
-        hostname: avd-test-Leaf2A
+        hostname: re-avd-Leaf2A
         id: 3
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1441,11 +1441,11 @@ ansible_facts:
         mlag_dual_primary_detection: false
         mlag_ibgp_origin_incomplete: true
         mlag_interfaces:
-        - Ethernet5
+          - Ethernet5
         mlag_ip: 192.168.255.4
         mlag_l3: true
         mlag_l3_ip: 192.168.254.4
-        mlag_peer: avd-test-Leaf2B
+        mlag_peer: re-avd-Leaf2B
         mlag_peer_ip: 192.168.255.5
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.5
@@ -1454,7 +1454,7 @@ ansible_facts:
         mlag_peer_link_allowed_vlans: 2-4094
         mlag_peer_mgmt_ip: 192.168.255.18
         mlag_peer_vlan: 4094
-        mlag_port_channel_id: '5'
+        mlag_port_channel_id: "5"
         mlag_role: primary
         mlag_support: true
         mlag_switch_ids:
@@ -1468,7 +1468,7 @@ ansible_facts:
         network_services_l3: true
         node_type_key: l3leaf
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.0.3
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -1476,10 +1476,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -1494,125 +1494,125 @@ ansible_facts:
         underlay_router: true
         underlay_routing_protocol: ebgp
         uplink_interfaces:
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_switch_interfaces:
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
-        - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
+          - Ethernet3
         uplink_switches:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_type: p2p
         uplinks:
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.33
-          peer_ip_address: 192.168.3.32
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.35
-          peer_ip_address: 192.168.3.34
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.37
-          peer_ip_address: 192.168.3.36
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.39
-          peer_ip_address: 192.168.3.38
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.41
-          peer_ip_address: 192.168.3.40
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.43
-          peer_ip_address: 192.168.3.42
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.45
-          peer_ip_address: 192.168.3.44
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet3
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.47
-          peer_ip_address: 192.168.3.46
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.33
+            peer_ip_address: 192.168.3.32
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.35
+            peer_ip_address: 192.168.3.34
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.37
+            peer_ip_address: 192.168.3.36
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.39
+            peer_ip_address: 192.168.3.38
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.41
+            peer_ip_address: 192.168.3.40
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.43
+            peer_ip_address: 192.168.3.42
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.45
+            peer_ip_address: 192.168.3.44
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet3
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.47
+            peer_ip_address: 192.168.3.46
         virtual_router_mac_address: 00:1c:73:00:dc:01
         vlans: 3300,3300,3300,3300
         vtep: true
         vtep_ip: 192.168.1.3
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    avd-test-Leaf2B:
+    re-avd-Leaf2B:
       switch:
-        bgp_as: '65002'
+        bgp_as: "65002"
         bgp_defaults: []
         bgp_peer_groups:
           ipv4_underlay_peers:
@@ -1645,7 +1645,7 @@ ansible_facts:
         default_interfaces: {}
         default_mpls_overlay_role: none
         default_overlay_address_families:
-        - evpn
+          - evpn
         default_overlay_routing_protocol: ebgp
         default_underlay_routing_protocol: ebgp
         enable_trunk_groups: false
@@ -1655,22 +1655,22 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
-        - all
-        - pod1
+          - all
+          - pod1
         filter_tenants:
-        - all
+          - all
         group: pod1
-        hostname: avd-test-Leaf2B
+        hostname: re-avd-Leaf2B
         id: 4
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1706,11 +1706,11 @@ ansible_facts:
         mlag_dual_primary_detection: false
         mlag_ibgp_origin_incomplete: true
         mlag_interfaces:
-        - Ethernet5
+          - Ethernet5
         mlag_ip: 192.168.255.5
         mlag_l3: true
         mlag_l3_ip: 192.168.254.5
-        mlag_peer: avd-test-Leaf2A
+        mlag_peer: re-avd-Leaf2A
         mlag_peer_ip: 192.168.255.4
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.4
@@ -1719,7 +1719,7 @@ ansible_facts:
         mlag_peer_link_allowed_vlans: 2-4094
         mlag_peer_mgmt_ip: 192.168.255.17
         mlag_peer_vlan: 4094
-        mlag_port_channel_id: '5'
+        mlag_port_channel_id: "5"
         mlag_role: secondary
         mlag_support: true
         mlag_switch_ids:
@@ -1733,7 +1733,7 @@ ansible_facts:
         network_services_l3: true
         node_type_key: l3leaf
         overlay_address_families:
-        - evpn
+          - evpn
         overlay_rd_type_admin_subfield: 192.168.0.4
         overlay_routing_protocol: ebgp
         overlay_routing_protocol_address_family: ipv4
@@ -1741,10 +1741,10 @@ ansible_facts:
         platform: vEOS
         platform_settings:
           platforms:
-          - VEOS
-          - VEOS-LAB
-          - vEOS
-          - vEOS-lab
+            - VEOS
+            - VEOS-LAB
+            - vEOS
+            - vEOS-lab
           reload_delay:
             mlag: 300
             non_mlag: 330
@@ -1759,116 +1759,116 @@ ansible_facts:
         underlay_router: true
         underlay_routing_protocol: ebgp
         uplink_interfaces:
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
-        - Ethernet1
-        - Ethernet2
-        - Ethernet3
-        - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
+          - Ethernet1
+          - Ethernet2
+          - Ethernet3
+          - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_switch_interfaces:
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
-        - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
+          - Ethernet4
         uplink_switches:
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
-        - avd-test-Spine1
-        - avd-test-Spine2
-        - avd-test-Spine3
-        - avd-test-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
+          - re-avd-Spine1
+          - re-avd-Spine2
+          - re-avd-Spine3
+          - re-avd-Spine4
         uplink_type: p2p
         uplinks:
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.49
-          peer_ip_address: 192.168.3.48
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.51
-          peer_ip_address: 192.168.3.50
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.53
-          peer_ip_address: 192.168.3.52
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.55
-          peer_ip_address: 192.168.3.54
-        - interface: Ethernet1
-          peer: avd-test-Spine1
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.57
-          peer_ip_address: 192.168.3.56
-        - interface: Ethernet2
-          peer: avd-test-Spine2
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.59
-          peer_ip_address: 192.168.3.58
-        - interface: Ethernet3
-          peer: avd-test-Spine3
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.61
-          peer_ip_address: 192.168.3.60
-        - interface: Ethernet4
-          peer: avd-test-Spine4
-          peer_interface: Ethernet4
-          peer_type: spine
-          peer_is_deployed: true
-          peer_bgp_as: '65100'
-          type: underlay_p2p
-          ip_address: 192.168.3.63
-          peer_ip_address: 192.168.3.62
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.49
+            peer_ip_address: 192.168.3.48
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.51
+            peer_ip_address: 192.168.3.50
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.53
+            peer_ip_address: 192.168.3.52
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.55
+            peer_ip_address: 192.168.3.54
+          - interface: Ethernet1
+            peer: re-avd-Spine1
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.57
+            peer_ip_address: 192.168.3.56
+          - interface: Ethernet2
+            peer: re-avd-Spine2
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.59
+            peer_ip_address: 192.168.3.58
+          - interface: Ethernet3
+            peer: re-avd-Spine3
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.61
+            peer_ip_address: 192.168.3.60
+          - interface: Ethernet4
+            peer: re-avd-Spine4
+            peer_interface: Ethernet4
+            peer_type: spine
+            peer_is_deployed: true
+            peer_bgp_as: "65100"
+            type: underlay_p2p
+            ip_address: 192.168.3.63
+            peer_ip_address: 192.168.3.62
         virtual_router_mac_address: 00:1c:73:00:dc:01
         vlans: 3300,3300,3300,3300
         vtep: true
@@ -1876,83 +1876,83 @@ ansible_facts:
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
   avd_overlay_peers:
-    avd-test-Spine1:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine2:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine3:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine4:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
+    re-avd-Spine1:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine2:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine3:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine4:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
   avd_topology_peers:
-    avd-test-Spine1:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine2:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine3:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
-    avd-test-Spine4:
-    - avd-test-Leaf1A
-    - avd-test-Leaf1A
-    - avd-test-Leaf1B
-    - avd-test-Leaf1B
-    - avd-test-Leaf2A
-    - avd-test-Leaf2A
-    - avd-test-Leaf2B
-    - avd-test-Leaf2B
+    re-avd-Spine1:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine2:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine3:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
+    re-avd-Spine4:
+      - re-avd-Leaf1A
+      - re-avd-Leaf1A
+      - re-avd-Leaf1B
+      - re-avd-Leaf1B
+      - re-avd-Leaf2A
+      - re-avd-Leaf2A
+      - re-avd-Leaf2B
+      - re-avd-Leaf2B
 avd_switch_facts:
-  avd-test-Spine1:
+  re-avd-Spine1:
     switch:
-      bgp_as: '65100'
+      bgp_as: "65100"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -1985,7 +1985,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       endpoint_trunk_groups: []
@@ -1993,7 +1993,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: avd-test-Spine1
+      hostname: re-avd-Spine1
       id: 1
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2034,7 +2034,7 @@ avd_switch_facts:
       network_services_l3: false
       node_type_key: spine
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.100.1
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2042,10 +2042,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2063,11 +2063,11 @@ avd_switch_facts:
       uplink_switch_interfaces: []
       uplink_type: p2p
       uplinks: []
-      vlans: ''
+      vlans: ""
       vtep: false
-  avd-test-Spine2:
+  re-avd-Spine2:
     switch:
-      bgp_as: '65100'
+      bgp_as: "65100"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2100,7 +2100,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       endpoint_trunk_groups: []
@@ -2108,7 +2108,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: avd-test-Spine2
+      hostname: re-avd-Spine2
       id: 2
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2149,7 +2149,7 @@ avd_switch_facts:
       network_services_l3: false
       node_type_key: spine
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.100.2
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2157,10 +2157,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2178,11 +2178,11 @@ avd_switch_facts:
       uplink_switch_interfaces: []
       uplink_type: p2p
       uplinks: []
-      vlans: ''
+      vlans: ""
       vtep: false
-  avd-test-Spine3:
+  re-avd-Spine3:
     switch:
-      bgp_as: '65100'
+      bgp_as: "65100"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2215,7 +2215,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       endpoint_trunk_groups: []
@@ -2223,7 +2223,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: avd-test-Spine3
+      hostname: re-avd-Spine3
       id: 3
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2264,7 +2264,7 @@ avd_switch_facts:
       network_services_l3: false
       node_type_key: spine
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.100.3
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2272,10 +2272,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2293,11 +2293,11 @@ avd_switch_facts:
       uplink_switch_interfaces: []
       uplink_type: p2p
       uplinks: []
-      vlans: ''
+      vlans: ""
       vtep: false
-  avd-test-Spine4:
+  re-avd-Spine4:
     switch:
-      bgp_as: '65100'
+      bgp_as: "65100"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2330,7 +2330,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       endpoint_trunk_groups: []
@@ -2338,7 +2338,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: avd-test-Spine4
+      hostname: re-avd-Spine4
       id: 4
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2379,7 +2379,7 @@ avd_switch_facts:
       network_services_l3: false
       node_type_key: spine
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.100.4
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2387,10 +2387,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2408,11 +2408,11 @@ avd_switch_facts:
       uplink_switch_interfaces: []
       uplink_type: p2p
       uplinks: []
-      vlans: ''
+      vlans: ""
       vtep: false
-  avd-test-Leaf1A:
+  re-avd-Leaf1A:
     switch:
-      bgp_as: '65001'
+      bgp_as: "65001"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2445,7 +2445,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       enable_trunk_groups: false
@@ -2455,22 +2455,22 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
-      - all
-      - pod0
+        - all
+        - pod0
       filter_tenants:
-      - all
+        - all
       group: pod0
-      hostname: avd-test-Leaf1A
+      hostname: re-avd-Leaf1A
       id: 1
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -2506,11 +2506,11 @@ avd_switch_facts:
       mlag_dual_primary_detection: false
       mlag_ibgp_origin_incomplete: true
       mlag_interfaces:
-      - Ethernet5
+        - Ethernet5
       mlag_ip: 192.168.255.0
       mlag_l3: true
       mlag_l3_ip: 192.168.254.0
-      mlag_peer: avd-test-Leaf1B
+      mlag_peer: re-avd-Leaf1B
       mlag_peer_ip: 192.168.255.1
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.1
@@ -2519,7 +2519,7 @@ avd_switch_facts:
       mlag_peer_link_allowed_vlans: 2-4094
       mlag_peer_mgmt_ip: 192.168.255.16
       mlag_peer_vlan: 4094
-      mlag_port_channel_id: '5'
+      mlag_port_channel_id: "5"
       mlag_role: primary
       mlag_support: true
       mlag_switch_ids:
@@ -2533,7 +2533,7 @@ avd_switch_facts:
       network_services_l3: true
       node_type_key: l3leaf
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.0.1
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2541,10 +2541,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2559,125 +2559,125 @@ avd_switch_facts:
       underlay_router: true
       underlay_routing_protocol: ebgp
       uplink_interfaces:
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_switch_interfaces:
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
-      - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
+        - Ethernet1
       uplink_switches:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_type: p2p
       uplinks:
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.1
-        peer_ip_address: 192.168.3.0
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.3
-        peer_ip_address: 192.168.3.2
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.5
-        peer_ip_address: 192.168.3.4
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.7
-        peer_ip_address: 192.168.3.6
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.9
-        peer_ip_address: 192.168.3.8
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.11
-        peer_ip_address: 192.168.3.10
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.13
-        peer_ip_address: 192.168.3.12
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet1
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.15
-        peer_ip_address: 192.168.3.14
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.1
+          peer_ip_address: 192.168.3.0
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.3
+          peer_ip_address: 192.168.3.2
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.5
+          peer_ip_address: 192.168.3.4
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.7
+          peer_ip_address: 192.168.3.6
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.9
+          peer_ip_address: 192.168.3.8
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.11
+          peer_ip_address: 192.168.3.10
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.13
+          peer_ip_address: 192.168.3.12
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet1
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.15
+          peer_ip_address: 192.168.3.14
       virtual_router_mac_address: 00:1c:73:00:dc:01
       vlans: 3300,3300,3300,3300
       vtep: true
       vtep_ip: 192.168.1.1
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  avd-test-Leaf1B:
+  re-avd-Leaf1B:
     switch:
-      bgp_as: '65001'
+      bgp_as: "65001"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2710,7 +2710,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       enable_trunk_groups: false
@@ -2720,22 +2720,22 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
-      - all
-      - pod0
+        - all
+        - pod0
       filter_tenants:
-      - all
+        - all
       group: pod0
-      hostname: avd-test-Leaf1B
+      hostname: re-avd-Leaf1B
       id: 2
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -2771,11 +2771,11 @@ avd_switch_facts:
       mlag_dual_primary_detection: false
       mlag_ibgp_origin_incomplete: true
       mlag_interfaces:
-      - Ethernet5
+        - Ethernet5
       mlag_ip: 192.168.255.1
       mlag_l3: true
       mlag_l3_ip: 192.168.254.1
-      mlag_peer: avd-test-Leaf1A
+      mlag_peer: re-avd-Leaf1A
       mlag_peer_ip: 192.168.255.0
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.0
@@ -2784,7 +2784,7 @@ avd_switch_facts:
       mlag_peer_link_allowed_vlans: 2-4094
       mlag_peer_mgmt_ip: 192.168.255.15
       mlag_peer_vlan: 4094
-      mlag_port_channel_id: '5'
+      mlag_port_channel_id: "5"
       mlag_role: secondary
       mlag_support: true
       mlag_switch_ids:
@@ -2798,7 +2798,7 @@ avd_switch_facts:
       network_services_l3: true
       node_type_key: l3leaf
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.0.2
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -2806,10 +2806,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -2824,125 +2824,125 @@ avd_switch_facts:
       underlay_router: true
       underlay_routing_protocol: ebgp
       uplink_interfaces:
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_switch_interfaces:
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
-      - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
+        - Ethernet2
       uplink_switches:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_type: p2p
       uplinks:
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.17
-        peer_ip_address: 192.168.3.16
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.19
-        peer_ip_address: 192.168.3.18
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.21
-        peer_ip_address: 192.168.3.20
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.23
-        peer_ip_address: 192.168.3.22
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.25
-        peer_ip_address: 192.168.3.24
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.27
-        peer_ip_address: 192.168.3.26
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.29
-        peer_ip_address: 192.168.3.28
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet2
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.31
-        peer_ip_address: 192.168.3.30
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.17
+          peer_ip_address: 192.168.3.16
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.19
+          peer_ip_address: 192.168.3.18
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.21
+          peer_ip_address: 192.168.3.20
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.23
+          peer_ip_address: 192.168.3.22
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.25
+          peer_ip_address: 192.168.3.24
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.27
+          peer_ip_address: 192.168.3.26
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.29
+          peer_ip_address: 192.168.3.28
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet2
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.31
+          peer_ip_address: 192.168.3.30
       virtual_router_mac_address: 00:1c:73:00:dc:01
       vlans: 3300,3300,3300,3300
       vtep: true
       vtep_ip: 192.168.1.1
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  avd-test-Leaf2A:
+  re-avd-Leaf2A:
     switch:
-      bgp_as: '65002'
+      bgp_as: "65002"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -2975,7 +2975,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       enable_trunk_groups: false
@@ -2985,22 +2985,22 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
-      - all
-      - pod1
+        - all
+        - pod1
       filter_tenants:
-      - all
+        - all
       group: pod1
-      hostname: avd-test-Leaf2A
+      hostname: re-avd-Leaf2A
       id: 3
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -3036,11 +3036,11 @@ avd_switch_facts:
       mlag_dual_primary_detection: false
       mlag_ibgp_origin_incomplete: true
       mlag_interfaces:
-      - Ethernet5
+        - Ethernet5
       mlag_ip: 192.168.255.4
       mlag_l3: true
       mlag_l3_ip: 192.168.254.4
-      mlag_peer: avd-test-Leaf2B
+      mlag_peer: re-avd-Leaf2B
       mlag_peer_ip: 192.168.255.5
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.5
@@ -3049,7 +3049,7 @@ avd_switch_facts:
       mlag_peer_link_allowed_vlans: 2-4094
       mlag_peer_mgmt_ip: 192.168.255.18
       mlag_peer_vlan: 4094
-      mlag_port_channel_id: '5'
+      mlag_port_channel_id: "5"
       mlag_role: primary
       mlag_support: true
       mlag_switch_ids:
@@ -3063,7 +3063,7 @@ avd_switch_facts:
       network_services_l3: true
       node_type_key: l3leaf
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.0.3
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -3071,10 +3071,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -3089,125 +3089,125 @@ avd_switch_facts:
       underlay_router: true
       underlay_routing_protocol: ebgp
       uplink_interfaces:
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_switch_interfaces:
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
-      - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
+        - Ethernet3
       uplink_switches:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_type: p2p
       uplinks:
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.33
-        peer_ip_address: 192.168.3.32
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.35
-        peer_ip_address: 192.168.3.34
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.37
-        peer_ip_address: 192.168.3.36
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.39
-        peer_ip_address: 192.168.3.38
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.41
-        peer_ip_address: 192.168.3.40
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.43
-        peer_ip_address: 192.168.3.42
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.45
-        peer_ip_address: 192.168.3.44
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet3
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.47
-        peer_ip_address: 192.168.3.46
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.33
+          peer_ip_address: 192.168.3.32
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.35
+          peer_ip_address: 192.168.3.34
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.37
+          peer_ip_address: 192.168.3.36
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.39
+          peer_ip_address: 192.168.3.38
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.41
+          peer_ip_address: 192.168.3.40
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.43
+          peer_ip_address: 192.168.3.42
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.45
+          peer_ip_address: 192.168.3.44
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet3
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.47
+          peer_ip_address: 192.168.3.46
       virtual_router_mac_address: 00:1c:73:00:dc:01
       vlans: 3300,3300,3300,3300
       vtep: true
       vtep_ip: 192.168.1.3
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  avd-test-Leaf2B:
+  re-avd-Leaf2B:
     switch:
-      bgp_as: '65002'
+      bgp_as: "65002"
       bgp_defaults: []
       bgp_peer_groups:
         ipv4_underlay_peers:
@@ -3240,7 +3240,7 @@ avd_switch_facts:
       default_interfaces: {}
       default_mpls_overlay_role: none
       default_overlay_address_families:
-      - evpn
+        - evpn
       default_overlay_routing_protocol: ebgp
       default_underlay_routing_protocol: ebgp
       enable_trunk_groups: false
@@ -3250,22 +3250,22 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
-      - all
-      - pod1
+        - all
+        - pod1
       filter_tenants:
-      - all
+        - all
       group: pod1
-      hostname: avd-test-Leaf2B
+      hostname: re-avd-Leaf2B
       id: 4
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -3301,11 +3301,11 @@ avd_switch_facts:
       mlag_dual_primary_detection: false
       mlag_ibgp_origin_incomplete: true
       mlag_interfaces:
-      - Ethernet5
+        - Ethernet5
       mlag_ip: 192.168.255.5
       mlag_l3: true
       mlag_l3_ip: 192.168.254.5
-      mlag_peer: avd-test-Leaf2A
+      mlag_peer: re-avd-Leaf2A
       mlag_peer_ip: 192.168.255.4
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.4
@@ -3314,7 +3314,7 @@ avd_switch_facts:
       mlag_peer_link_allowed_vlans: 2-4094
       mlag_peer_mgmt_ip: 192.168.255.17
       mlag_peer_vlan: 4094
-      mlag_port_channel_id: '5'
+      mlag_port_channel_id: "5"
       mlag_role: secondary
       mlag_support: true
       mlag_switch_ids:
@@ -3328,7 +3328,7 @@ avd_switch_facts:
       network_services_l3: true
       node_type_key: l3leaf
       overlay_address_families:
-      - evpn
+        - evpn
       overlay_rd_type_admin_subfield: 192.168.0.4
       overlay_routing_protocol: ebgp
       overlay_routing_protocol_address_family: ipv4
@@ -3336,10 +3336,10 @@ avd_switch_facts:
       platform: vEOS
       platform_settings:
         platforms:
-        - VEOS
-        - VEOS-LAB
-        - vEOS
-        - vEOS-lab
+          - VEOS
+          - VEOS-LAB
+          - vEOS
+          - vEOS-lab
         reload_delay:
           mlag: 300
           non_mlag: 330
@@ -3354,116 +3354,116 @@ avd_switch_facts:
       underlay_router: true
       underlay_routing_protocol: ebgp
       uplink_interfaces:
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
-      - Ethernet1
-      - Ethernet2
-      - Ethernet3
-      - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
+        - Ethernet1
+        - Ethernet2
+        - Ethernet3
+        - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_switch_interfaces:
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
-      - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
+        - Ethernet4
       uplink_switches:
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
-      - avd-test-Spine1
-      - avd-test-Spine2
-      - avd-test-Spine3
-      - avd-test-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
+        - re-avd-Spine1
+        - re-avd-Spine2
+        - re-avd-Spine3
+        - re-avd-Spine4
       uplink_type: p2p
       uplinks:
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.49
-        peer_ip_address: 192.168.3.48
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.51
-        peer_ip_address: 192.168.3.50
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.53
-        peer_ip_address: 192.168.3.52
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.55
-        peer_ip_address: 192.168.3.54
-      - interface: Ethernet1
-        peer: avd-test-Spine1
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.57
-        peer_ip_address: 192.168.3.56
-      - interface: Ethernet2
-        peer: avd-test-Spine2
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.59
-        peer_ip_address: 192.168.3.58
-      - interface: Ethernet3
-        peer: avd-test-Spine3
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.61
-        peer_ip_address: 192.168.3.60
-      - interface: Ethernet4
-        peer: avd-test-Spine4
-        peer_interface: Ethernet4
-        peer_type: spine
-        peer_is_deployed: true
-        peer_bgp_as: '65100'
-        type: underlay_p2p
-        ip_address: 192.168.3.63
-        peer_ip_address: 192.168.3.62
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.49
+          peer_ip_address: 192.168.3.48
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.51
+          peer_ip_address: 192.168.3.50
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.53
+          peer_ip_address: 192.168.3.52
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.55
+          peer_ip_address: 192.168.3.54
+        - interface: Ethernet1
+          peer: re-avd-Spine1
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.57
+          peer_ip_address: 192.168.3.56
+        - interface: Ethernet2
+          peer: re-avd-Spine2
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.59
+          peer_ip_address: 192.168.3.58
+        - interface: Ethernet3
+          peer: re-avd-Spine3
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.61
+          peer_ip_address: 192.168.3.60
+        - interface: Ethernet4
+          peer: re-avd-Spine4
+          peer_interface: Ethernet4
+          peer_type: spine
+          peer_is_deployed: true
+          peer_bgp_as: "65100"
+          type: underlay_p2p
+          ip_address: 192.168.3.63
+          peer_ip_address: 192.168.3.62
       virtual_router_mac_address: 00:1c:73:00:dc:01
       vlans: 3300,3300,3300,3300
       vtep: true
@@ -3471,82 +3471,82 @@ avd_switch_facts:
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
 avd_overlay_peers:
-  avd-test-Spine1:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine2:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine3:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine4:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
+  re-avd-Spine1:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine2:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine3:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine4:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
 avd_topology_peers:
-  avd-test-Spine1:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine2:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine3:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
-  avd-test-Spine4:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Leaf2B
+  re-avd-Spine1:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine2:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine3:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
+  re-avd-Spine4:
+    - re-avd-Leaf1A
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Leaf2B
 avd_collection_version: version
 switch:
-  bgp_as: '65002'
+  bgp_as: "65002"
   bgp_defaults: []
   bgp_peer_groups:
     ipv4_underlay_peers:
@@ -3579,7 +3579,7 @@ switch:
   default_interfaces: {}
   default_mpls_overlay_role: none
   default_overlay_address_families:
-  - evpn
+    - evpn
   default_overlay_routing_protocol: ebgp
   default_underlay_routing_protocol: ebgp
   enable_trunk_groups: false
@@ -3589,22 +3589,22 @@ switch:
   evpn_gateway_vxlan_l3_inter_domain: true
   evpn_role: client
   evpn_route_servers:
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   filter_only_vlans_in_use: false
   filter_tags:
-  - all
-  - pod1
+    - all
+    - pod1
   filter_tenants:
-  - all
+    - all
   group: pod1
-  hostname: avd-test-Leaf2B
+  hostname: re-avd-Leaf2B
   id: 4
   igmp_snooping_enabled: true
   interface_descriptions:
@@ -3640,11 +3640,11 @@ switch:
   mlag_dual_primary_detection: false
   mlag_ibgp_origin_incomplete: true
   mlag_interfaces:
-  - Ethernet5
+    - Ethernet5
   mlag_ip: 192.168.255.5
   mlag_l3: true
   mlag_l3_ip: 192.168.254.5
-  mlag_peer: avd-test-Leaf2A
+  mlag_peer: re-avd-Leaf2A
   mlag_peer_ip: 192.168.255.4
   mlag_peer_ipv4_pool: 192.168.255.0/24
   mlag_peer_l3_ip: 192.168.254.4
@@ -3653,7 +3653,7 @@ switch:
   mlag_peer_link_allowed_vlans: 2-4094
   mlag_peer_mgmt_ip: 192.168.255.17
   mlag_peer_vlan: 4094
-  mlag_port_channel_id: '5'
+  mlag_port_channel_id: "5"
   mlag_role: secondary
   mlag_support: true
   mlag_switch_ids:
@@ -3667,7 +3667,7 @@ switch:
   network_services_l3: true
   node_type_key: l3leaf
   overlay_address_families:
-  - evpn
+    - evpn
   overlay_rd_type_admin_subfield: 192.168.0.4
   overlay_routing_protocol: ebgp
   overlay_routing_protocol_address_family: ipv4
@@ -3675,10 +3675,10 @@ switch:
   platform: vEOS
   platform_settings:
     platforms:
-    - VEOS
-    - VEOS-LAB
-    - vEOS
-    - vEOS-lab
+      - VEOS
+      - VEOS-LAB
+      - vEOS
+      - vEOS-lab
     reload_delay:
       mlag: 300
       non_mlag: 330
@@ -3693,116 +3693,116 @@ switch:
   underlay_router: true
   underlay_routing_protocol: ebgp
   uplink_interfaces:
-  - Ethernet1
-  - Ethernet2
-  - Ethernet3
-  - Ethernet4
-  - Ethernet1
-  - Ethernet2
-  - Ethernet3
-  - Ethernet4
+    - Ethernet1
+    - Ethernet2
+    - Ethernet3
+    - Ethernet4
+    - Ethernet1
+    - Ethernet2
+    - Ethernet3
+    - Ethernet4
   uplink_ipv4_pool: 192.168.3.0/24
   uplink_peers:
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   uplink_switch_interfaces:
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
-  - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
+    - Ethernet4
   uplink_switches:
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   uplink_type: p2p
   uplinks:
-  - interface: Ethernet1
-    peer: avd-test-Spine1
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.49
-    peer_ip_address: 192.168.3.48
-  - interface: Ethernet2
-    peer: avd-test-Spine2
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.51
-    peer_ip_address: 192.168.3.50
-  - interface: Ethernet3
-    peer: avd-test-Spine3
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.53
-    peer_ip_address: 192.168.3.52
-  - interface: Ethernet4
-    peer: avd-test-Spine4
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.55
-    peer_ip_address: 192.168.3.54
-  - interface: Ethernet1
-    peer: avd-test-Spine1
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.57
-    peer_ip_address: 192.168.3.56
-  - interface: Ethernet2
-    peer: avd-test-Spine2
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.59
-    peer_ip_address: 192.168.3.58
-  - interface: Ethernet3
-    peer: avd-test-Spine3
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.61
-    peer_ip_address: 192.168.3.60
-  - interface: Ethernet4
-    peer: avd-test-Spine4
-    peer_interface: Ethernet4
-    peer_type: spine
-    peer_is_deployed: true
-    peer_bgp_as: '65100'
-    type: underlay_p2p
-    ip_address: 192.168.3.63
-    peer_ip_address: 192.168.3.62
+    - interface: Ethernet1
+      peer: re-avd-Spine1
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.49
+      peer_ip_address: 192.168.3.48
+    - interface: Ethernet2
+      peer: re-avd-Spine2
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.51
+      peer_ip_address: 192.168.3.50
+    - interface: Ethernet3
+      peer: re-avd-Spine3
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.53
+      peer_ip_address: 192.168.3.52
+    - interface: Ethernet4
+      peer: re-avd-Spine4
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.55
+      peer_ip_address: 192.168.3.54
+    - interface: Ethernet1
+      peer: re-avd-Spine1
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.57
+      peer_ip_address: 192.168.3.56
+    - interface: Ethernet2
+      peer: re-avd-Spine2
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.59
+      peer_ip_address: 192.168.3.58
+    - interface: Ethernet3
+      peer: re-avd-Spine3
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.61
+      peer_ip_address: 192.168.3.60
+    - interface: Ethernet4
+      peer: re-avd-Spine4
+      peer_interface: Ethernet4
+      peer_type: spine
+      peer_is_deployed: true
+      peer_bgp_as: "65100"
+      type: underlay_p2p
+      ip_address: 192.168.3.63
+      peer_ip_address: 192.168.3.62
   virtual_router_mac_address: 00:1c:73:00:dc:01
   vlans: 3300,3300,3300,3300
   vtep: true
@@ -3814,56 +3814,56 @@ ansible_playbook_python: /usr/local/bin/python
 ansible_config_file: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/ansible.cfg
 groups:
   all:
-  - CV_AVD_FABRIC
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - CV_AVD_FABRIC
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   ungrouped: []
   cv_servers:
-  - CV_AVD_FABRIC
+    - CV_AVD_FABRIC
   MY_LAB_AVD:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   AVD_FABRIC:
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
   SPINES:
-  - avd-test-Spine1
-  - avd-test-Spine2
-  - avd-test-Spine3
-  - avd-test-Spine4
+    - re-avd-Spine1
+    - re-avd-Spine2
+    - re-avd-Spine3
+    - re-avd-Spine4
   LEAFS:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
   AVD_FABRIC_TENANTS:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
   AVD_FABRIC_SERVERS:
-  - avd-test-Leaf1A
-  - avd-test-Leaf1B
-  - avd-test-Leaf2A
-  - avd-test-Leaf2B
+    - re-avd-Leaf1A
+    - re-avd-Leaf1B
+    - re-avd-Leaf2A
+    - re-avd-Leaf2B
 omit: __omit_place_holder__ae2d6abed2d094d9492c06fe964236e2e7e1223f
 ansible_version:
   string: 2.12.9
@@ -3875,9 +3875,9 @@ ansible_check_mode: false
 ansible_diff_mode: false
 ansible_forks: 5
 ansible_inventory_sources:
-- /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory/inventory.yml
+  - /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory/inventory.yml
 ansible_skip_tags: []
 ansible_run_tags:
-- build
-- generate
+  - build
+  - generate
 ansible_verbosity: 0

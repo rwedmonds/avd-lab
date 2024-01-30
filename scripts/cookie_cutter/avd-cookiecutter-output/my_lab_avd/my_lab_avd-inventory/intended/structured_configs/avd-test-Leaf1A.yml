@@ -1,14 +1,14 @@
 router_bgp:
-  as: '65001'
+  as: "65001"
   router_id: 192.168.0.1
   bgp_defaults:
-  - maximum-paths 4 ecmp 4
+    - maximum-paths 4 ecmp 4
   peer_groups:
     MLAG-IPv4-UNDERLAY-PEER:
       type: ipv4
-      remote_as: '65001'
+      remote_as: "65001"
       next_hop_self: true
-      description: avd-test-Leaf1B
+      description: re-avd-Leaf1B
       password: AQQvKeimxJu+uGQ/yYvv9w==
       maximum_routes: 12000
       send_community: all
@@ -22,7 +22,7 @@ router_bgp:
       type: evpn
       update_source: Loopback0
       bfd: true
-      ebgp_multihop: '3'
+      ebgp_multihop: "3"
       password: AQQvKeimxJu+uGQ/yYvv9w==
       send_community: all
       maximum_routes: 0
@@ -37,55 +37,55 @@ router_bgp:
   neighbors:
     192.168.254.1:
       peer_group: MLAG-IPv4-UNDERLAY-PEER
-      description: avd-test-Leaf1B
+      description: re-avd-Leaf1B
     192.168.3.0:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine1_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine1_Ethernet1
     192.168.3.8:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine1_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine1_Ethernet1
     192.168.3.2:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine2_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine2_Ethernet1
     192.168.3.10:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine2_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine2_Ethernet1
     192.168.3.4:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine3_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine3_Ethernet1
     192.168.3.12:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine3_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine3_Ethernet1
     192.168.3.6:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine4_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine4_Ethernet1
     192.168.3.14:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65100'
-      description: avd-test-Spine4_Ethernet1
+      remote_as: "65100"
+      description: re-avd-Spine4_Ethernet1
     192.168.100.1:
       peer_group: EVPN-OVERLAY-PEERS
-      description: avd-test-Spine1
-      remote_as: '65100'
+      description: re-avd-Spine1
+      remote_as: "65100"
     192.168.100.2:
       peer_group: EVPN-OVERLAY-PEERS
-      description: avd-test-Spine2
-      remote_as: '65100'
+      description: re-avd-Spine2
+      remote_as: "65100"
     192.168.100.3:
       peer_group: EVPN-OVERLAY-PEERS
-      description: avd-test-Spine3
-      remote_as: '65100'
+      description: re-avd-Spine3
+      remote_as: "65100"
     192.168.100.4:
       peer_group: EVPN-OVERLAY-PEERS
-      description: avd-test-Spine4
-      remote_as: '65100'
+      description: re-avd-Spine4
+      remote_as: "65100"
   redistribute_routes:
     connected:
       route_map: RM-CONN-2-BGP
@@ -100,105 +100,105 @@ router_bgp:
       route_targets:
         import:
           evpn:
-          - '3:3'
+            - "3:3"
         export:
           evpn:
-          - '3:3'
+            - "3:3"
       neighbors:
         192.168.254.1:
           peer_group: MLAG-IPv4-UNDERLAY-PEER
       redistribute_routes:
-      - connected
+        - connected
     npdmz:
       router_id: 192.168.0.1
       rd: 192.168.0.1:4
       route_targets:
         import:
           evpn:
-          - '4:4'
+            - "4:4"
         export:
           evpn:
-          - '4:4'
+            - "4:4"
       neighbors:
         192.168.254.1:
           peer_group: MLAG-IPv4-UNDERLAY-PEER
       redistribute_routes:
-      - connected
+        - connected
     pdmz:
       router_id: 192.168.0.1
       rd: 192.168.0.1:2
       route_targets:
         import:
           evpn:
-          - '2:2'
+            - "2:2"
         export:
           evpn:
-          - '2:2'
+            - "2:2"
       neighbors:
         192.168.254.1:
           peer_group: MLAG-IPv4-UNDERLAY-PEER
       redistribute_routes:
-      - connected
+        - connected
     prod:
       router_id: 192.168.0.1
       rd: 192.168.0.1:1
       route_targets:
         import:
           evpn:
-          - '1:1'
+            - "1:1"
         export:
           evpn:
-          - '1:1'
+            - "1:1"
       neighbors:
         192.168.254.1:
           peer_group: MLAG-IPv4-UNDERLAY-PEER
       redistribute_routes:
-      - connected
+        - connected
   vlan_aware_bundles:
     nonprod:
       rd: 192.168.0.1:3
       route_targets:
         both:
-        - '3:3'
+          - "3:3"
       redistribute_routes:
-      - learned
+        - learned
       vlan: 3300
     npdmz:
       rd: 192.168.0.1:4
       route_targets:
         both:
-        - '4:4'
+          - "4:4"
       redistribute_routes:
-      - learned
+        - learned
       vlan: 3300
     pdmz:
       rd: 192.168.0.1:2
       route_targets:
         both:
-        - '2:2'
+          - "2:2"
       redistribute_routes:
-      - learned
+        - learned
       vlan: 3300
     prod:
       rd: 192.168.0.1:1
       route_targets:
         both:
-        - '1:1'
+          - "1:1"
       redistribute_routes:
-      - learned
+        - learned
       vlan: 3300
 static_routes:
-- vrf: MGMT
-  destination_address_prefix: 0.0.0.0/0
-  gateway: 192.168.255.1
+  - vrf: MGMT
+    destination_address_prefix: 0.0.0.0/0
+    gateway: 192.168.255.1
 service_routing_protocols_model: multi-agent
 ip_routing: true
 daemon_terminattr:
   cvaddrs:
-  - 192.168.2.137:9910
+    - 192.168.2.137:9910
   cvauth:
     method: key
-    key: ''
+    key: ""
   cvvrf: MGMT
   smashexcludes: ale,flexCounter,hardware,kni,pulse,strata
   ingestexclude: /Sysdb/cell/1/agent,/Sysdb/cell/2/agent
@@ -212,12 +212,12 @@ name_server:
   source:
     vrf: MGMT
   nodes:
-  - 192.168.2.1
-  - 192.168.255.1
+    - 192.168.2.1
+    - 192.168.255.1
 spanning_tree:
   mode: mstp
   mst_instances:
-    '0':
+    "0":
       priority: 16384
   no_spanning_tree_vlan: 4093-4094
 local_users:
@@ -261,12 +261,12 @@ vlans:
     tenant: system
     name: LEAF_PEER_L3
     trunk_groups:
-    - LEAF_PEER_L3
+      - LEAF_PEER_L3
   4094:
     tenant: system
     name: MLAG_PEER
     trunk_groups:
-    - MLAG
+      - MLAG
   3300:
     tenant: redmonds
     name: DMZ_Non_Prod_VLAN
@@ -274,22 +274,22 @@ vlans:
     tenant: redmonds
     name: MLAG_iBGP_nonprod
     trunk_groups:
-    - LEAF_PEER_L3
+      - LEAF_PEER_L3
   3003:
     tenant: redmonds
     name: MLAG_iBGP_npdmz
     trunk_groups:
-    - LEAF_PEER_L3
+      - LEAF_PEER_L3
   3001:
     tenant: redmonds
     name: MLAG_iBGP_pdmz
     trunk_groups:
-    - LEAF_PEER_L3
+      - LEAF_PEER_L3
   3000:
     tenant: redmonds
     name: MLAG_iBGP_prod
     trunk_groups:
-    - LEAF_PEER_L3
+      - LEAF_PEER_L3
 vlan_interfaces:
   Vlan4093:
     description: MLAG_PEER_L3_PEERING
@@ -305,7 +305,7 @@ vlan_interfaces:
   Vlan3300:
     tenant: redmonds
     tags:
-    - l3leaf
+      - l3leaf
     description: DMZ_Non_Prod_VLAN
     shutdown: false
     vrf: prod
@@ -314,7 +314,7 @@ vlan_interfaces:
     tenant: redmonds
     type: underlay_peering
     shutdown: false
-    description: 'MLAG_PEER_L3_iBGP: vrf nonprod'
+    description: "MLAG_PEER_L3_iBGP: vrf nonprod"
     vrf: nonprod
     ip_address: 192.168.254.0/31
     mtu: 9214
@@ -322,7 +322,7 @@ vlan_interfaces:
     tenant: redmonds
     type: underlay_peering
     shutdown: false
-    description: 'MLAG_PEER_L3_iBGP: vrf npdmz'
+    description: "MLAG_PEER_L3_iBGP: vrf npdmz"
     vrf: npdmz
     ip_address: 192.168.254.0/31
     mtu: 9214
@@ -330,7 +330,7 @@ vlan_interfaces:
     tenant: redmonds
     type: underlay_peering
     shutdown: false
-    description: 'MLAG_PEER_L3_iBGP: vrf pdmz'
+    description: "MLAG_PEER_L3_iBGP: vrf pdmz"
     vrf: pdmz
     ip_address: 192.168.254.0/31
     mtu: 9214
@@ -338,20 +338,20 @@ vlan_interfaces:
     tenant: redmonds
     type: underlay_peering
     shutdown: false
-    description: 'MLAG_PEER_L3_iBGP: vrf prod'
+    description: "MLAG_PEER_L3_iBGP: vrf prod"
     vrf: prod
     ip_address: 192.168.254.0/31
     mtu: 9214
 port_channel_interfaces:
   Port-Channel5:
-    description: MLAG_PEER_avd-test-Leaf1B_Po5
+    description: MLAG_PEER_re-avd-Leaf1B_Po5
     type: switched
     shutdown: false
     vlans: 2-4094
     mode: trunk
     trunk_groups:
-    - LEAF_PEER_L3
-    - MLAG
+      - LEAF_PEER_L3
+      - MLAG
   Port-Channel7:
     description: exa01_ntx01_to_leaf1b
     type: switched
@@ -367,17 +367,17 @@ port_channel_interfaces:
     mlag: 8
 ethernet_interfaces:
   Ethernet5:
-    peer: avd-test-Leaf1B
+    peer: re-avd-Leaf1B
     peer_interface: Ethernet5
     peer_type: mlag_peer
-    description: MLAG_PEER_avd-test-Leaf1B_Ethernet5
+    description: MLAG_PEER_re-avd-Leaf1B_Ethernet5
     type: switched
     shutdown: false
     channel_group:
       id: 5
       mode: active
   Ethernet1:
-    peer: avd-test-Spine1
+    peer: re-avd-Spine1
     peer_interface: Ethernet1
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE1_Ethernet1
@@ -386,7 +386,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.9/31
   Ethernet2:
-    peer: avd-test-Spine2
+    peer: re-avd-Spine2
     peer_interface: Ethernet1
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE2_Ethernet1
@@ -395,7 +395,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.11/31
   Ethernet3:
-    peer: avd-test-Spine3
+    peer: re-avd-Spine3
     peer_interface: Ethernet1
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE3_Ethernet1
@@ -404,7 +404,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.13/31
   Ethernet4:
-    peer: avd-test-Spine4
+    peer: re-avd-Spine4
     peer_interface: Ethernet1
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE4_Ethernet1
@@ -449,14 +449,14 @@ route_maps:
       10:
         type: permit
         set:
-        - origin incomplete
+          - origin incomplete
         description: Make routes learned over MLAG Peer-link less preferred on spines to ensure optimal routing
   RM-CONN-2-BGP:
     sequence_numbers:
       10:
         type: permit
         match:
-        - ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
+          - ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 loopback_interfaces:
   Loopback0:
     description: EVPN_Overlay_Peering
@@ -503,7 +503,7 @@ ip_igmp_snooping:
 ip_virtual_router_mac_address: 00:1c:73:00:dc:01
 vxlan_interface:
   Vxlan1:
-    description: avd-test-Leaf1A_VTEP
+    description: re-avd-Leaf1A_VTEP
     vxlan:
       source_interface: Loopback1
       virtual_router_encapsulation_mac_address: mlag-system-id

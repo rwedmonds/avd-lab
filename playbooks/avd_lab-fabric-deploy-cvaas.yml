@@ -37,6 +37,6 @@
       vars:
         container_root: "redmonds"
         configlets_prefix: "re-avd"
-        device_filter: "avd-test-"
+        device_filter: "re-avd-"
         state: present
         cv_collection: v3

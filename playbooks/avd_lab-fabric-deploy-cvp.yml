@@ -37,6 +37,6 @@
       vars:
         container_root: "AVD_Lab"
         configlets_prefix: "avd"
-        device_filter: "re-avd-"
+        device_filter: "RE-AVD-"
         state: present
         cv_collection: v3

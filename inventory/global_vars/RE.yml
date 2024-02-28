@@ -1,6 +1,16 @@
 ---
 # Validation lab
 
+# **************************** Management API HTTP ****************************
+
+management_api_http:
+  enable_http: True
+
+  enable_vrfs:
+
+      # VRF Name
+    - name: "MGMT"
+
 # ******************************** Local Users ********************************
 
 local_users:
@@ -26,10 +36,10 @@ daemon_terminattr:
   # TCP 9910 is used for on-prem CV
   # TCP 443 is used on CV as a Service
   cvaddrs: # For single cluster
-    - "cvp.slacker.net:9910"
+    - "apiserver.arista.io:443"
   cvauth:
-    method: "token"
-    token_file: "/tmp/token"
+    method: "token-secure"
+    token_file: "/tmp/cv-onboarding-token"
   cvvrf: "MGMT"
   # Exclude paths from Sysdb on the ingest side
   ingestexclude: "/Sysdb/cell/1/agent,/Sysdb/cell/2/agent"
@@ -42,6 +52,11 @@ management_interfaces:
   - name: "Management1"
     shutdown: false
     vrf: "MGMT"
+    gateway: "192.168.255.1"
+
+static_routes:
+  - vrf: "MGMT"
+    destination_address_prefix: "0.0.0.0/0"
     gateway: "192.168.255.1"
 
 # ********************//************ DNS Servers ********************************

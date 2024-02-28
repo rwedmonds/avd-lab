@@ -24,25 +24,25 @@ spine:
     # Assign range larger then total spines
     loopback_ipv4_pool: 192.168.100.0/24
   nodes:
-    re-avd-Spine1:
+    RE-AVD-Spine1:
       id: 1
       mgmt_ip: 192.168.255.11/24
       platform: vEOS
       bgp_as: 65100
       mac_address: "0c:1d:c0:1d:62:01"
-    re-avd-Spine2:
+    RE-AVD-Spine2:
       id: 2
       mgmt_ip: 192.168.255.12/24
       platform: vEOS
       bgp_as: 65100
       mac_address: "0c:1d:c0:1d:62:02"
-    re-avd-Spine3:
+    RE-AVD-Spine3:
       id: 3
       mgmt_ip: 192.168.255.13/24
       platform: vEOS
       bgp_as: 65100
       mac_address: "0c:1d:c0:1d:62:03"
-    re-avd-Spine4:
+    RE-AVD-Spine4:
       id: 4
       mgmt_ip: 192.168.255.14/24
       platform: vEOS
@@ -75,20 +75,20 @@ l3leaf:
     pod0:
       bgp_as: 65001
       nodes:
-        re-avd-Leaf1A:
+        RE-AVD-Leaf1A:
           id: 1
           mgmt_ip: 192.168.255.15/24
           platform: vEOS
           uplink_switches:
             [
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
             ]
           uplink_interfaces:
             [
@@ -114,20 +114,20 @@ l3leaf:
             ]
           mac_address: "0c:1d:c0:1d:62:05"
           mlag_interfaces: ["Ethernet5"]
-        re-avd-Leaf1B:
+        RE-AVD-Leaf1B:
           id: 2
           mgmt_ip: 192.168.255.16/24
           platform: vEOS
           uplink_switches:
             [
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
             ]
           uplink_interfaces:
             [
@@ -156,20 +156,20 @@ l3leaf:
     pod1:
       bgp_as: 65002
       nodes:
-        re-avd-Leaf2A:
+        RE-AVD-Leaf2A:
           id: 3
           mgmt_ip: 192.168.255.17/24
           platform: vEOS
           uplink_switches:
             [
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
             ]
           uplink_interfaces:
             [
@@ -195,20 +195,20 @@ l3leaf:
             ]
           mac_address: "0c:1d:c0:1d:62:07"
           mlag_interfaces: ["Ethernet5"]
-        re-avd-Leaf2B:
+        RE-AVD-Leaf2B:
           id: 4
           mgmt_ip: 192.168.255.18/24
           platform: vEOS
           uplink_switches:
             [
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
-              "re-avd-Spine1",
-              "re-avd-Spine2",
-              "re-avd-Spine3",
-              "re-avd-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
+              "RE-AVD-Spine1",
+              "RE-AVD-Spine2",
+              "RE-AVD-Spine3",
+              "RE-AVD-Spine4",
             ]
           uplink_interfaces:
             [

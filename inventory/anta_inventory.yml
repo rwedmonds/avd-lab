@@ -1,0 +1,91 @@
+---
+anta_inventory:
+  # This will work, but won't report back hostnames
+  # ranges:
+  #   - start: 192.168.255.11
+  #     end: 192.168.255.14
+  #     tags:
+  #       - "fabric"
+  #       - "spine"
+  #   - start: 192.168.255.15
+  #     end: 192.168.255.18
+  #     tags:
+  #       - "fabric"
+  #       - "leaf"
+  #       - "l3leaf"
+  #   - start: 192.168.255.19
+  #     end: 192.168.255.22
+  #     tags:
+  #       - "fabric"
+  #       - "leaf"
+  #       - "l2leaf"
+  hosts:
+    - host: 192.168.255.11
+      name: "RE-AVD-Spine1"
+      tags:
+        - "fabric"
+        - "spine"
+    - host: 192.168.255.12
+      name: "RE-AVD-Spine2"
+      tags:
+        - "fabric"
+        - "spine"
+    - host: 192.168.255.13
+      name: "RE-AVD-Spine3"
+      tags:
+        - "fabric"
+        - "spine"
+    - host: 192.168.255.14
+      name: "RE-AVD-Spine4"
+      tags:
+        - "fabric"
+        - "spine"
+    - host: 192.168.255.15
+      name: "RE-AVD-Leaf1A"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l3leaf"
+    - host: 192.168.255.16
+      name: "RE-AVD-Leaf1B"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l3leaf"
+    - host: 192.168.255.17
+      name: "RE-AVD-Leaf2A"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l3leaf"
+    - host: 192.168.255.18
+      name: "RE-AVD-Leaf2B"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l3leaf"
+    - host: 192.168.255.19
+      name: "RE-AVD-L2Leaf1A"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l2leaf"
+    - host: 192.168.255.20
+      name: "RE-AVD-L2Leaf1B"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l2leaf"
+    - host: 192.168.255.21
+      name: "RE-AVD-L2Leaf2A"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l2leaf"
+    - host: 192.168.255.22
+      name: "RE-AVD-L2Leaf2B"
+      tags:
+        - "fabric"
+        - "leaf"
+        - "l2leaf"
+

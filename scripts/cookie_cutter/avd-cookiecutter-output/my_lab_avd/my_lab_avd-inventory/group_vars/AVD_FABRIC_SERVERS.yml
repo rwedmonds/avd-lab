@@ -16,7 +16,7 @@ servers:
       - type: nic
         endpoint_ports: ["ntx01_to_leaf2b", "ntx01_to_leaf2b"]
         switch_ports: ["Ethernet7", "Ethernet7"]
-        switches: ["re-avd-Leaf2A", "re-avd-Leaf2B"]
+        switches: ["RE-AVD-Leaf2A", "RE-AVD-Leaf2B"]
         profile: nutanix
         port_channel:
           description: ntx01_to_leaf2b
@@ -30,7 +30,7 @@ servers:
       - type: nic
         endpoint_ports: ["ntx01_to_leaf1b", "ntx01_to_leaf1b"]
         switch_ports: ["Ethernet8", "Ethernet8"]
-        switches: ["re-avd-Leaf1A", "re-avd-Leaf1B"]
+        switches: ["RE-AVD-Leaf1A", "RE-AVD-Leaf1B"]
         profile: nutanix
         port_channel:
           description: ntx01_to_leaf1b
@@ -44,7 +44,7 @@ servers:
       - type: nic
         endpoint_ports: ["ntx01_to_leaf1b", "ntx01_to_leaf1b"]
         switch_ports: ["Ethernet7", "Ethernet7"]
-        switches: ["re-avd-Leaf1A", "re-avd-Leaf1A"]
+        switches: ["RE-AVD-Leaf1A", "RE-AVD-Leaf1A"]
         profile: exadata
         port_channel:
           description: ntx01_to_leaf1b

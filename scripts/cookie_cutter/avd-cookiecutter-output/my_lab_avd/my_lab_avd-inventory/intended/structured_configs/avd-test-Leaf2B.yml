@@ -8,7 +8,7 @@ router_bgp:
       type: ipv4
       remote_as: "65002"
       next_hop_self: true
-      description: re-avd-Leaf2A
+      description: RE-AVD-Leaf2A
       password: AQQvKeimxJu+uGQ/yYvv9w==
       maximum_routes: 12000
       send_community: all
@@ -37,54 +37,54 @@ router_bgp:
   neighbors:
     192.168.254.4:
       peer_group: MLAG-IPv4-UNDERLAY-PEER
-      description: re-avd-Leaf2A
+      description: RE-AVD-Leaf2A
     192.168.3.48:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine1_Ethernet4
+      description: RE-AVD-Spine1_Ethernet4
     192.168.3.56:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine1_Ethernet4
+      description: RE-AVD-Spine1_Ethernet4
     192.168.3.50:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine2_Ethernet4
+      description: RE-AVD-Spine2_Ethernet4
     192.168.3.58:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine2_Ethernet4
+      description: RE-AVD-Spine2_Ethernet4
     192.168.3.52:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine3_Ethernet4
+      description: RE-AVD-Spine3_Ethernet4
     192.168.3.60:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine3_Ethernet4
+      description: RE-AVD-Spine3_Ethernet4
     192.168.3.54:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine4_Ethernet4
+      description: RE-AVD-Spine4_Ethernet4
     192.168.3.62:
       peer_group: IPv4-UNDERLAY-PEERS
       remote_as: "65100"
-      description: re-avd-Spine4_Ethernet4
+      description: RE-AVD-Spine4_Ethernet4
     192.168.100.1:
       peer_group: EVPN-OVERLAY-PEERS
-      description: re-avd-Spine1
+      description: RE-AVD-Spine1
       remote_as: "65100"
     192.168.100.2:
       peer_group: EVPN-OVERLAY-PEERS
-      description: re-avd-Spine2
+      description: RE-AVD-Spine2
       remote_as: "65100"
     192.168.100.3:
       peer_group: EVPN-OVERLAY-PEERS
-      description: re-avd-Spine3
+      description: RE-AVD-Spine3
       remote_as: "65100"
     192.168.100.4:
       peer_group: EVPN-OVERLAY-PEERS
-      description: re-avd-Spine4
+      description: RE-AVD-Spine4
       remote_as: "65100"
   redistribute_routes:
     connected:
@@ -344,7 +344,7 @@ vlan_interfaces:
     mtu: 9214
 port_channel_interfaces:
   Port-Channel5:
-    description: MLAG_PEER_re-avd-Leaf2A_Po5
+    description: MLAG_PEER_RE-AVD-Leaf2A_Po5
     type: switched
     shutdown: false
     vlans: 2-4094
@@ -361,17 +361,17 @@ port_channel_interfaces:
     mlag: 7
 ethernet_interfaces:
   Ethernet5:
-    peer: re-avd-Leaf2A
+    peer: RE-AVD-Leaf2A
     peer_interface: Ethernet5
     peer_type: mlag_peer
-    description: MLAG_PEER_re-avd-Leaf2A_Ethernet5
+    description: MLAG_PEER_RE-AVD-Leaf2A_Ethernet5
     type: switched
     shutdown: false
     channel_group:
       id: 5
       mode: active
   Ethernet1:
-    peer: re-avd-Spine1
+    peer: RE-AVD-Spine1
     peer_interface: Ethernet4
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE1_Ethernet4
@@ -380,7 +380,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.57/31
   Ethernet2:
-    peer: re-avd-Spine2
+    peer: RE-AVD-Spine2
     peer_interface: Ethernet4
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE2_Ethernet4
@@ -389,7 +389,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.59/31
   Ethernet3:
-    peer: re-avd-Spine3
+    peer: RE-AVD-Spine3
     peer_interface: Ethernet4
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE3_Ethernet4
@@ -398,7 +398,7 @@ ethernet_interfaces:
     shutdown: false
     ip_address: 192.168.3.61/31
   Ethernet4:
-    peer: re-avd-Spine4
+    peer: RE-AVD-Spine4
     peer_interface: Ethernet4
     peer_type: spine
     description: P2P_LINK_TO_AVD-TEST-SPINE4_Ethernet4
@@ -485,7 +485,7 @@ ip_igmp_snooping:
 ip_virtual_router_mac_address: 00:1c:73:00:dc:01
 vxlan_interface:
   Vxlan1:
-    description: re-avd-Leaf2B_VTEP
+    description: RE-AVD-Leaf2B_VTEP
     vxlan:
       source_interface: Loopback1
       virtual_router_encapsulation_mac_address: mlag-system-id

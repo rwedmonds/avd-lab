@@ -1,9 +1,7 @@
 """
-Build configs from yaml files
+Compare AVD generated configurations to those on the network devices
 """
-
 import os
-# import subprocess
 import difflib
 from nornir import InitNornir
 from nornir.core.task import Task, Result
@@ -12,6 +10,9 @@ import pyavd
 
 
 def build_config(task: Task, eos_designs, avd_facts):
+    """
+    Build configs from structured config data
+    """
     structured_config = pyavd.get_device_structured_config(
         task.host.name, eos_designs[task.host.name], avd_facts=avd_facts)
     config = pyavd.get_device_config(structured_config)
@@ -21,29 +22,45 @@ def build_config(task: Task, eos_designs, avd_facts):
 
 
 def pull_config(task: Task):
-    with open(f'inventory/intended/configs/{task.host.name}.cfg', "r",
-              encoding="utf-8") as f:
+    """
+    Function docstring
+    """
+    with open(f'intented/configs/{task.host.name}.cfg', "r", encoding="utf-8")\
+            as f:
         task.host.data["running-config"] = f.read()
     return Result(host=task.host)
 
 
 def diff_config(task: Task):
+    """
+    Function docstring
+    """
     changed = False
     diff = ""
-    for line in difflib.unified_diff(task.host.data["running-config"].split("\n"), task.host.data["designed-config"].split("\n"), fromfile='running-config', tofile='designed-config', lineterm=''):
+    for line in difflib.unified_diff(task.host.data["running-config"]
+                                     .split("\n"), task.host.data
+                                     ["designed-config"].split("\n"),
+                                     fromfile='running-config',
+                                     tofile='designed-config', lineterm=''):
         diff += f'{line}\n'
         changed = True
     return Result(host=task.host, diff=diff, changed=changed)
 
 
 def deploy_config(task: Task):
-    with open(f'inventory/intended/configs/{task.host.name}.cfg', "w",
-              encoding="utf-8") as f:
+    """
+    Function docstring
+    """
+    with open(f'intended/configs/{task.host.name}.cfg', "w", encoding="utf-8")\
+            as f:
         f.write(task.host.data["designed-config"])
     return Result(host=task.host, changed=True)
 
 
 def config_management(task: Task, eos_designs, avd_facts):
+    """
+    Function docstring
+    """
     task.run(task=build_config, eos_designs=eos_designs, avd_facts=avd_facts)
 
     # task.run(task=pull_config)
@@ -53,9 +70,11 @@ def config_management(task: Task, eos_designs, avd_facts):
 
 
 def run():
-    """Build configs"""
+    """
+    Function docstring
+    """
     # Initialize Nornir object from config_file
-    nr = InitNornir(config_file="../inventory/config.yml")
+    nr = InitNornir(config_file="config.yml")
 
     eos_designs = {}
 
@@ -72,8 +91,14 @@ def run():
 
     # Validate input and convert types as needed
     failures = False
-    for host in eos_designs:
-        hostvars = eos_designs[host]
+    for host, _ in eos_designs.items():
+        hostvars = _[host]
+
+        results = pyavd.validate_inputs(hostvars)
+        if results.failed:
+            for result in results.validation_errors:
+                print(result)
+            failures = True
 
         results = pyavd.validate_inputs(hostvars)
         if results.failed:
@@ -92,8 +117,5 @@ def run():
 
 
 run()
-os.remove("nornir.log")
 
-# docs = input("\n\nRun Ansible playbook to generate documentation (y/n)? ")
-# if docs.lower() == "y":
-#     subprocess.Popen('ansible-playbook playbooks/avd_lab_generate_docs.yml --tags build', shell=True)
+os.remove("nornir.log")

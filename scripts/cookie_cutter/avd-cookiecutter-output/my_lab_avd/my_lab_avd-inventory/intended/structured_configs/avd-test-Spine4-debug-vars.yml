@@ -48,25 +48,25 @@ spine:
   defaults:
     loopback_ipv4_pool: 192.168.100.0/24
   nodes:
-    re-avd-Spine1:
+    RE-AVD-Spine1:
       id: 1
       mgmt_ip: 192.168.255.11/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:01
-    re-avd-Spine2:
+    RE-AVD-Spine2:
       id: 2
       mgmt_ip: 192.168.255.12/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:02
-    re-avd-Spine3:
+    RE-AVD-Spine3:
       id: 3
       mgmt_ip: 192.168.255.13/24
       platform: vEOS
       bgp_as: 65100
       mac_address: 0c:1d:c0:1d:62:03
-    re-avd-Spine4:
+    RE-AVD-Spine4:
       id: 4
       mgmt_ip: 192.168.255.14/24
       platform: vEOS
@@ -86,19 +86,19 @@ l3leaf:
     pod0:
       bgp_as: 65001
       nodes:
-        re-avd-Leaf1A:
+        RE-AVD-Leaf1A:
           id: 1
           mgmt_ip: 192.168.255.15/24
           platform: vEOS
           uplink_switches:
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
           uplink_interfaces:
             - Ethernet1
             - Ethernet2
@@ -120,19 +120,19 @@ l3leaf:
           mac_address: 0c:1d:c0:1d:62:05
           mlag_interfaces:
             - Ethernet5
-        re-avd-Leaf1B:
+        RE-AVD-Leaf1B:
           id: 2
           mgmt_ip: 192.168.255.16/24
           platform: vEOS
           uplink_switches:
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
           uplink_interfaces:
             - Ethernet1
             - Ethernet2
@@ -157,19 +157,19 @@ l3leaf:
     pod1:
       bgp_as: 65002
       nodes:
-        re-avd-Leaf2A:
+        RE-AVD-Leaf2A:
           id: 3
           mgmt_ip: 192.168.255.17/24
           platform: vEOS
           uplink_switches:
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
           uplink_interfaces:
             - Ethernet1
             - Ethernet2
@@ -191,19 +191,19 @@ l3leaf:
           mac_address: 0c:1d:c0:1d:62:07
           mlag_interfaces:
             - Ethernet5
-        re-avd-Leaf2B:
+        RE-AVD-Leaf2B:
           id: 4
           mgmt_ip: 192.168.255.18/24
           platform: vEOS
           uplink_switches:
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
-            - re-avd-Spine1
-            - re-avd-Spine2
-            - re-avd-Spine3
-            - re-avd-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
+            - RE-AVD-Spine1
+            - RE-AVD-Spine2
+            - RE-AVD-Spine3
+            - RE-AVD-Spine4
           uplink_interfaces:
             - Ethernet1
             - Ethernet2
@@ -230,15 +230,15 @@ type: spine
 inventory_file: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory/inventory.yml
 inventory_dir: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-output/my_lab_avd/my_lab_avd-inventory
 ansible_host: 192.168.255.14
-inventory_hostname: re-avd-Spine4
-inventory_hostname_short: re-avd-Spine4
+inventory_hostname: RE-AVD-Spine4
+inventory_hostname_short: RE-AVD-Spine4
 group_names:
   - AVD_FABRIC
   - MY_LAB_AVD
   - SPINES
 ansible_facts:
   avd_switch_facts:
-    re-avd-Spine1:
+    RE-AVD-Spine1:
       switch:
         bgp_as: "65100"
         bgp_defaults: []
@@ -281,7 +281,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: re-avd-Spine1
+        hostname: RE-AVD-Spine1
         id: 1
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -353,7 +353,7 @@ ansible_facts:
         uplinks: []
         vlans: ""
         vtep: false
-    re-avd-Spine2:
+    RE-AVD-Spine2:
       switch:
         bgp_as: "65100"
         bgp_defaults: []
@@ -396,7 +396,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: re-avd-Spine2
+        hostname: RE-AVD-Spine2
         id: 2
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -468,7 +468,7 @@ ansible_facts:
         uplinks: []
         vlans: ""
         vtep: false
-    re-avd-Spine3:
+    RE-AVD-Spine3:
       switch:
         bgp_as: "65100"
         bgp_defaults: []
@@ -511,7 +511,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: re-avd-Spine3
+        hostname: RE-AVD-Spine3
         id: 3
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -583,7 +583,7 @@ ansible_facts:
         uplinks: []
         vlans: ""
         vtep: false
-    re-avd-Spine4:
+    RE-AVD-Spine4:
       switch:
         bgp_as: "65100"
         bgp_defaults: []
@@ -626,7 +626,7 @@ ansible_facts:
         evpn_gateway_vxlan_l3: false
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: server
-        hostname: re-avd-Spine4
+        hostname: RE-AVD-Spine4
         id: 4
         interface_descriptions:
           underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -698,7 +698,7 @@ ansible_facts:
         uplinks: []
         vlans: ""
         vtep: false
-    re-avd-Leaf1A:
+    RE-AVD-Leaf1A:
       switch:
         bgp_as: "65001"
         bgp_defaults: []
@@ -743,14 +743,14 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
           - all
@@ -758,7 +758,7 @@ ansible_facts:
         filter_tenants:
           - all
         group: pod0
-        hostname: re-avd-Leaf1A
+        hostname: RE-AVD-Leaf1A
         id: 1
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -798,7 +798,7 @@ ansible_facts:
         mlag_ip: 192.168.255.0
         mlag_l3: true
         mlag_l3_ip: 192.168.254.0
-        mlag_peer: re-avd-Leaf1B
+        mlag_peer: RE-AVD-Leaf1B
         mlag_peer_ip: 192.168.255.1
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.1
@@ -857,14 +857,14 @@ ansible_facts:
           - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_switch_interfaces:
           - Ethernet1
           - Ethernet1
@@ -875,18 +875,18 @@ ansible_facts:
           - Ethernet1
           - Ethernet1
         uplink_switches:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_type: p2p
         uplinks:
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -895,7 +895,7 @@ ansible_facts:
             ip_address: 192.168.3.1
             peer_ip_address: 192.168.3.0
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -904,7 +904,7 @@ ansible_facts:
             ip_address: 192.168.3.3
             peer_ip_address: 192.168.3.2
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -913,7 +913,7 @@ ansible_facts:
             ip_address: 192.168.3.5
             peer_ip_address: 192.168.3.4
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -922,7 +922,7 @@ ansible_facts:
             ip_address: 192.168.3.7
             peer_ip_address: 192.168.3.6
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -931,7 +931,7 @@ ansible_facts:
             ip_address: 192.168.3.9
             peer_ip_address: 192.168.3.8
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -940,7 +940,7 @@ ansible_facts:
             ip_address: 192.168.3.11
             peer_ip_address: 192.168.3.10
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -949,7 +949,7 @@ ansible_facts:
             ip_address: 192.168.3.13
             peer_ip_address: 192.168.3.12
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet1
             peer_type: spine
             peer_is_deployed: true
@@ -963,7 +963,7 @@ ansible_facts:
         vtep_ip: 192.168.1.1
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    re-avd-Leaf1B:
+    RE-AVD-Leaf1B:
       switch:
         bgp_as: "65001"
         bgp_defaults: []
@@ -1008,14 +1008,14 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
           - all
@@ -1023,7 +1023,7 @@ ansible_facts:
         filter_tenants:
           - all
         group: pod0
-        hostname: re-avd-Leaf1B
+        hostname: RE-AVD-Leaf1B
         id: 2
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1063,7 +1063,7 @@ ansible_facts:
         mlag_ip: 192.168.255.1
         mlag_l3: true
         mlag_l3_ip: 192.168.254.1
-        mlag_peer: re-avd-Leaf1A
+        mlag_peer: RE-AVD-Leaf1A
         mlag_peer_ip: 192.168.255.0
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.0
@@ -1122,14 +1122,14 @@ ansible_facts:
           - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_switch_interfaces:
           - Ethernet2
           - Ethernet2
@@ -1140,18 +1140,18 @@ ansible_facts:
           - Ethernet2
           - Ethernet2
         uplink_switches:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_type: p2p
         uplinks:
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1160,7 +1160,7 @@ ansible_facts:
             ip_address: 192.168.3.17
             peer_ip_address: 192.168.3.16
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1169,7 +1169,7 @@ ansible_facts:
             ip_address: 192.168.3.19
             peer_ip_address: 192.168.3.18
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1178,7 +1178,7 @@ ansible_facts:
             ip_address: 192.168.3.21
             peer_ip_address: 192.168.3.20
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1187,7 +1187,7 @@ ansible_facts:
             ip_address: 192.168.3.23
             peer_ip_address: 192.168.3.22
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1196,7 +1196,7 @@ ansible_facts:
             ip_address: 192.168.3.25
             peer_ip_address: 192.168.3.24
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1205,7 +1205,7 @@ ansible_facts:
             ip_address: 192.168.3.27
             peer_ip_address: 192.168.3.26
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1214,7 +1214,7 @@ ansible_facts:
             ip_address: 192.168.3.29
             peer_ip_address: 192.168.3.28
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet2
             peer_type: spine
             peer_is_deployed: true
@@ -1228,7 +1228,7 @@ ansible_facts:
         vtep_ip: 192.168.1.1
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    re-avd-Leaf2A:
+    RE-AVD-Leaf2A:
       switch:
         bgp_as: "65002"
         bgp_defaults: []
@@ -1273,14 +1273,14 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
           - all
@@ -1288,7 +1288,7 @@ ansible_facts:
         filter_tenants:
           - all
         group: pod1
-        hostname: re-avd-Leaf2A
+        hostname: RE-AVD-Leaf2A
         id: 3
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1328,7 +1328,7 @@ ansible_facts:
         mlag_ip: 192.168.255.4
         mlag_l3: true
         mlag_l3_ip: 192.168.254.4
-        mlag_peer: re-avd-Leaf2B
+        mlag_peer: RE-AVD-Leaf2B
         mlag_peer_ip: 192.168.255.5
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.5
@@ -1387,14 +1387,14 @@ ansible_facts:
           - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_switch_interfaces:
           - Ethernet3
           - Ethernet3
@@ -1405,18 +1405,18 @@ ansible_facts:
           - Ethernet3
           - Ethernet3
         uplink_switches:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_type: p2p
         uplinks:
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1425,7 +1425,7 @@ ansible_facts:
             ip_address: 192.168.3.33
             peer_ip_address: 192.168.3.32
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1434,7 +1434,7 @@ ansible_facts:
             ip_address: 192.168.3.35
             peer_ip_address: 192.168.3.34
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1443,7 +1443,7 @@ ansible_facts:
             ip_address: 192.168.3.37
             peer_ip_address: 192.168.3.36
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1452,7 +1452,7 @@ ansible_facts:
             ip_address: 192.168.3.39
             peer_ip_address: 192.168.3.38
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1461,7 +1461,7 @@ ansible_facts:
             ip_address: 192.168.3.41
             peer_ip_address: 192.168.3.40
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1470,7 +1470,7 @@ ansible_facts:
             ip_address: 192.168.3.43
             peer_ip_address: 192.168.3.42
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1479,7 +1479,7 @@ ansible_facts:
             ip_address: 192.168.3.45
             peer_ip_address: 192.168.3.44
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet3
             peer_type: spine
             peer_is_deployed: true
@@ -1493,7 +1493,7 @@ ansible_facts:
         vtep_ip: 192.168.1.3
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
-    re-avd-Leaf2B:
+    RE-AVD-Leaf2B:
       switch:
         bgp_as: "65002"
         bgp_defaults: []
@@ -1538,14 +1538,14 @@ ansible_facts:
         evpn_gateway_vxlan_l3_inter_domain: true
         evpn_role: client
         evpn_route_servers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         filter_only_vlans_in_use: false
         filter_tags:
           - all
@@ -1553,7 +1553,7 @@ ansible_facts:
         filter_tenants:
           - all
         group: pod1
-        hostname: re-avd-Leaf2B
+        hostname: RE-AVD-Leaf2B
         id: 4
         igmp_snooping_enabled: true
         interface_descriptions:
@@ -1593,7 +1593,7 @@ ansible_facts:
         mlag_ip: 192.168.255.5
         mlag_l3: true
         mlag_l3_ip: 192.168.254.5
-        mlag_peer: re-avd-Leaf2A
+        mlag_peer: RE-AVD-Leaf2A
         mlag_peer_ip: 192.168.255.4
         mlag_peer_ipv4_pool: 192.168.255.0/24
         mlag_peer_l3_ip: 192.168.254.4
@@ -1652,14 +1652,14 @@ ansible_facts:
           - Ethernet4
         uplink_ipv4_pool: 192.168.3.0/24
         uplink_peers:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_switch_interfaces:
           - Ethernet4
           - Ethernet4
@@ -1670,18 +1670,18 @@ ansible_facts:
           - Ethernet4
           - Ethernet4
         uplink_switches:
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
-          - re-avd-Spine1
-          - re-avd-Spine2
-          - re-avd-Spine3
-          - re-avd-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
+          - RE-AVD-Spine1
+          - RE-AVD-Spine2
+          - RE-AVD-Spine3
+          - RE-AVD-Spine4
         uplink_type: p2p
         uplinks:
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1690,7 +1690,7 @@ ansible_facts:
             ip_address: 192.168.3.49
             peer_ip_address: 192.168.3.48
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1699,7 +1699,7 @@ ansible_facts:
             ip_address: 192.168.3.51
             peer_ip_address: 192.168.3.50
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1708,7 +1708,7 @@ ansible_facts:
             ip_address: 192.168.3.53
             peer_ip_address: 192.168.3.52
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1717,7 +1717,7 @@ ansible_facts:
             ip_address: 192.168.3.55
             peer_ip_address: 192.168.3.54
           - interface: Ethernet1
-            peer: re-avd-Spine1
+            peer: RE-AVD-Spine1
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1726,7 +1726,7 @@ ansible_facts:
             ip_address: 192.168.3.57
             peer_ip_address: 192.168.3.56
           - interface: Ethernet2
-            peer: re-avd-Spine2
+            peer: RE-AVD-Spine2
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1735,7 +1735,7 @@ ansible_facts:
             ip_address: 192.168.3.59
             peer_ip_address: 192.168.3.58
           - interface: Ethernet3
-            peer: re-avd-Spine3
+            peer: RE-AVD-Spine3
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1744,7 +1744,7 @@ ansible_facts:
             ip_address: 192.168.3.61
             peer_ip_address: 192.168.3.60
           - interface: Ethernet4
-            peer: re-avd-Spine4
+            peer: RE-AVD-Spine4
             peer_interface: Ethernet4
             peer_type: spine
             peer_is_deployed: true
@@ -1759,81 +1759,81 @@ ansible_facts:
         vtep_loopback: Loopback1
         vtep_loopback_ipv4_pool: 192.168.1.0/24
   avd_overlay_peers:
-    re-avd-Spine1:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine2:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine3:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine4:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
+    RE-AVD-Spine1:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine2:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine3:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine4:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
   avd_topology_peers:
-    re-avd-Spine1:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine2:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine3:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
-    re-avd-Spine4:
-      - re-avd-Leaf1A
-      - re-avd-Leaf1A
-      - re-avd-Leaf1B
-      - re-avd-Leaf1B
-      - re-avd-Leaf2A
-      - re-avd-Leaf2A
-      - re-avd-Leaf2B
-      - re-avd-Leaf2B
+    RE-AVD-Spine1:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine2:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine3:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
+    RE-AVD-Spine4:
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1A
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf1B
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2A
+      - RE-AVD-Leaf2B
+      - RE-AVD-Leaf2B
 avd_switch_facts:
-  re-avd-Spine1:
+  RE-AVD-Spine1:
     switch:
       bgp_as: "65100"
       bgp_defaults: []
@@ -1876,7 +1876,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: re-avd-Spine1
+      hostname: RE-AVD-Spine1
       id: 1
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -1948,7 +1948,7 @@ avd_switch_facts:
       uplinks: []
       vlans: ""
       vtep: false
-  re-avd-Spine2:
+  RE-AVD-Spine2:
     switch:
       bgp_as: "65100"
       bgp_defaults: []
@@ -1991,7 +1991,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: re-avd-Spine2
+      hostname: RE-AVD-Spine2
       id: 2
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2063,7 +2063,7 @@ avd_switch_facts:
       uplinks: []
       vlans: ""
       vtep: false
-  re-avd-Spine3:
+  RE-AVD-Spine3:
     switch:
       bgp_as: "65100"
       bgp_defaults: []
@@ -2106,7 +2106,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: re-avd-Spine3
+      hostname: RE-AVD-Spine3
       id: 3
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2178,7 +2178,7 @@ avd_switch_facts:
       uplinks: []
       vlans: ""
       vtep: false
-  re-avd-Spine4:
+  RE-AVD-Spine4:
     switch:
       bgp_as: "65100"
       bgp_defaults: []
@@ -2221,7 +2221,7 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3: false
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: server
-      hostname: re-avd-Spine4
+      hostname: RE-AVD-Spine4
       id: 4
       interface_descriptions:
         underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -2293,7 +2293,7 @@ avd_switch_facts:
       uplinks: []
       vlans: ""
       vtep: false
-  re-avd-Leaf1A:
+  RE-AVD-Leaf1A:
     switch:
       bgp_as: "65001"
       bgp_defaults: []
@@ -2338,14 +2338,14 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
         - all
@@ -2353,7 +2353,7 @@ avd_switch_facts:
       filter_tenants:
         - all
       group: pod0
-      hostname: re-avd-Leaf1A
+      hostname: RE-AVD-Leaf1A
       id: 1
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -2393,7 +2393,7 @@ avd_switch_facts:
       mlag_ip: 192.168.255.0
       mlag_l3: true
       mlag_l3_ip: 192.168.254.0
-      mlag_peer: re-avd-Leaf1B
+      mlag_peer: RE-AVD-Leaf1B
       mlag_peer_ip: 192.168.255.1
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.1
@@ -2452,14 +2452,14 @@ avd_switch_facts:
         - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_switch_interfaces:
         - Ethernet1
         - Ethernet1
@@ -2470,18 +2470,18 @@ avd_switch_facts:
         - Ethernet1
         - Ethernet1
       uplink_switches:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_type: p2p
       uplinks:
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2490,7 +2490,7 @@ avd_switch_facts:
           ip_address: 192.168.3.1
           peer_ip_address: 192.168.3.0
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2499,7 +2499,7 @@ avd_switch_facts:
           ip_address: 192.168.3.3
           peer_ip_address: 192.168.3.2
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2508,7 +2508,7 @@ avd_switch_facts:
           ip_address: 192.168.3.5
           peer_ip_address: 192.168.3.4
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2517,7 +2517,7 @@ avd_switch_facts:
           ip_address: 192.168.3.7
           peer_ip_address: 192.168.3.6
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2526,7 +2526,7 @@ avd_switch_facts:
           ip_address: 192.168.3.9
           peer_ip_address: 192.168.3.8
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2535,7 +2535,7 @@ avd_switch_facts:
           ip_address: 192.168.3.11
           peer_ip_address: 192.168.3.10
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2544,7 +2544,7 @@ avd_switch_facts:
           ip_address: 192.168.3.13
           peer_ip_address: 192.168.3.12
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet1
           peer_type: spine
           peer_is_deployed: true
@@ -2558,7 +2558,7 @@ avd_switch_facts:
       vtep_ip: 192.168.1.1
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  re-avd-Leaf1B:
+  RE-AVD-Leaf1B:
     switch:
       bgp_as: "65001"
       bgp_defaults: []
@@ -2603,14 +2603,14 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
         - all
@@ -2618,7 +2618,7 @@ avd_switch_facts:
       filter_tenants:
         - all
       group: pod0
-      hostname: re-avd-Leaf1B
+      hostname: RE-AVD-Leaf1B
       id: 2
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -2658,7 +2658,7 @@ avd_switch_facts:
       mlag_ip: 192.168.255.1
       mlag_l3: true
       mlag_l3_ip: 192.168.254.1
-      mlag_peer: re-avd-Leaf1A
+      mlag_peer: RE-AVD-Leaf1A
       mlag_peer_ip: 192.168.255.0
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.0
@@ -2717,14 +2717,14 @@ avd_switch_facts:
         - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_switch_interfaces:
         - Ethernet2
         - Ethernet2
@@ -2735,18 +2735,18 @@ avd_switch_facts:
         - Ethernet2
         - Ethernet2
       uplink_switches:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_type: p2p
       uplinks:
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2755,7 +2755,7 @@ avd_switch_facts:
           ip_address: 192.168.3.17
           peer_ip_address: 192.168.3.16
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2764,7 +2764,7 @@ avd_switch_facts:
           ip_address: 192.168.3.19
           peer_ip_address: 192.168.3.18
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2773,7 +2773,7 @@ avd_switch_facts:
           ip_address: 192.168.3.21
           peer_ip_address: 192.168.3.20
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2782,7 +2782,7 @@ avd_switch_facts:
           ip_address: 192.168.3.23
           peer_ip_address: 192.168.3.22
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2791,7 +2791,7 @@ avd_switch_facts:
           ip_address: 192.168.3.25
           peer_ip_address: 192.168.3.24
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2800,7 +2800,7 @@ avd_switch_facts:
           ip_address: 192.168.3.27
           peer_ip_address: 192.168.3.26
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2809,7 +2809,7 @@ avd_switch_facts:
           ip_address: 192.168.3.29
           peer_ip_address: 192.168.3.28
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet2
           peer_type: spine
           peer_is_deployed: true
@@ -2823,7 +2823,7 @@ avd_switch_facts:
       vtep_ip: 192.168.1.1
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  re-avd-Leaf2A:
+  RE-AVD-Leaf2A:
     switch:
       bgp_as: "65002"
       bgp_defaults: []
@@ -2868,14 +2868,14 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
         - all
@@ -2883,7 +2883,7 @@ avd_switch_facts:
       filter_tenants:
         - all
       group: pod1
-      hostname: re-avd-Leaf2A
+      hostname: RE-AVD-Leaf2A
       id: 3
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -2923,7 +2923,7 @@ avd_switch_facts:
       mlag_ip: 192.168.255.4
       mlag_l3: true
       mlag_l3_ip: 192.168.254.4
-      mlag_peer: re-avd-Leaf2B
+      mlag_peer: RE-AVD-Leaf2B
       mlag_peer_ip: 192.168.255.5
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.5
@@ -2982,14 +2982,14 @@ avd_switch_facts:
         - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_switch_interfaces:
         - Ethernet3
         - Ethernet3
@@ -3000,18 +3000,18 @@ avd_switch_facts:
         - Ethernet3
         - Ethernet3
       uplink_switches:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_type: p2p
       uplinks:
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3020,7 +3020,7 @@ avd_switch_facts:
           ip_address: 192.168.3.33
           peer_ip_address: 192.168.3.32
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3029,7 +3029,7 @@ avd_switch_facts:
           ip_address: 192.168.3.35
           peer_ip_address: 192.168.3.34
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3038,7 +3038,7 @@ avd_switch_facts:
           ip_address: 192.168.3.37
           peer_ip_address: 192.168.3.36
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3047,7 +3047,7 @@ avd_switch_facts:
           ip_address: 192.168.3.39
           peer_ip_address: 192.168.3.38
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3056,7 +3056,7 @@ avd_switch_facts:
           ip_address: 192.168.3.41
           peer_ip_address: 192.168.3.40
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3065,7 +3065,7 @@ avd_switch_facts:
           ip_address: 192.168.3.43
           peer_ip_address: 192.168.3.42
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3074,7 +3074,7 @@ avd_switch_facts:
           ip_address: 192.168.3.45
           peer_ip_address: 192.168.3.44
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet3
           peer_type: spine
           peer_is_deployed: true
@@ -3088,7 +3088,7 @@ avd_switch_facts:
       vtep_ip: 192.168.1.3
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
-  re-avd-Leaf2B:
+  RE-AVD-Leaf2B:
     switch:
       bgp_as: "65002"
       bgp_defaults: []
@@ -3133,14 +3133,14 @@ avd_switch_facts:
       evpn_gateway_vxlan_l3_inter_domain: true
       evpn_role: client
       evpn_route_servers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       filter_only_vlans_in_use: false
       filter_tags:
         - all
@@ -3148,7 +3148,7 @@ avd_switch_facts:
       filter_tenants:
         - all
       group: pod1
-      hostname: re-avd-Leaf2B
+      hostname: RE-AVD-Leaf2B
       id: 4
       igmp_snooping_enabled: true
       interface_descriptions:
@@ -3188,7 +3188,7 @@ avd_switch_facts:
       mlag_ip: 192.168.255.5
       mlag_l3: true
       mlag_l3_ip: 192.168.254.5
-      mlag_peer: re-avd-Leaf2A
+      mlag_peer: RE-AVD-Leaf2A
       mlag_peer_ip: 192.168.255.4
       mlag_peer_ipv4_pool: 192.168.255.0/24
       mlag_peer_l3_ip: 192.168.254.4
@@ -3247,14 +3247,14 @@ avd_switch_facts:
         - Ethernet4
       uplink_ipv4_pool: 192.168.3.0/24
       uplink_peers:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_switch_interfaces:
         - Ethernet4
         - Ethernet4
@@ -3265,18 +3265,18 @@ avd_switch_facts:
         - Ethernet4
         - Ethernet4
       uplink_switches:
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
-        - re-avd-Spine1
-        - re-avd-Spine2
-        - re-avd-Spine3
-        - re-avd-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
+        - RE-AVD-Spine1
+        - RE-AVD-Spine2
+        - RE-AVD-Spine3
+        - RE-AVD-Spine4
       uplink_type: p2p
       uplinks:
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3285,7 +3285,7 @@ avd_switch_facts:
           ip_address: 192.168.3.49
           peer_ip_address: 192.168.3.48
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3294,7 +3294,7 @@ avd_switch_facts:
           ip_address: 192.168.3.51
           peer_ip_address: 192.168.3.50
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3303,7 +3303,7 @@ avd_switch_facts:
           ip_address: 192.168.3.53
           peer_ip_address: 192.168.3.52
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3312,7 +3312,7 @@ avd_switch_facts:
           ip_address: 192.168.3.55
           peer_ip_address: 192.168.3.54
         - interface: Ethernet1
-          peer: re-avd-Spine1
+          peer: RE-AVD-Spine1
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3321,7 +3321,7 @@ avd_switch_facts:
           ip_address: 192.168.3.57
           peer_ip_address: 192.168.3.56
         - interface: Ethernet2
-          peer: re-avd-Spine2
+          peer: RE-AVD-Spine2
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3330,7 +3330,7 @@ avd_switch_facts:
           ip_address: 192.168.3.59
           peer_ip_address: 192.168.3.58
         - interface: Ethernet3
-          peer: re-avd-Spine3
+          peer: RE-AVD-Spine3
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3339,7 +3339,7 @@ avd_switch_facts:
           ip_address: 192.168.3.61
           peer_ip_address: 192.168.3.60
         - interface: Ethernet4
-          peer: re-avd-Spine4
+          peer: RE-AVD-Spine4
           peer_interface: Ethernet4
           peer_type: spine
           peer_is_deployed: true
@@ -3354,79 +3354,79 @@ avd_switch_facts:
       vtep_loopback: Loopback1
       vtep_loopback_ipv4_pool: 192.168.1.0/24
 avd_overlay_peers:
-  re-avd-Spine1:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine2:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine3:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine4:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
+  RE-AVD-Spine1:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine2:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine3:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine4:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
 avd_topology_peers:
-  re-avd-Spine1:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine2:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine3:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
-  re-avd-Spine4:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Leaf2B
+  RE-AVD-Spine1:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine2:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine3:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
+  RE-AVD-Spine4:
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Leaf2B
 avd_collection_version: version
 switch:
   bgp_as: "65100"
@@ -3470,7 +3470,7 @@ switch:
   evpn_gateway_vxlan_l3: false
   evpn_gateway_vxlan_l3_inter_domain: true
   evpn_role: server
-  hostname: re-avd-Spine4
+  hostname: RE-AVD-Spine4
   id: 4
   interface_descriptions:
     underlay_ethernet_interfaces: interface_descriptions/underlay/ethernet-interfaces.j2
@@ -3548,55 +3548,55 @@ ansible_config_file: /workspaces/avd-lab/scripts/cookie_cutter/avd-cookiecutter-
 groups:
   all:
     - CV_AVD_FABRIC
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Spine1
-    - re-avd-Spine2
-    - re-avd-Spine3
-    - re-avd-Spine4
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Spine1
+    - RE-AVD-Spine2
+    - RE-AVD-Spine3
+    - RE-AVD-Spine4
   ungrouped: []
   cv_servers:
     - CV_AVD_FABRIC
   MY_LAB_AVD:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
-    - re-avd-Spine1
-    - re-avd-Spine2
-    - re-avd-Spine3
-    - re-avd-Spine4
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
+    - RE-AVD-Spine1
+    - RE-AVD-Spine2
+    - RE-AVD-Spine3
+    - RE-AVD-Spine4
   AVD_FABRIC:
-    - re-avd-Spine1
-    - re-avd-Spine2
-    - re-avd-Spine3
-    - re-avd-Spine4
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
+    - RE-AVD-Spine1
+    - RE-AVD-Spine2
+    - RE-AVD-Spine3
+    - RE-AVD-Spine4
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
   SPINES:
-    - re-avd-Spine1
-    - re-avd-Spine2
-    - re-avd-Spine3
-    - re-avd-Spine4
+    - RE-AVD-Spine1
+    - RE-AVD-Spine2
+    - RE-AVD-Spine3
+    - RE-AVD-Spine4
   LEAFS:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
   AVD_FABRIC_TENANTS:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
   AVD_FABRIC_SERVERS:
-    - re-avd-Leaf1A
-    - re-avd-Leaf1B
-    - re-avd-Leaf2A
-    - re-avd-Leaf2B
+    - RE-AVD-Leaf1A
+    - RE-AVD-Leaf1B
+    - RE-AVD-Leaf2A
+    - RE-AVD-Leaf2B
 omit: __omit_place_holder__ae2d6abed2d094d9492c06fe964236e2e7e1223f
 ansible_version:
   string: 2.12.9

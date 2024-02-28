@@ -22,8 +22,8 @@ servers:
           - Ethernet5
           - Ethernet5
         switches:
-          - re-avd-L2Leaf1A
-          - re-avd-L2Leaf1B
+          - RE-AVD-L2Leaf1A
+          - RE-AVD-L2Leaf1B
         endpoint_ports:
           - ens3
           - ens4
@@ -36,8 +36,8 @@ servers:
           - Ethernet5
           - Ethernet5
         switches:
-          - re-avd-L2Leaf2A
-          - re-avd-L2Leaf2B
+          - RE-AVD-L2Leaf2A
+          - RE-AVD-L2Leaf2B
         endpoint_ports:
           - ens3
           - ens4
@@ -50,8 +50,8 @@ servers:
           - Ethernet6
           - Ethernet6
         switches:
-          - re-avd-L2Leaf2A
-          - re-avd-L2Leaf2B
+          - RE-AVD-L2Leaf2A
+          - RE-AVD-L2Leaf2B
         endpoint_ports:
           - ens3
           - ens4

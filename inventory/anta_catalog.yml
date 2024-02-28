@@ -1,0 +1,84 @@
+# Load anta.tests.software
+anta.tests.software:
+  - VerifyEOSVersion: # Verifies the device is running one of the allowed EOS version.
+      versions: # List of allowed EOS versions.
+        - 4.28.6M
+      filters:
+        tags:
+          - "fabric"
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+          - "spine"
+  - VerifyTerminAttrVersion:
+      versions:
+        - v1.22.3
+      filters:
+        tags:
+          - "fabric"
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+          - "spine"
+
+anta.tests.system:
+  - VerifyUptime: # Verifies the device uptime is higher than a value.
+      minimum: 1
+      filters:
+        tags:
+          - "fabric"
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+          - "spine"
+  - VerifyNTP:
+      filters:
+        tags:
+          - "fabric"
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+          - "spine"
+  # - VerifySyslog:
+
+anta.tests.mlag:
+  - VerifyMlagStatus:
+      filters:
+        tags:
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+  - VerifyMlagInterfaces:
+      filters:
+        tags:
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+  - VerifyMlagConfigSanity:
+      filters:
+        tags:
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+
+anta.tests.configuration:
+  - VerifyZeroTouch: # Verifies ZeroTouch is disabled.
+  - VerifyRunningConfigDiffs: # Verifies there is no difference between the running-config and the startup-config
+
+anta.tests.connectivity:
+  - VerifyReachability:
+      hosts:
+        - source: Management1
+          destination: 9.9.9.9
+          vrf: MGMT
+      filters:
+        tags:
+          - "fabric"
+          - "leaf"
+          - "l2leaf"
+          - "l3leaf"
+          - "spine"
+      result_overwrite:
+        categories:
+          - "connectivity"
+        description: "Test connectivity to Quad9 DNS server"

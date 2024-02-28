@@ -6,5 +6,7 @@ inventory/reports
 inventory/snapshots
 ansible-log
 *DS_Store
-ansible-log
+ansible.log
 .*/
+nornir.*
+.gitignore

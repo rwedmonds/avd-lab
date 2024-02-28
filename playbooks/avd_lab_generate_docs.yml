@@ -1,0 +1,23 @@
+---
+- name: Manage Arista EOS EVPN/VXLAN Configuration
+  hosts: AVD_Lab
+  connection: local
+  gather_facts: false
+  collections:
+    - arista.avd
+    - arista.cvp
+  tasks:
+    - name: Generate device documentation
+      tags: [build, provision, documentation]
+      arista.avd.validate_and_template:
+        template: "eos-device-documentation.j2"
+        dest: "{{ devices_dir }}/{{ inventory_hostname }}.md"
+        mode: 0664
+        schema_id: "{{ role_name }}"
+        conversion_mode: "{{ avd_data_conversion_mode }}"
+        validation_mode: "{{ avd_data_validation_mode }}"
+        add_md_toc: true
+        md_toc_skip_lines: 3
+        #cprofile_file: "docs-{{inventory_hostname}}.prof"
+      delegate_to: localhost
+      when: generate_device_documentation | arista.avd.default(true)

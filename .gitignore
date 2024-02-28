@@ -4,7 +4,7 @@ inventory/intended
 inventory/config_backup
 inventory/reports
 inventory/snapshots
-ansible-log
+ansible.log
 *DS_Store
 ansible.log
 .*/

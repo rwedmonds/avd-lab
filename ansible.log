@@ -6497,3 +6497,13 @@ Collection        Version
 ----------------- ----------
 
 2024-02-17 15:25:18,404 p=92981 u=redmonds n=ansible | arista.avd        4.0.0-dev9
+2024-02-28 15:27:20,689 p=31367 u=avd n=ansible | # /home/avd/.ansible/collections/ansible_collections
+Collection        Version
+----------------- -------
+
+2024-02-28 15:27:20,690 p=31367 u=avd n=ansible | ansible.netcommon 6.0.0  
+2024-02-28 15:27:20,690 p=31367 u=avd n=ansible | ansible.utils     3.1.0  
+2024-02-28 15:27:20,691 p=31367 u=avd n=ansible | arista.avd        4.6.0  
+2024-02-28 15:27:20,691 p=31367 u=avd n=ansible | arista.cvp        3.10.1 
+2024-02-28 15:27:20,691 p=31367 u=avd n=ansible | arista.eos        7.0.0  
+2024-02-28 15:27:20,691 p=31367 u=avd n=ansible | community.general 8.3.0  

@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8
-# Copyright (c) 2018 Arista Networks, Inc.  All rights reserved.
-# Arista Networks, Inc. Confidential and Proprietary.
+
 """
 CVP ZTP BootStrap Script logic (this script)
 
@@ -29,6 +27,7 @@ CVP Server logic (CVP server expectations)
 	switch configuration within a CLI config session, then run 'copy
 	session-config flash:cvp-config'. The node will reload.
 """
+
 import logging
 import logging.handlers
 import os
@@ -62,12 +61,12 @@ def setupLogger():
 		handler = logging.handlers.SysLogHandler(address='/dev/log')
 		logger.addHandler(handler)
 	except socket.error:
-		print "error setting up logger"
+		print("error setting up logger")
 		logger = None
 
 def log(msg):
 	""" Print message to terminal and log if logging is up"""
-	print msg
+	print(msg)
 	if logger:
 		logger.critical(msg)
 
@@ -360,7 +359,7 @@ class ImageUpgrade(object):
 		maxInstallAttempts = 5
 
 		while True:
-			print "standby module found"
+			print("standby module found")
 			cmdList = ["enable",
 				"session peer-supervisor copy flash:/%s extension:" % self.imageName,
 				"session peer-supervisor copy installed-extensions boot-extensions"]

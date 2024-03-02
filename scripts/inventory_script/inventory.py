@@ -2,29 +2,48 @@
 Takes as input a CSV file with a large number of hosts and IP addresses and
 generates Ansible inventory entries in YAML format for use in Ansible playbooks
 """
-import os
+
 import csv
-from jinja2 import Environment, FileSystemLoader
+import os
+from jinja2 import Template
 
-env = Environment(loader=FileSystemLoader(searchpath="./"))
-template = env.get_template("./inventory.j2") # Jinja template to be applied
+# Ensure the output directory exists
+os.makedirs("./inventory_files", exist_ok=True)
 
-DATA_DIR = "./data_files"
-ENDPOINT_FILES_DIR = "./inventory_files"
-IN_FILE = f"{DATA_DIR}/inventory.csv"
-OUT_FILE = f"{ENDPOINT_FILES_DIR}/inventory.yml"
+# Jinja template as a string
+TEMPLATE_STR = """
+    "{{ switch }}":
+      ansible_host: "{{ mgmt_ip }}"
+      {%- if is_deployed == false %}
+      is_deployed: {{ is_deployed }}
+      {%- endif %}
+"""
 
-with open(IN_FILE, "r", encoding="utf-8")as f:
-    if os.path.exists(OUT_FILE):
-        os.remove(OUT_FILE) # Delete file if it exists
-    data = csv.reader(f, delimiter=",")
-    with open(OUT_FILE, "a", encoding="utf-8") as f:
-        f.write("  hosts:\n")
-    for row in data:
-        switch = row[0]
-        mgmt_ip = row[1]
+# Create a Jinja Template instance
+template = Template(TEMPLATE_STR)
 
-        with open(OUT_FILE, "a", encoding="utf-8") as f:
-            output = template.render(switch=switch, mgmt_ip=mgmt_ip)
+# Initialize an empty string to hold all rendered templates
+ALL_RENDERED = ""
 
-            f.write(output)
+# Path to the CSV file
+CSV_FILE_PATH = "./data_files/inventory.csv"
+
+# Read the CSV file
+with open(CSV_FILE_PATH, mode='r', newline='', encoding="utf-8") as csv_file:
+    reader = csv.DictReader(csv_file)
+
+    # Render the template for each row in the CSV
+    for row in reader:
+        # Convert `is_deployed` from string to boolean
+        row['is_deployed'] = row['is_deployed'].lower() in ['true', '1',
+                                                            't', 'y', 'yes']
+        ALL_RENDERED += template.render(row)
+
+# Output file path
+OUTPUT_FILE_PATH = "./inventory_files/inventory.yml"
+
+# Write the rendered template to the output file
+with open(OUTPUT_FILE_PATH, 'w', encoding="utf-8") as output_file:
+    output_file.write(ALL_RENDERED)
+
+print("Inventory CSV processed and saved to inventory.yml")

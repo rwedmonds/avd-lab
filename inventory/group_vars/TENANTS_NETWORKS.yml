@@ -1,7 +1,14 @@
 ---
+###########################################################
+# ------------------ Network Services ------------------- #
+###########################################################
+
 # DC1 Tenants Networks
 # Documentation of Tenant specific information - Vlans/VRFs
 tenants:
+# ------------------------------------------------------- #
+# Tenant A
+# ------------------------------------------------------- #
   # Tenant A Specific Information - VRFs / VLANs
   - name: "Tenant_A"
     mac_vrf_vni_base: 10000
@@ -99,7 +106,9 @@ tenants:
         name: Tenant_A_NFS
         tags:
           - "nfs"
-
+# ------------------------------------------------------- #
+# Tenant B
+# ------------------------------------------------------- #
   # Tenant B Specific Information - VRFs / VLANs
   - name: "Tenant_B"
     mac_vrf_vni_base: 20000
@@ -128,7 +137,9 @@ tenants:
               - "wan"
             enabled: true
             ip_address_virtual: "10.2.50.1/24"
-
+# ------------------------------------------------------- #
+# Tenant C
+# ------------------------------------------------------- #
   # Tenant C Specific Information - VRFs / VLANs
   - name: "Tenant_C"
     mac_vrf_vni_base: 30000

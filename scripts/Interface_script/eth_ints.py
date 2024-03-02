@@ -10,7 +10,8 @@ import os
 import json
 from jinja2 import Environment, FileSystemLoader
 
-env = Environment(loader=FileSystemLoader(searchpath="./"), trim_blocks=True, lstrip_blocks=True)
+env = Environment(loader=FileSystemLoader(searchpath="./"),
+                  trim_blocks=True, lstrip_blocks=True)
 # Ethernet interface template
 ethernet_template = env.get_template("./mgmt_eth_ints.j2")
 # Port-Channel interface template
@@ -18,8 +19,8 @@ port_channel_template = env.get_template("./mgmt_pc_ints.j2")
 
 DATA_DIR = "./data_files"
 
-for filename in os.listdir(DATA_DIR): # Iterate over all .json files
-    in_file = os.path.join(DATA_DIR, filename) # Complete path to file
+for filename in os.listdir(DATA_DIR):  # Iterate over all .json files
+    in_file = os.path.join(DATA_DIR, filename)  # Complete path to file
     # Create directory in host_vars with device name as the directory name
     output_dir = f"../../inventory/host_vars/{os.path.splitext(filename)[0]}"
     # Create the directory if it doesn't already exist
@@ -28,9 +29,9 @@ for filename in os.listdir(DATA_DIR): # Iterate over all .json files
     out_file = f"{output_dir}/{os.path.splitext(filename)[0]}.yml"
     # Delete existing file
     if os.path.exists(out_file):
-        os.remove(out_file) # Delete file if it exists
+        os.remove(out_file)  # Delete file if it exists
 
-    # Write the Port-Channel interface header prior to looping through json file    
+    # Write the Port-Channel interface header before looping through json file
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("""custom_structured_configuration_prefix: [mgmt_]
 
@@ -46,10 +47,12 @@ mgmt_port_channel_interfaces:
             description = port_channel["description"]
             mode = port_channel["mode"]
             allowed_vlans = port_channel["allowed_vlans"]
-            
+
             with open(out_file, "a", encoding="utf-8") as f:
-                output = port_channel_template.render(name=name, description=description,
-                    mode=mode, allowed_vlans=allowed_vlans)
+                output = port_channel_template.render(name=name,
+                                                      description=description,
+                                                      mode=mode,
+                                                      allowed_vlans=allowed_vlans)
                 f.write(output)
 
     # Write the Ethernet interface header prior to looping through json file
@@ -71,7 +74,11 @@ mgmt_ethernet_interfaces:
             channel_mode = interface["channel_mode"]
 
             with open(out_file, "a", encoding="utf-8") as f:
-                output = ethernet_template.render(name=name, description=description,
-                    mode=mode, shutdown=shutdown, access_vlan=access_vlan,
-                    channel_group=channel_group, channel_mode=channel_mode)
+                output = ethernet_template.render(name=name,
+                                                  description=description,
+                                                  mode=mode,
+                                                  shutdown=shutdown,
+                                                  access_vlan=access_vlan,
+                                                  channel_group=channel_group,
+                                                  channel_mode=channel_mode)
                 f.write(output)

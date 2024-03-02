@@ -1,0 +1,255 @@
+custom_structured_configuration_prefix: [mgmt_]
+
+# Port-Channel Interfaces
+mgmt_port_channel_interfaces:
+  Port-Channel12:
+    description: uplink to CMG01/CMG02
+    vlans: 1905
+    mode: trunk
+# Switched Interfaces
+mgmt_ethernet_interfaces:
+  Ethernet1:
+    description: AMusaDFW01Csw02-spine
+    mode: switchport
+    vlans: 1905
+  Ethernet2:
+    description: AMusaDFW01Csw04-spine
+    mode: switchport
+    vlans: 1905
+  Ethernet3:
+    description: AMusaDFW01Esw02-bdrlf
+    mode: switchport
+    vlans: 1905
+  Ethernet4:
+    description: AMusaDFW01Oca102
+    mode: switchport
+    vlans: 1905
+  Ethernet5:
+    description: AMusaDFW02Esw105-DR-DoD
+    mode: switchport
+    vlans: 1905
+  Ethernet6:
+    description: AMusaDFW02Esw106-DR-DoD
+    mode: switchport
+    vlans: 1905
+  Ethernet7:
+    description: AMusaDFW02Esw104-DR-DoD
+    mode: switchport
+    vlans: 1905
+  Ethernet8:
+    description: AMusaDFW02SFW13-DR-DOD
+    mode: switchport
+    vlans: 1905
+  Ethernet9:
+    description: AMusaDFW02SFW14-DR-DOD
+    mode: switchport
+    vlans: 1905
+  Ethernet10:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet11:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet12:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet13:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet14:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet15:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet16:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet17:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet18:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet19:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet20:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet21:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet22:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet23:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet24:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet25:
+    description: AMusaDFW02Csw02-DR-spine
+    mode: switchport
+    vlans: 1905
+  Ethernet26:
+    description: AMusaDFW02Esw02-DR-bdrlf
+    mode: switchport
+    vlans: 1905
+  Ethernet27:
+    description: AMusaDFW02Bsw02-DR-DCI
+    mode: switchport
+    vlans: 1905
+  Ethernet28:
+    description: AMusaDFW02Esw04-DR-svclf
+    mode: switchport
+    vlans: 1905
+  Ethernet29:
+    description: ESW204
+    mode: switchport
+    vlans: 1905
+  Ethernet30:
+    description: ESW104-eor10g
+    mode: switchport
+    vlans: 1905
+  Ethernet31:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet32:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet33:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet34:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet35:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet36:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet37:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet38:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet39:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet40:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet41:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet42:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet43:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet44:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet45:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet46:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet47:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet48:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet49:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet50:
+    description: SHUTDOWN WHILE NOT IN USE
+    mode: switchport
+    shutdown: true
+    vlans: 1905
+  Ethernet51:
+    description: AMusaDFW01Cmg01-mgmt
+    channel_group:
+      id: 102
+      mode: active
+  Ethernet52:
+    description: AMusaDFW01Cmg02-mgmt
+    channel_group:
+      id: 102
+      mode: active

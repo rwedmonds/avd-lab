@@ -1,4 +1,8 @@
 ---
+###########################################################
+# ------------------ Fabric Definition ------------------ #
+###########################################################
+
 # L3LS Fabric Values - update these values with caution
 # SOME CHANGES COULD BE DISRUPTIVE.
 fabric_name: "RE"
@@ -18,6 +22,19 @@ bgp_peer_groups:
     password: "q+VNViP5i4rVjW1cxFv2wA=="
   mlag_ipv4_underlay_peer:
     password: "vnEaG8gMeQf3d3cN6PktXQ=="
+
+# Override for vEOS Lab Caveats
+p2p_uplinks_mtu: 1500
+
+# Adjust default BFD values
+bfd_multihop:
+  interval: 1200
+  min_rx: 1200
+  multiplier: 3
+
+# ------------------------------------------------------- #
+# Node Type Keys
+# ------------------------------------------------------- #
 
 # Spine Switches
 spine:
@@ -181,11 +198,3 @@ l2leaf:
             - "Ethernet8"
             - "Ethernet8"
 
-# Override for vEOS Lab Caveats
-p2p_uplinks_mtu: 1500
-
-# Adjust default BFD values
-bfd_multihop:
-  interval: 1200
-  min_rx: 1200
-  multiplier: 3

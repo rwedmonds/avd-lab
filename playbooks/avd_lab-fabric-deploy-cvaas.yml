@@ -31,7 +31,7 @@
         name: eos_cli_config_gen
 
 - name: Configuration deployment with CVaaS
-  hosts: cvaas
+  hosts: "cvaas"
   connection: local
   gather_facts: false
   collections:

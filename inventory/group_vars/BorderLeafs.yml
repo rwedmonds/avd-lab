@@ -1,0 +1,37 @@
+csc_prefix_lists:
+  - name: "PL-LEAK-DEFAULT"
+    sequence_numbers:
+      - sequence: 10
+        action: "permit 0.0.0.0/0"
+  - name: "PL-LEAK-APP-ZONE"
+    sequence_numbers:
+      - sequence: 10
+        action: "permit 10.1.30.0/24"
+      - sequence: 20
+        action: "permit 10.1.31.0/24"
+
+csc_route_maps:
+  - name: "RM-LEAK-DEFAULT"
+    sequence_numbers:
+      - sequence: 10
+        type: "permit"
+        match:
+          - "ip address prefix-list PL-LEAK-DEFAULT"
+  - name: "RM-LEAK-APP-ZONE"
+    sequence_numbers:
+      - sequence: 10
+        type: "permit"
+        match:
+          - "ip address prefix-list PL-LEAK-APP-ZONE"
+
+csc_router_bgp:
+  vrfs:
+    - name: "Tenant_A_APP_Zone"
+      redistribute_routes:
+        - source_protocol: "static"
+          route_map: "RM-LEAK-DEFAULT"
+          include_leaked: true
+    - name: "Tenant_A_OP_Zone"
+      redistribute_routes:
+        - source_protocol: "static"
+          route_map: "RM-LEAK-APP-ZONE"

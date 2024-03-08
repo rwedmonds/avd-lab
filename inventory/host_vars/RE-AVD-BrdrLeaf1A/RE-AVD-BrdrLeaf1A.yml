@@ -5,3 +5,16 @@ csc_ethernet_interfaces:
     type: "routed"
     vrf: "Tenant_A_OP_Zone"
     ip_address: "192.168.20.23/23"
+
+router_general:
+  router_id:
+    ipv4: 192.168.254.25
+  vrfs:
+    - name: "Tenant_A_OP_Zone"
+      leak_routes:
+        - source_vrf: "Tenant_A_APP_Zone"
+          subscribe_policy: "RM-LEAK-APP-ZONE"
+    - name: "Tenant_A_APP_Zone"
+      leak_routes:
+        - source_vrf: "Tenant_A_OP_Zone"
+          subscribe_policy: "RM-LEAK-DEFAULT"

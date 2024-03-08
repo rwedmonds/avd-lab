@@ -57,10 +57,13 @@ all:
                   ansible_host: 192.168.255.17
                 "RE-AVD-Leaf2B":
                   ansible_host: 192.168.255.18
-                "RE-AVD-BrdrLeaf1A":
-                  ansible_host: 192.168.255.23
-                "RE-AVD-BrdrLeaf1B":
-                  ansible-host: 192.168.255.24
+              children:
+                BorderLeafs:
+                  hosts:
+                    "RE-AVD-BrdrLeaf1A":
+                      ansible_host: 192.168.255.24
+                    "RE-AVD-BrdrLeaf1B":
+                      ansible-host: 192.168.255.25
             L2Leafs:
               vars:
                 type: l2leaf

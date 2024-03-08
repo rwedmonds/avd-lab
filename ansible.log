@@ -23908,3 +23908,846 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2024-03-08 13:58:32,134 p=40013 u=avd n=ansible | RE-AVD-Spine4              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 2024-03-08 13:58:32,134 p=40013 u=avd n=ansible | cvaas                      : ok=10   changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
 2024-03-08 13:58:32,230 p=42220 u=avd n=ansible | shutdown complete
+2024-03-08 21:06:22,278 p=57 u=avd n=ansible | [WARNING]: Skipping unexpected key (RE-AVD-BrdrLeaf1A) in group (BorderLeafs), only "vars", "children" and "hosts" are valid
+
+2024-03-08 21:06:22,280 p=57 u=avd n=ansible | [WARNING]: Skipping unexpected key (RE-AVD-BrdrLeaf1B) in group (BorderLeafs), only "vars", "children" and "hosts" are valid
+
+2024-03-08 21:06:22,428 p=57 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:06:22,630 p=57 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:06:22,691 p=57 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:06:22,692 p=57 u=avd n=ansible | Use -v for details.
+2024-03-08 21:06:22,718 p=57 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:22,727 p=57 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:06:23,094 p=57 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:06:23,329 p=57 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:06:23,390 p=57 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:06:23,543 p=57 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:06:23,551 p=57 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate YAML file with hostvars (only for debugging)] *****************************************************************************************************************************************
+2024-03-08 21:06:24,175 p=57 u=avd n=ansible |  [ERROR]: User interrupted execution
+
+2024-03-08 21:06:48,300 p=299 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:06:48,502 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:06:48,549 p=299 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:06:48,549 p=299 u=avd n=ansible | Use -v for details.
+2024-03-08 21:06:48,571 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:48,576 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:06:48,920 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:06:49,157 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:06:49,212 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:06:49,411 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:06:49,418 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate YAML file with hostvars (only for debugging)] *****************************************************************************************************************************************
+2024-03-08 21:06:50,325 p=299 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:06:50,362 p=299 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:06:50,399 p=299 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:06:50,422 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:50,465 p=299 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:06:50,505 p=299 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:06:50,548 p=299 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:06:50,611 p=299 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:06:51,148 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:06:51,153 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:06:51,174 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:06:51,195 p=299 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:06:51,218 p=299 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:06:51,282 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:06:51,338 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:06:52,469 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:52,577 p=299 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:06:52,674 p=299 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:06:52,773 p=299 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:06:52,823 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:06:52,858 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:06:52,877 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:06:53,062 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:06:53,433 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:06:53,595 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:06:53,614 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:06:53,632 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:06:53,704 p=299 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:06:53,808 p=299 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:06:53,816 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:06:54,739 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:54,745 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:06:55,472 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:55,479 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:06:56,092 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:06:56,099 p=299 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:06:56,112 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:06:56,179 p=299 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:06:56,196 p=299 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:06:56,202 p=299 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:06:56,455 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:06:56,687 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:06:56,934 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:06:57,176 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:06:57,183 p=299 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:06:57,214 p=299 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:06:57,226 p=299 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:06:57,237 p=299 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:06:57,248 p=299 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:06:57,260 p=299 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:06:57,269 p=299 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:06:57,280 p=299 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:06:57,290 p=299 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:06:57,301 p=299 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:06:57,314 p=299 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:06:57,327 p=299 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:06:57,328 p=299 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:06:57,333 p=299 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:06:57,347 p=299 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:06:57,440 p=299 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:06:59,920 p=299 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:06:59,942 p=299 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:00,196 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:07:00,248 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:07:00,447 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:07:00,529 p=299 u=avd n=ansible | [WARNING]: [RE-AVD-BrdrLeaf1A]: 'Validation Error: router_general.router_id': Unexpected key(s) 'vrfs' found in dict.
+
+2024-03-08 21:07:00,699 p=299 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:07:00,712 p=299 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:07:00,823 p=299 u=avd n=ansible | [WARNING]: [RE-AVD-BrdrLeaf1B]: 'Validation Error: router_general.router_id': Unexpected key(s) 'vrfs' found in dict.
+
+2024-03-08 21:07:00,985 p=299 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:07:02,365 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:07:02,455 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:07:02,581 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:07:02,640 p=299 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:07:02,703 p=299 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:07:02,797 p=299 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:07:02,805 p=299 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:07:04,076 p=299 u=avd n=ansible |  [ERROR]: User interrupted execution
+
+2024-03-08 21:07:51,036 p=2171 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:07:51,229 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:07:51,296 p=2171 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:07:51,298 p=2171 u=avd n=ansible | Use -v for details.
+2024-03-08 21:07:51,324 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:51,329 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:07:51,683 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:07:51,925 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:07:51,971 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:07:52,165 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:07:52,171 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate YAML file with hostvars (only for debugging)] *****************************************************************************************************************************************
+2024-03-08 21:07:53,193 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:07:53,226 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:07:53,250 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:07:53,287 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:07:53,301 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:07:53,313 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:53,323 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:07:53,330 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:07:53,873 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:07:53,890 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:07:53,929 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:07:53,935 p=2171 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:07:54,036 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:07:54,076 p=2171 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:07:54,125 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:07:55,157 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:07:55,196 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:07:55,233 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:55,337 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:07:55,391 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:07:55,492 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:07:55,532 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:07:55,534 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:07:56,049 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:07:56,116 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:07:56,167 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:07:56,223 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:07:56,274 p=2171 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:07:56,337 p=2171 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:07:56,347 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:07:57,318 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:57,326 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:07:58,079 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:58,088 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:07:58,729 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:07:58,737 p=2171 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:07:58,750 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:07:58,819 p=2171 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:07:58,842 p=2171 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:07:58,848 p=2171 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:07:59,103 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:07:59,326 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:07:59,554 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:07:59,783 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:07:59,790 p=2171 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:07:59,821 p=2171 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:07:59,832 p=2171 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:07:59,844 p=2171 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:07:59,857 p=2171 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:07:59,869 p=2171 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:07:59,892 p=2171 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:07:59,911 p=2171 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:07:59,922 p=2171 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:07:59,933 p=2171 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:07:59,946 p=2171 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:07:59,960 p=2171 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:07:59,961 p=2171 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:07:59,964 p=2171 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:07:59,978 p=2171 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:08:00,079 p=2171 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:08:02,533 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:08:02,626 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:08:02,712 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:08:03,088 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:08:03,110 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:08:03,270 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:08:03,318 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:08:03,582 p=2171 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:08:04,733 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:08:04,859 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:08:04,982 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:08:05,088 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:08:05,090 p=2171 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:08:05,254 p=2171 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:08:05,261 p=2171 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:08:07,978 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:08:08,016 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:08:08,216 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:08:08,645 p=2171 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:08:08,809 p=2171 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:08:09,113 p=2171 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:08:09,252 p=2171 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:08:09,376 p=2171 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:08:10,320 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:08:10,495 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:08:10,559 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:08:10,777 p=2171 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:08:11,204 p=2171 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:08:11,211 p=2171 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:08:11,475 p=2171 u=avd n=ansible | PLAY [Configuration deployment with CVaaS] ************************************************************************************************************************************************************************************
+2024-03-08 21:08:11,484 p=2171 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create required output directories if not present] ***********************************************************************************************************************************
+2024-03-08 21:08:11,747 p=2171 u=avd n=ansible | ok: [cvaas -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs/cvp)
+2024-03-08 21:08:11,753 p=2171 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Verify Requirements] *****************************************************************************************************************************************************************
+2024-03-08 21:08:11,796 p=2171 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:08:11,796 p=2171 u=avd n=ansible | Use -v for details.
+2024-03-08 21:08:11,818 p=2171 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:08:11,822 p=2171 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:08:11,846 p=2171 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/main.yml for cvaas
+2024-03-08 21:08:11,851 p=2171 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] *********************************************************************************************************************************************************
+2024-03-08 21:08:12,507 p=2171 u=avd n=ansible | platform_type is set to eos
+2024-03-08 21:08:12,862 p=2171 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:08:12,869 p=2171 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Build DEVICES and CONTAINER definition for cvaas] ************************************************************************************************************************************
+2024-03-08 21:08:13,478 p=2171 u=avd n=ansible | changed: [cvaas -> localhost]
+2024-03-08 21:08:13,490 p=2171 u=avd n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************
+2024-03-08 21:08:13,491 p=2171 u=avd n=ansible | RE-AVD-BrdrLeaf1A          : ok=4    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,491 p=2171 u=avd n=ansible | RE-AVD-BrdrLeaf1B          : ok=4    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,491 p=2171 u=avd n=ansible | RE-AVD-L2Leaf1A            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,491 p=2171 u=avd n=ansible | RE-AVD-L2Leaf1B            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,492 p=2171 u=avd n=ansible | RE-AVD-L2Leaf2A            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,492 p=2171 u=avd n=ansible | RE-AVD-L2Leaf2B            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,492 p=2171 u=avd n=ansible | RE-AVD-Leaf1A              : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,493 p=2171 u=avd n=ansible | RE-AVD-Leaf1B              : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,493 p=2171 u=avd n=ansible | RE-AVD-Leaf2A              : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,493 p=2171 u=avd n=ansible | RE-AVD-Leaf2B              : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,493 p=2171 u=avd n=ansible | RE-AVD-Spine1              : ok=12   changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-03-08 21:08:13,494 p=2171 u=avd n=ansible | RE-AVD-Spine2              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,494 p=2171 u=avd n=ansible | RE-AVD-Spine3              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,494 p=2171 u=avd n=ansible | RE-AVD-Spine4              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:08:13,494 p=2171 u=avd n=ansible | cvaas                      : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-08 21:10:12,485 p=4552 u=avd n=ansible | persistent connection idle timeout triggered, timeout value is 120 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2024-03-08 21:10:12,604 p=4552 u=avd n=ansible | shutdown complete
+2024-03-08 21:15:45,138 p=4631 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:15:45,342 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:15:45,392 p=4631 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:15:45,392 p=4631 u=avd n=ansible | Use -v for details.
+2024-03-08 21:15:45,414 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:45,419 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:15:45,771 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:15:46,004 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:15:46,062 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:15:46,255 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:15:46,262 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate YAML file with hostvars (only for debugging)] *****************************************************************************************************************************************
+2024-03-08 21:15:47,168 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:15:47,211 p=4631 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:15:47,241 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:15:47,260 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:47,275 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:15:47,369 p=4631 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:15:47,424 p=4631 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:15:47,471 p=4631 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:15:47,957 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:15:47,968 p=4631 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:15:47,972 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:15:48,016 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:15:48,125 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:15:48,179 p=4631 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:15:48,228 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:15:49,199 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:49,294 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:15:49,382 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:15:49,487 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:15:49,554 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:15:49,633 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:15:49,676 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:15:49,679 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:15:50,172 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:15:50,245 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:15:50,267 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:15:50,320 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:15:50,377 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:15:50,443 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:15:50,469 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:15:51,397 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:51,404 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:15:52,165 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:52,174 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:15:52,808 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:52,818 p=4631 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:15:52,832 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:15:52,903 p=4631 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:15:52,924 p=4631 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:15:52,930 p=4631 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:15:53,189 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:15:53,417 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:15:53,657 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:15:53,886 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:15:53,893 p=4631 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:15:53,913 p=4631 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:15:53,923 p=4631 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:15:53,936 p=4631 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:15:53,948 p=4631 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:15:53,960 p=4631 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:15:53,972 p=4631 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:15:53,982 p=4631 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:15:53,993 p=4631 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:15:54,004 p=4631 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:15:54,015 p=4631 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:15:54,027 p=4631 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:15:54,040 p=4631 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:15:54,048 p=4631 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:15:54,065 p=4631 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:15:54,163 p=4631 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:15:56,645 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:15:56,783 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:15:56,801 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:15:56,811 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:15:56,851 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:15:57,195 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:15:57,306 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:15:57,411 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:15:58,673 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:15:58,840 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:15:58,898 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:15:58,971 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:15:59,038 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:15:59,047 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:15:59,054 p=4631 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:16:01,848 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:16:01,960 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:16:02,206 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:16:02,272 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:16:02,586 p=4631 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:16:02,961 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:16:03,245 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:16:03,353 p=4631 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:16:04,386 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:16:04,548 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:16:04,631 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:16:04,633 p=4631 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:16:05,294 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:16:05,412 p=4631 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:16:05,668 p=4631 u=avd n=ansible | PLAY [Configuration deployment with CVaaS] ************************************************************************************************************************************************************************************
+2024-03-08 21:16:05,679 p=4631 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create required output directories if not present] ***********************************************************************************************************************************
+2024-03-08 21:16:05,937 p=4631 u=avd n=ansible | ok: [cvaas -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs/cvp)
+2024-03-08 21:16:05,942 p=4631 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Verify Requirements] *****************************************************************************************************************************************************************
+2024-03-08 21:16:05,978 p=4631 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:16:05,979 p=4631 u=avd n=ansible | Use -v for details.
+2024-03-08 21:16:06,000 p=4631 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:16:06,004 p=4631 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:16:06,038 p=4631 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/main.yml for cvaas
+2024-03-08 21:16:06,043 p=4631 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] *********************************************************************************************************************************************************
+2024-03-08 21:16:06,675 p=4631 u=avd n=ansible | platform_type is set to eos
+2024-03-08 21:16:07,019 p=4631 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:16:07,025 p=4631 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Build DEVICES and CONTAINER definition for cvaas] ************************************************************************************************************************************
+2024-03-08 21:16:07,605 p=4631 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:16:07,616 p=4631 u=avd n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************
+2024-03-08 21:16:07,617 p=4631 u=avd n=ansible | RE-AVD-BrdrLeaf1A          : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,617 p=4631 u=avd n=ansible | RE-AVD-BrdrLeaf1B          : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,617 p=4631 u=avd n=ansible | RE-AVD-L2Leaf1A            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,618 p=4631 u=avd n=ansible | RE-AVD-L2Leaf1B            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,618 p=4631 u=avd n=ansible | RE-AVD-L2Leaf2A            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,618 p=4631 u=avd n=ansible | RE-AVD-L2Leaf2B            : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,618 p=4631 u=avd n=ansible | RE-AVD-Leaf1A              : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,619 p=4631 u=avd n=ansible | RE-AVD-Leaf1B              : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,619 p=4631 u=avd n=ansible | RE-AVD-Leaf2A              : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,619 p=4631 u=avd n=ansible | RE-AVD-Leaf2B              : ok=4    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,619 p=4631 u=avd n=ansible | RE-AVD-Spine1              : ok=12   changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-03-08 21:16:07,620 p=4631 u=avd n=ansible | RE-AVD-Spine2              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,620 p=4631 u=avd n=ansible | RE-AVD-Spine3              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,620 p=4631 u=avd n=ansible | RE-AVD-Spine4              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:16:07,620 p=4631 u=avd n=ansible | cvaas                      : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-08 21:17:07,435 p=7138 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:17:07,553 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Cleanup existing folders in /home/avd/projects/inventory/intended] ********************************************************************************************************************
+2024-03-08 21:17:08,002 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:08,008 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/intended] **********************************************************************************************************************************
+2024-03-08 21:17:08,267 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:08,272 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder structured_configs for structured YAML files] ***************************************************************************************************************************
+2024-03-08 21:17:08,518 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:08,523 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder configs for EOS Configuration files] ************************************************************************************************************************************
+2024-03-08 21:17:08,767 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:08,772 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder cvp for CVP structured YAML files] **************************************************************************************************************************************
+2024-03-08 21:17:09,025 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:09,031 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create documentation folder: documentation] *******************************************************************************************************************************************
+2024-03-08 21:17:09,272 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:09,277 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder fabric for Fabric documentation] ****************************************************************************************************************************************
+2024-03-08 21:17:09,516 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:09,522 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder devices for EOS documentation] ******************************************************************************************************************************************
+2024-03-08 21:17:09,841 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:09,848 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS post backup dir] *****************************************************************************************************
+2024-03-08 21:17:10,111 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:10,117 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS pre backup dir] ******************************************************************************************************
+2024-03-08 21:17:10,382 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:10,387 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder reports for EOS state report dir] ***************************************************************************************************************************************
+2024-03-08 21:17:10,652 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:10,657 p=7138 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create output directory for each EOS device] ******************************************************************************************************************************************
+2024-03-08 21:17:10,910 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:11,027 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:17:11,120 p=7138 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:17:11,121 p=7138 u=avd n=ansible | Use -v for details.
+2024-03-08 21:17:11,161 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:11,183 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:17:11,523 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:17:11,802 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:17:11,853 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:17:12,082 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:17:12,147 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:17:13,680 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:17:13,776 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:17:13,796 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:17:13,835 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:17:13,855 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:17:13,886 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:17:13,911 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:17:13,915 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:14,585 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:17:14,610 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:17:14,627 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:17:14,643 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:17:14,758 p=7138 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:17:14,843 p=7138 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:17:14,853 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:17:15,802 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:15,809 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:17:16,550 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:16,557 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:17:17,190 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:17,197 p=7138 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:17:17,209 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:17:17,274 p=7138 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:17:17,292 p=7138 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:17:17,298 p=7138 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:17:17,550 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:17:17,777 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:17:18,022 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:17:18,262 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:17:18,269 p=7138 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:17:18,288 p=7138 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:17:18,299 p=7138 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:17:18,311 p=7138 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:17:18,323 p=7138 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:17:18,334 p=7138 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:17:18,350 p=7138 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:17:18,367 p=7138 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:17:18,388 p=7138 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:17:18,402 p=7138 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:17:18,413 p=7138 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:17:18,426 p=7138 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:17:18,439 p=7138 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:17:18,444 p=7138 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:17:18,458 p=7138 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:17:18,545 p=7138 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:17:20,957 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:17:21,050 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:17:21,245 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:17:21,256 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:17:21,385 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:17:21,648 p=7138 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:17:21,824 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:17:21,832 p=7138 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:23,100 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:17:23,174 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:17:23,255 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:17:23,320 p=7138 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:17:23,422 p=7138 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:17:23,591 p=7138 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:17:23,599 p=7138 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:17:26,408 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:17:26,441 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:17:26,727 p=7138 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:17:26,845 p=7138 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:17:27,142 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:17:27,319 p=7138 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:17:27,479 p=7138 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:17:27,733 p=7138 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:17:28,859 p=7138 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:17:28,968 p=7138 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:17:29,049 p=7138 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:17:29,128 p=7138 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:17:29,368 p=7138 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:17:29,469 p=7138 u=avd n=ansible | ok: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:17:29,745 p=7138 u=avd n=ansible | PLAY [Configuration deployment with CVaaS] ************************************************************************************************************************************************************************************
+2024-03-08 21:17:29,753 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create required output directories if not present] ***********************************************************************************************************************************
+2024-03-08 21:17:30,003 p=7138 u=avd n=ansible | ok: [cvaas -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs/cvp)
+2024-03-08 21:17:30,008 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Verify Requirements] *****************************************************************************************************************************************************************
+2024-03-08 21:17:30,042 p=7138 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:17:30,043 p=7138 u=avd n=ansible | Use -v for details.
+2024-03-08 21:17:30,064 p=7138 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:17:30,068 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:17:30,088 p=7138 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/main.yml for cvaas
+2024-03-08 21:17:30,093 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] *********************************************************************************************************************************************************
+2024-03-08 21:17:30,709 p=7138 u=avd n=ansible | platform_type is set to eos
+2024-03-08 21:17:31,056 p=7138 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:17:31,064 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Build DEVICES and CONTAINER definition for cvaas] ************************************************************************************************************************************
+2024-03-08 21:17:31,731 p=7138 u=avd n=ansible | changed: [cvaas -> localhost]
+2024-03-08 21:17:31,735 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:17:31,763 p=7138 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/present.yml for cvaas
+2024-03-08 21:17:31,770 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Load CVP device information for cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:17:32,301 p=7138 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:17:32,305 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create configlets on CVP cvaas.] *****************************************************************************************************************************************************
+2024-03-08 21:17:41,012 p=7138 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:17:41,025 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute any configlet generated tasks to update configuration on cvaas] **************************************************************************************************************
+2024-03-08 21:17:41,093 p=7138 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:17:41,099 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Building Containers topology on cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:17:47,344 p=7138 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:17:47,350 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:17:47,402 p=7138 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:17:47,408 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Configure devices on cvaas] **********************************************************************************************************************************************************
+2024-03-08 21:17:59,229 p=7138 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:17:59,237 p=7138 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:17:59,269 p=7138 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:17:59,291 p=7138 u=avd n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************
+2024-03-08 21:17:59,292 p=7138 u=avd n=ansible | RE-AVD-BrdrLeaf1A          : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,292 p=7138 u=avd n=ansible | RE-AVD-BrdrLeaf1B          : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,293 p=7138 u=avd n=ansible | RE-AVD-L2Leaf1A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,293 p=7138 u=avd n=ansible | RE-AVD-L2Leaf1B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,293 p=7138 u=avd n=ansible | RE-AVD-L2Leaf2A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,294 p=7138 u=avd n=ansible | RE-AVD-L2Leaf2B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,294 p=7138 u=avd n=ansible | RE-AVD-Leaf1A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,294 p=7138 u=avd n=ansible | RE-AVD-Leaf1B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,295 p=7138 u=avd n=ansible | RE-AVD-Leaf2A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,295 p=7138 u=avd n=ansible | RE-AVD-Leaf2B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,295 p=7138 u=avd n=ansible | RE-AVD-Spine1              : ok=23   changed=7    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-03-08 21:17:59,296 p=7138 u=avd n=ansible | RE-AVD-Spine2              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,296 p=7138 u=avd n=ansible | RE-AVD-Spine3              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,296 p=7138 u=avd n=ansible | RE-AVD-Spine4              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:17:59,296 p=7138 u=avd n=ansible | cvaas                      : ok=10   changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-03-08 21:17:59,394 p=9337 u=avd n=ansible | shutdown complete
+2024-03-08 21:18:06,656 p=7052 u=avd n=ansible | persistent connection idle timeout triggered, timeout value is 120 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2024-03-08 21:18:06,772 p=7052 u=avd n=ansible | shutdown complete
+2024-03-08 21:19:25,499 p=9513 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:19:25,615 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Cleanup existing folders in /home/avd/projects/inventory/intended] ********************************************************************************************************************
+2024-03-08 21:19:26,045 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:26,050 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/intended] **********************************************************************************************************************************
+2024-03-08 21:19:26,306 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:26,311 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder structured_configs for structured YAML files] ***************************************************************************************************************************
+2024-03-08 21:19:26,583 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:26,594 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder configs for EOS Configuration files] ************************************************************************************************************************************
+2024-03-08 21:19:26,845 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:26,850 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder cvp for CVP structured YAML files] **************************************************************************************************************************************
+2024-03-08 21:19:27,132 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:27,137 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create documentation folder: documentation] *******************************************************************************************************************************************
+2024-03-08 21:19:27,495 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:27,509 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder fabric for Fabric documentation] ****************************************************************************************************************************************
+2024-03-08 21:19:27,816 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:27,821 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder devices for EOS documentation] ******************************************************************************************************************************************
+2024-03-08 21:19:28,122 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:28,137 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS post backup dir] *****************************************************************************************************
+2024-03-08 21:19:28,452 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:28,459 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS pre backup dir] ******************************************************************************************************
+2024-03-08 21:19:28,786 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:28,792 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder reports for EOS state report dir] ***************************************************************************************************************************************
+2024-03-08 21:19:29,095 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:29,101 p=9513 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create output directory for each EOS device] ******************************************************************************************************************************************
+2024-03-08 21:19:29,378 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:29,509 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:19:29,568 p=9513 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:19:29,569 p=9513 u=avd n=ansible | Use -v for details.
+2024-03-08 21:19:29,590 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:29,596 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:19:29,867 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:19:30,129 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:19:30,179 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:19:30,411 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:19:30,464 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:19:31,837 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:19:31,858 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:19:31,948 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:31,999 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:19:32,062 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:19:32,094 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:19:32,161 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:19:32,195 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:19:32,870 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:19:32,938 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:19:33,050 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:19:33,060 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:19:33,171 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:19:33,288 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:19:33,302 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:19:34,395 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:34,403 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:19:35,229 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:35,238 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:19:35,970 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:35,979 p=9513 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:19:35,991 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:19:36,093 p=9513 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:19:36,112 p=9513 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:19:36,118 p=9513 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:19:36,389 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:19:36,614 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:19:36,851 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:19:37,109 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:19:37,117 p=9513 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:19:37,165 p=9513 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:19:37,185 p=9513 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:19:37,199 p=9513 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:19:37,211 p=9513 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:19:37,223 p=9513 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:19:37,234 p=9513 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:19:37,245 p=9513 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:19:37,257 p=9513 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:19:37,268 p=9513 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:19:37,281 p=9513 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:19:37,294 p=9513 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:19:37,294 p=9513 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:19:37,298 p=9513 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:19:37,311 p=9513 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:19:37,399 p=9513 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:19:39,896 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:19:39,980 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:19:40,048 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:19:40,232 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:19:40,283 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:40,428 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:19:40,446 p=9513 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:19:40,558 p=9513 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:19:41,999 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:19:42,110 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:19:42,167 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:19:42,279 p=9513 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:19:42,337 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:19:42,445 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:19:42,452 p=9513 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:19:45,309 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:19:45,534 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:19:45,658 p=9513 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:19:45,742 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:19:46,080 p=9513 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:19:46,132 p=9513 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:19:46,352 p=9513 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:19:46,476 p=9513 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:19:47,781 p=9513 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:19:47,859 p=9513 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:19:47,924 p=9513 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:19:48,004 p=9513 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:19:48,384 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:19:48,530 p=9513 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:19:48,824 p=9513 u=avd n=ansible | PLAY [Configuration deployment with CVaaS] ************************************************************************************************************************************************************************************
+2024-03-08 21:19:48,833 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create required output directories if not present] ***********************************************************************************************************************************
+2024-03-08 21:19:49,126 p=9513 u=avd n=ansible | ok: [cvaas -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs/cvp)
+2024-03-08 21:19:49,131 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Verify Requirements] *****************************************************************************************************************************************************************
+2024-03-08 21:19:49,171 p=9513 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:19:49,172 p=9513 u=avd n=ansible | Use -v for details.
+2024-03-08 21:19:49,193 p=9513 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:19:49,197 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:19:49,218 p=9513 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/main.yml for cvaas
+2024-03-08 21:19:49,223 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] *********************************************************************************************************************************************************
+2024-03-08 21:19:49,900 p=9513 u=avd n=ansible | platform_type is set to eos
+2024-03-08 21:19:50,290 p=9513 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:19:50,297 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Build DEVICES and CONTAINER definition for cvaas] ************************************************************************************************************************************
+2024-03-08 21:19:50,945 p=9513 u=avd n=ansible | changed: [cvaas -> localhost]
+2024-03-08 21:19:50,949 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:19:50,972 p=9513 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/present.yml for cvaas
+2024-03-08 21:19:50,977 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Load CVP device information for cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:19:51,481 p=9513 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:19:51,486 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create configlets on CVP cvaas.] *****************************************************************************************************************************************************
+2024-03-08 21:19:59,765 p=9513 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:19:59,783 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute any configlet generated tasks to update configuration on cvaas] **************************************************************************************************************
+2024-03-08 21:19:59,856 p=9513 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:19:59,861 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Building Containers topology on cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:20:04,120 p=9513 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:20:04,147 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:20:04,256 p=9513 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:20:04,262 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Configure devices on cvaas] **********************************************************************************************************************************************************
+2024-03-08 21:20:15,640 p=9513 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:20:15,670 p=9513 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:20:15,755 p=9513 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:20:15,799 p=9513 u=avd n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************
+2024-03-08 21:20:15,800 p=9513 u=avd n=ansible | RE-AVD-BrdrLeaf1A          : ok=3    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,800 p=9513 u=avd n=ansible | RE-AVD-BrdrLeaf1B          : ok=3    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,801 p=9513 u=avd n=ansible | RE-AVD-L2Leaf1A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,802 p=9513 u=avd n=ansible | RE-AVD-L2Leaf1B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,802 p=9513 u=avd n=ansible | RE-AVD-L2Leaf2A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,803 p=9513 u=avd n=ansible | RE-AVD-L2Leaf2B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,803 p=9513 u=avd n=ansible | RE-AVD-Leaf1A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,804 p=9513 u=avd n=ansible | RE-AVD-Leaf1B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,804 p=9513 u=avd n=ansible | RE-AVD-Leaf2A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,805 p=9513 u=avd n=ansible | RE-AVD-Leaf2B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,805 p=9513 u=avd n=ansible | RE-AVD-Spine1              : ok=23   changed=7    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-03-08 21:20:15,806 p=9513 u=avd n=ansible | RE-AVD-Spine2              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,806 p=9513 u=avd n=ansible | RE-AVD-Spine3              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,807 p=9513 u=avd n=ansible | RE-AVD-Spine4              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:20:15,808 p=9513 u=avd n=ansible | cvaas                      : ok=10   changed=3    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-03-08 21:20:15,901 p=11720 u=avd n=ansible | shutdown complete
+2024-03-08 21:24:48,527 p=11896 u=avd n=ansible | PLAY [Manage Arista EOS EVPN/VXLAN Configuration] *****************************************************************************************************************************************************************************
+2024-03-08 21:24:48,635 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Cleanup existing folders in /home/avd/projects/inventory/intended] ********************************************************************************************************************
+2024-03-08 21:24:49,064 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:49,070 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/intended] **********************************************************************************************************************************
+2024-03-08 21:24:49,324 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:49,330 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder structured_configs for structured YAML files] ***************************************************************************************************************************
+2024-03-08 21:24:49,598 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:49,603 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder configs for EOS Configuration files] ************************************************************************************************************************************
+2024-03-08 21:24:49,849 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:49,854 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder cvp for CVP structured YAML files] **************************************************************************************************************************************
+2024-03-08 21:24:50,105 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:50,110 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create documentation folder: documentation] *******************************************************************************************************************************************
+2024-03-08 21:24:50,355 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:50,360 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder fabric for Fabric documentation] ****************************************************************************************************************************************
+2024-03-08 21:24:50,613 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:50,618 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder devices for EOS documentation] ******************************************************************************************************************************************
+2024-03-08 21:24:50,865 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:50,871 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS post backup dir] *****************************************************************************************************
+2024-03-08 21:24:51,112 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:51,117 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder /home/avd/projects/inventory/config_backup for EOS pre backup dir] ******************************************************************************************************
+2024-03-08 21:24:51,374 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:51,380 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create folder reports for EOS state report dir] ***************************************************************************************************************************************
+2024-03-08 21:24:51,626 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:51,631 p=11896 u=avd n=ansible | TASK [arista.avd.build_output_folders : Create output directory for each EOS device] ******************************************************************************************************************************************
+2024-03-08 21:24:51,880 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:51,982 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Verify Requirements] ***************************************************************************************************************************************************************************
+2024-03-08 21:24:52,018 p=11896 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:24:52,019 p=11896 u=avd n=ansible | Use -v for details.
+2024-03-08 21:24:52,040 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:52,045 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Create required output directories if not present] *********************************************************************************************************************************************
+2024-03-08 21:24:52,311 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:24:52,546 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/fabric)
+2024-03-08 21:24:52,589 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Set eos_designs facts] *************************************************************************************************************************************************************************
+2024-03-08 21:24:52,785 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:24:52,838 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate device configuration in structured format] ********************************************************************************************************************************************
+2024-03-08 21:24:54,140 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:54,165 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:24:54,200 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:24:54,247 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:24:54,334 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:24:54,400 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:24:54,405 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:24:54,466 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:24:55,155 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:24:55,170 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:24:55,199 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:24:55,277 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:24:55,380 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:24:55,386 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:24:55,395 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric documentation] *****************************************************************************************************************************************************************
+2024-03-08 21:24:56,355 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:56,362 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric point-to-point links summary in csv format.] ***********************************************************************************************************************************
+2024-03-08 21:24:57,146 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:57,154 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Generate fabric topology in csv format.] *******************************************************************************************************************************************************
+2024-03-08 21:24:57,778 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:24:57,785 p=11896 u=avd n=ansible | TASK [arista.avd.eos_designs : Remove avd_switch_facts] ***********************************************************************************************************************************************************************
+2024-03-08 21:24:57,797 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1]
+2024-03-08 21:24:57,879 p=11896 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Verify Requirements] ********************************************************************************************************************************************************************
+2024-03-08 21:24:57,896 p=11896 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:24:57,902 p=11896 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Create required output directories if not present] **************************************************************************************************************************************
+2024-03-08 21:24:58,167 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs)
+2024-03-08 21:24:58,413 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation)
+2024-03-08 21:24:58,642 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/intended/configs)
+2024-03-08 21:24:58,868 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost] => (item=/home/avd/projects/inventory/documentation/devices)
+2024-03-08 21:24:58,875 p=11896 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Include device intended structure configuration variables] ******************************************************************************************************************************
+2024-03-08 21:24:58,908 p=11896 u=avd n=ansible | skipping: [RE-AVD-Spine1]
+2024-03-08 21:24:58,919 p=11896 u=avd n=ansible | skipping: [RE-AVD-Spine2]
+2024-03-08 21:24:58,930 p=11896 u=avd n=ansible | skipping: [RE-AVD-Spine3]
+2024-03-08 21:24:58,942 p=11896 u=avd n=ansible | skipping: [RE-AVD-Spine4]
+2024-03-08 21:24:58,954 p=11896 u=avd n=ansible | skipping: [RE-AVD-Leaf1A]
+2024-03-08 21:24:58,963 p=11896 u=avd n=ansible | skipping: [RE-AVD-Leaf1B]
+2024-03-08 21:24:58,974 p=11896 u=avd n=ansible | skipping: [RE-AVD-Leaf2A]
+2024-03-08 21:24:58,984 p=11896 u=avd n=ansible | skipping: [RE-AVD-Leaf2B]
+2024-03-08 21:24:58,995 p=11896 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1A]
+2024-03-08 21:24:59,006 p=11896 u=avd n=ansible | skipping: [RE-AVD-L2Leaf1B]
+2024-03-08 21:24:59,018 p=11896 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2A]
+2024-03-08 21:24:59,019 p=11896 u=avd n=ansible | skipping: [RE-AVD-L2Leaf2B]
+2024-03-08 21:24:59,023 p=11896 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1A]
+2024-03-08 21:24:59,035 p=11896 u=avd n=ansible | skipping: [RE-AVD-BrdrLeaf1B]
+2024-03-08 21:24:59,123 p=11896 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate eos intended configuration] ****************************************************************************************************************************************************
+2024-03-08 21:25:01,637 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:25:01,712 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:25:01,726 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:25:01,759 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:25:02,507 p=11896 u=avd n=ansible | changed: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:25:02,797 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:25:02,871 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:25:02,940 p=11896 u=avd n=ansible | changed: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:25:03,973 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:25:04,023 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:25:04,085 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:25:04,148 p=11896 u=avd n=ansible | changed: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:25:04,536 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:25:04,638 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:25:04,646 p=11896 u=avd n=ansible | TASK [arista.avd.eos_cli_config_gen : Generate device documentation] **********************************************************************************************************************************************************
+2024-03-08 21:25:07,619 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine3 -> localhost]
+2024-03-08 21:25:07,690 p=11896 u=avd n=ansible | ok: [RE-AVD-Leaf2B -> localhost]
+2024-03-08 21:25:07,766 p=11896 u=avd n=ansible | ok: [RE-AVD-Leaf1A -> localhost]
+2024-03-08 21:25:07,943 p=11896 u=avd n=ansible | ok: [RE-AVD-Leaf2A -> localhost]
+2024-03-08 21:25:08,436 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine4 -> localhost]
+2024-03-08 21:25:08,497 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine2 -> localhost]
+2024-03-08 21:25:08,506 p=11896 u=avd n=ansible | ok: [RE-AVD-Spine1 -> localhost]
+2024-03-08 21:25:08,721 p=11896 u=avd n=ansible | ok: [RE-AVD-Leaf1B -> localhost]
+2024-03-08 21:25:09,933 p=11896 u=avd n=ansible | ok: [RE-AVD-L2Leaf1A -> localhost]
+2024-03-08 21:25:09,941 p=11896 u=avd n=ansible | ok: [RE-AVD-L2Leaf1B -> localhost]
+2024-03-08 21:25:10,085 p=11896 u=avd n=ansible | ok: [RE-AVD-L2Leaf2A -> localhost]
+2024-03-08 21:25:10,344 p=11896 u=avd n=ansible | ok: [RE-AVD-L2Leaf2B -> localhost]
+2024-03-08 21:25:10,650 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1A -> localhost]
+2024-03-08 21:25:10,780 p=11896 u=avd n=ansible | changed: [RE-AVD-BrdrLeaf1B -> localhost]
+2024-03-08 21:25:11,043 p=11896 u=avd n=ansible | PLAY [Configuration deployment with CVaaS] ************************************************************************************************************************************************************************************
+2024-03-08 21:25:11,053 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create required output directories if not present] ***********************************************************************************************************************************
+2024-03-08 21:25:11,312 p=11896 u=avd n=ansible | ok: [cvaas -> localhost] => (item=/home/avd/projects/inventory/intended/structured_configs/cvp)
+2024-03-08 21:25:11,317 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Verify Requirements] *****************************************************************************************************************************************************************
+2024-03-08 21:25:11,385 p=11896 u=avd n=ansible | AVD version 4.6.0
+2024-03-08 21:25:11,385 p=11896 u=avd n=ansible | Use -v for details.
+2024-03-08 21:25:11,402 p=11896 u=avd n=ansible | ok: [cvaas -> localhost]
+2024-03-08 21:25:11,409 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:25:11,450 p=11896 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/main.yml for cvaas
+2024-03-08 21:25:11,457 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Generate intended variables] *********************************************************************************************************************************************************
+2024-03-08 21:25:12,066 p=11896 u=avd n=ansible | platform_type is set to eos
+2024-03-08 21:25:12,384 p=11896 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:25:12,391 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Build DEVICES and CONTAINER definition for cvaas] ************************************************************************************************************************************
+2024-03-08 21:25:13,005 p=11896 u=avd n=ansible | changed: [cvaas -> localhost]
+2024-03-08 21:25:13,008 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Start creation/update process.] ******************************************************************************************************************************************************
+2024-03-08 21:25:13,032 p=11896 u=avd n=ansible | included: /home/avd/.ansible/collections/ansible_collections/arista/avd/roles/eos_config_deploy_cvp/tasks/v3/present.yml for cvaas
+2024-03-08 21:25:13,037 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Load CVP device information for cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:25:13,578 p=11896 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:25:13,583 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Create configlets on CVP cvaas.] *****************************************************************************************************************************************************
+2024-03-08 21:25:21,145 p=11896 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:25:21,153 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute any configlet generated tasks to update configuration on cvaas] **************************************************************************************************************
+2024-03-08 21:25:21,209 p=11896 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:25:21,214 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Building Containers topology on cvaas] ***********************************************************************************************************************************************
+2024-03-08 21:25:25,224 p=11896 u=avd n=ansible | ok: [cvaas]
+2024-03-08 21:25:25,232 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:25:25,265 p=11896 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:25:25,270 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Configure devices on cvaas] **********************************************************************************************************************************************************
+2024-03-08 21:25:36,143 p=11896 u=avd n=ansible | changed: [cvaas]
+2024-03-08 21:25:36,156 p=11896 u=avd n=ansible | TASK [arista.avd.eos_config_deploy_cvp : Execute pending tasks on cvaas] ******************************************************************************************************************************************************
+2024-03-08 21:25:36,216 p=11896 u=avd n=ansible | skipping: [cvaas]
+2024-03-08 21:25:36,232 p=11896 u=avd n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************************
+2024-03-08 21:25:36,232 p=11896 u=avd n=ansible | RE-AVD-BrdrLeaf1A          : ok=3    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,233 p=11896 u=avd n=ansible | RE-AVD-BrdrLeaf1B          : ok=3    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,233 p=11896 u=avd n=ansible | RE-AVD-L2Leaf1A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,233 p=11896 u=avd n=ansible | RE-AVD-L2Leaf1B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,234 p=11896 u=avd n=ansible | RE-AVD-L2Leaf2A            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,234 p=11896 u=avd n=ansible | RE-AVD-L2Leaf2B            : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,234 p=11896 u=avd n=ansible | RE-AVD-Leaf1A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,234 p=11896 u=avd n=ansible | RE-AVD-Leaf1B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,235 p=11896 u=avd n=ansible | RE-AVD-Leaf2A              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,235 p=11896 u=avd n=ansible | RE-AVD-Leaf2B              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,235 p=11896 u=avd n=ansible | RE-AVD-Spine1              : ok=23   changed=7    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-03-08 21:25:36,236 p=11896 u=avd n=ansible | RE-AVD-Spine2              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,236 p=11896 u=avd n=ansible | RE-AVD-Spine3              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,236 p=11896 u=avd n=ansible | RE-AVD-Spine4              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-03-08 21:25:36,236 p=11896 u=avd n=ansible | cvaas                      : ok=10   changed=3    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-03-08 21:25:36,334 p=14103 u=avd n=ansible | shutdown complete

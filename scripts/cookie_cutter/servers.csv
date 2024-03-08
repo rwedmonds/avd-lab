@@ -1,7 +1,0 @@
-server_name,description,rack_name,switch_hostname,switch_port,profile,port_channel_mode
-ntx01,ntx01_to_leaf1a,pod1,avd-test-Leaf1A,Ethernet8,nutanix,active
-ntx01,ntx01_to_leaf1b,pod1,avd-test-Leaf1B,Ethernet8,nutanix,active
-exa01,ntx01_to_leaf1a,pod1,avd-test-Leaf1A,Ethernet7,exadata,active
-exa01,ntx01_to_leaf1b,pod1,avd-test-Leaf1A,Ethernet7,exadata,active
-ntx02,ntx01_to_leaf2a,pod1,avd-test-Leaf2A,Ethernet7,nutanix,active
-ntx02,ntx01_to_leaf2b,pod1,avd-test-Leaf2B,Ethernet7,nutanix,active

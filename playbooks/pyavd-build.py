@@ -12,6 +12,9 @@ import pyavd
 
 
 def build_config(task: Task, eos_designs, avd_facts):
+    """
+    Build configs
+    """
     structured_config = pyavd.get_device_structured_config(
         task.host.name, eos_designs[task.host.name], avd_facts=avd_facts)
     config = pyavd.get_device_config(structured_config)
@@ -21,6 +24,9 @@ def build_config(task: Task, eos_designs, avd_facts):
 
 
 def pull_config(task: Task):
+    """
+    Pull configs
+    """
     with open(f'inventory/intended/configs/{task.host.name}.cfg', "r",
               encoding="utf-8") as f:
         task.host.data["running-config"] = f.read()
@@ -28,6 +34,9 @@ def pull_config(task: Task):
 
 
 def diff_config(task: Task):
+    """
+    Diff configs
+    """
     changed = False
     diff = ""
     for line in difflib.unified_diff(task.host.data["running-config"].split("\n"), task.host.data["designed-config"].split("\n"), fromfile='running-config', tofile='designed-config', lineterm=''):
@@ -37,6 +46,9 @@ def diff_config(task: Task):
 
 
 def deploy_config(task: Task):
+    """
+    Deploy configs
+    """
     with open(f'inventory/intended/configs/{task.host.name}.cfg', "w",
               encoding="utf-8") as f:
         f.write(task.host.data["designed-config"])
@@ -44,6 +56,9 @@ def deploy_config(task: Task):
 
 
 def config_management(task: Task, eos_designs, avd_facts):
+    """
+    Manage configs
+    """
     task.run(task=build_config, eos_designs=eos_designs, avd_facts=avd_facts)
 
     # task.run(task=pull_config)

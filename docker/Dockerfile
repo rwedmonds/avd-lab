@@ -65,7 +65,7 @@ ENTRYPOINT [ "/bin/entrypoint.sh" ]
 COPY ./gitconfig /home/avd/gitconfig-avd-base-template
 
 # change this for every release
-ARG _AVD_VERSION=4.6.0-dev2
+ARG _AVD_VERSION=4.6.0
 ARG _CVP_VERSION=3.10.1
 ARG _RELEASE_DATE
 

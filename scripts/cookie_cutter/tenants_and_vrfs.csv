@@ -1,5 +1,0 @@
-tenant_name,tenant_mac_vrf_base_vni,ip_vrf_name,ip_vrf_vni,vrf_diagnostic_loopback_number,vrf_diagnostic_loopback_ip_range
-redmonds,20000,prod,1,100,10.1.255.0/24
-redmonds,20000,nonprod,3,300,10.3.255.0/24
-redmonds,20000,pdmz,2,400,10.4.255.0/24
-redmonds,20000,npdmz,4,500,10.5.255.0/24

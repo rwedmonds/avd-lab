@@ -3,7 +3,10 @@
 # ------------------- Global Settings ------------------- #
 ###########################################################
 
-# Validation lab
+# ------------------------------------------------------- #
+# Prefix for custom_structured_configuration
+# ------------------------------------------------------- #
+custom_structured_configuration_prefix: csc_
 
 # ------------------------------------------------------- #
 # Management API HTTP
@@ -19,12 +22,11 @@ management_api_http:
 # ------------------------------------------------------- #
 # Local Users
 # ------------------------------------------------------- #
-
 local_users:
   "admin":
     privilege: 15
     role: "network-admin"
-    sha512_password: "$6$Df86J4/SFMDE3/1K$Hef4KstdoxNDaami37cBquTWOTplC.miMPjXVgQxMe92.e5wxlnXOLlebgPj8Fz1KO0za/RCO7ZIs4Q6Eiq1g1"
+    sha512_password: "$6$RWWNi/U4IjK9U3Nv$/bMitcVhMFiqvUIJtAAeTOTSyvqAHK.XpJi12NI0.YTJlzbl9FiCGi2EDfIWo14Evi/sj5i1Rxspmkbso0Tun1"
 
   "cvpadmin":
     privilege: 15
@@ -43,9 +45,15 @@ local_users:
     ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA/FAQMSaka0eojd51yDc+Uf59FvJdewt2SJp1mU4yf2 redmonds@redmonds"
 
 # ------------------------------------------------------- #
+# Enable Password
+# ------------------------------------------------------- #
+enable_password:
+  hash_algorithm: "sha512"
+  key: "$6$Q5Pg0k.kTwgJ89NX$j0438CJoJx2RiuCsygN8GtpTrWPNWlZQIytcMQQRhLhv7oK0HNaXgbhDKsUUksrL22UDMx9tMfE9ufd0YJmkx1"
+
+# ------------------------------------------------------- #
 # TerminAttr Config
 # ------------------------------------------------------- #
-
 daemon_terminattr:
   # Address of the gRPC server on CloudVision
   # TCP 9910 is used for on-prem CV
@@ -60,18 +68,21 @@ daemon_terminattr:
   ingestexclude: "/Sysdb/cell/1/agent,/Sysdb/cell/2/agent"
   # Exclude paths from the shared memory table
   smashexcludes: "ale,flexCounter,hardware,kni,pulse,strata"
+  disable_aaa: true
 
 # ------------------------------------------------------- #
 # OOB Management
 # ------------------------------------------------------- #
-
 management_interfaces:
   - name: "Management1"
     shutdown: false
     vrf: "MGMT"
+    type: "oob"
     gateway: "192.168.255.1"
 
-static_routes:
+mgmt_vrf_routing: true
+
+csc_static_routes:
   - vrf: "MGMT"
     destination_address_prefix: "0.0.0.0/0"
     gateway: "192.168.255.1"
@@ -79,7 +90,6 @@ static_routes:
 # ------------------------------------------------------- #
 # DNS Servers
 # ------------------------------------------------------- #
-
 ip_name_servers:
   - ip_address: "192.168.255.1"
     vrf: "MGMT"
@@ -89,7 +99,6 @@ dns_domain: "slacker.net"
 # ------------------------------------------------------- #
 # NTP Servers
 # ------------------------------------------------------- #
-
 # NTP Servers IP or DNS name, first NTP server will be preferred,
 # and sourced from Management VRF
 
@@ -110,14 +119,11 @@ clock:
 # ------------------------------------------------------- #
 # RADIUS
 # ------------------------------------------------------- #
-
 radius_server:
   hosts:
-    - host: freeradius.slacker.net
+    - host: jumpbox.slacker.net
       vrf: MGMT
       key: 15331905173E2A1629373C3700
-      key_type: 7
-    - host: jumpbox.slacker.net
 
 ip_radius_source_interfaces:
   - name: Management1
@@ -126,23 +132,22 @@ ip_radius_source_interfaces:
 # ------------------------------------------------------- #
 # AAA
 # ------------------------------------------------------- #
-
 aaa_server_groups:
   - name: FreeRadius
     type: radius
     servers:
-      - server: freeradius.slacker.net
       - server: jumpbox.slacker.net
+        vrf: MGMT
 
 aaa_authentication:
   login:
     default: group FreeRadius local
   enable:
-    default: group FreeRadius local
+    default: none
 
 aaa_authorization:
   exec:
-    default: group FreeRadius
+    default: local group FreeRadius
   config_commands: false
   serial_console: false
 
@@ -172,9 +177,14 @@ aaa_accounting:
         logging: true
 
 # ------------------------------------------------------- #
+# Raw EOS CLI commands
+# ------------------------------------------------------- #
+eos_cli:
+  no schedule tech-support
+
+# ------------------------------------------------------- #
 # Banners
 # ------------------------------------------------------- #
-
 banners:
   login: |
     _________________________________________

@@ -1,6 +1,6 @@
 .venv
 inventory/documentation
-inventory/intended
+inventory/intended/structured_configs
 inventory/config_backup
 inventory/reports
 inventory/snapshots

@@ -6,9 +6,17 @@ csc_prefix_lists:
   - name: "PL-LEAK-APP-ZONE"
     sequence_numbers:
       - sequence: 10
-        action: "permit 10.1.30.0/24"
+        action: "permit 10.1.30.0/24 le 32"
       - sequence: 20
-        action: "permit 10.1.31.0/24"
+        action: "permit 10.1.31.0/24 le 32"
+      - sequence: 30
+        action: "permit 10.255.2.0/24 eq 32"
+  - name: "PL-LEAK-OP-ZONE"
+    sequence_numbers:
+      - sequence: 10
+        action: "permit 10.1.10.0/24 le 32"
+      - sequence: 20
+        action: "permit 10.255.1.0/24 eq 32"
 
 csc_route_maps:
   - name: "RM-LEAK-DEFAULT"
@@ -17,12 +25,16 @@ csc_route_maps:
         type: "permit"
         match:
           - "ip address prefix-list PL-LEAK-DEFAULT"
-  - name: "RM-LEAK-APP-ZONE"
+  - name: "RM-LEAK-VRFS"
     sequence_numbers:
       - sequence: 10
         type: "permit"
         match:
           - "ip address prefix-list PL-LEAK-APP-ZONE"
+      - sequence: 20
+        type: "permit"
+        match:
+          - "ip address prefix-list PL-LEAK-OP-ZONE"
 
 csc_router_bgp:
   vrfs:
@@ -34,4 +46,25 @@ csc_router_bgp:
     - name: "Tenant_A_OP_Zone"
       redistribute_routes:
         - source_protocol: "static"
-          route_map: "RM-LEAK-APP-ZONE"
+          route_map: "RM-LEAK-DEFAULT"
+          include_leaked: true
+    - name: "Internet"
+      redistribute_routes:
+        - source_protocol: "static"
+
+csc_router_general:
+  vrfs:
+    - name: "Internet"
+      leak_routes:
+        - source_vrf: "Tenant_A_APP_Zone"
+          subscribe_policy: "RM-LEAK-VRFS"
+        - source_vrf: "Tenant_A_OP_Zone"
+          subscribe_policy: "RM-LEAK-VRFS"
+    - name: "Tenant_A_APP_Zone"
+      leak_routes:
+        - source_vrf: "Internet"
+          subscribe_policy: "RM-LEAK-DEFAULT"
+    - name: "Tenant_A_OP_Zone"
+      leak_routes:
+        - source_vrf: "Internet"
+          subscribe_policy: "RM-LEAK-DEFAULT"

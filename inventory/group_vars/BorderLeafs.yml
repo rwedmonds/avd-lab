@@ -1,3 +1,11 @@
+#########################################################
+# ------------- Borderleaf Route Leaking -------------- #
+#########################################################
+
+# ------------------------------------------------------- #
+# Prefix-lists
+# ------------------------------------------------------- #
+
 csc_prefix_lists:
   - name: "PL-LEAK-DEFAULT"
     sequence_numbers:
@@ -18,6 +26,10 @@ csc_prefix_lists:
       - sequence: 20
         action: "permit 10.255.1.0/24 eq 32"
 
+# ------------------------------------------------------- #
+# Route-maps
+# ------------------------------------------------------- #
+
 csc_route_maps:
   - name: "RM-LEAK-DEFAULT"
     sequence_numbers:
@@ -36,6 +48,10 @@ csc_route_maps:
         match:
           - "ip address prefix-list PL-LEAK-OP-ZONE"
 
+# ------------------------------------------------------- #
+# BGP
+# ------------------------------------------------------- #
+
 csc_router_bgp:
   vrfs:
     - name: "Tenant_A_APP_Zone"
@@ -51,6 +67,10 @@ csc_router_bgp:
     - name: "Internet"
       redistribute_routes:
         - source_protocol: "static"
+
+# ------------------------------------------------------- #
+# Router General
+# ------------------------------------------------------- #
 
 csc_router_general:
   vrfs:

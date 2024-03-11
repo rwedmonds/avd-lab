@@ -4,8 +4,11 @@
 <img style="background-color:white;" src="./data/avd-lab.png"> </br>
 </p>
 
+## Fabric Documentation
 
-## Management Interface
+[ ... Can be found here](inventory/documentation/fabric/)
+
+## Management Interfaces
 
 - Interface: Management1
 - IP Network: 192.168.255.0/24

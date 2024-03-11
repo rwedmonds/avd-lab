@@ -6,7 +6,7 @@
 
 ## Fabric Documentation
 
-[ ... Can be found here](inventory/documentation/fabric/)
+[ ... Can be found here](https://github.com/rwedmonds/avd-lab/blob/main/inventory/documentation/fabric/RE-documentation.md)
 
 ## Management Interfaces
 

@@ -1,0 +1,13 @@
+csc_ethernet_interfaces:
+  - name: "Ethernet1"
+    description: "RE-AVD-LEAF1A_Ethernet7"
+    shutdown: false
+    channel_group:
+      id: 1
+      mode: "on"
+  - name: "Ethernet2"
+    description: "RE-AVD-LEAF1B_Ethernet7"
+    shutdown: false
+    channel_group:
+      id: 1
+      mode: "on"

@@ -4,25 +4,25 @@
 ###########################################################
 
 port_profiles:
-  - profile: TENANT_A_VL110_MLAG
+  - profile: "APP_ZONE_VL110_MLAG"
     mode: access
     vlans: "110"
     port_channel:
       mode: "on"
 
-  - profile: TENANT_A_VL1191_MLAG
+  - profile: "OP_ZONE_VL120_MLAG"
     mode: access
-    vlans: "1191"
+    vlans: "120"
     port_channel:
       mode: "on"
 
-  - profile: TENANT_A_VL1191_SINGLE
+  - profile: "OP_ZONE_VL120_SINGLE"
     mode: access
-    vlans: "1191"
+    vlans: "120"
 
-  - profile: TENANT_A_VL130_MLAG
+  - profile: "OP_ZONE_VL121_MLAG"
     mode: access
-    vlans: "130"
+    vlans: "121"
     port_channel:
       mode: "on"
 
@@ -31,61 +31,64 @@ port_profiles:
 ###########################################################
 
 servers:
+
   # ----------------------------------------------------- #
   # Site1 RACKA Endpoints
   # ----------------------------------------------------- #
-  - name: Host1
-    rack: RackA
-    adapters:
-      - switch_ports:
-          - Ethernet5
-          - Ethernet5
-        switches:
-          - RE-AVD-L2Leaf1A
-          - RE-AVD-L2Leaf1B
-        endpoint_ports:
-          - Ethernet1
-          - Ethernet2
-        profile: TENANT_A_VL110_MLAG
 
-  - name: vl1191_host
-    rack: RackA
+  - name: "Host1"
+    rack: "RackA"
     adapters:
       - switch_ports:
-          - Ethernet6
+          - "Ethernet5"
+          - "Ethernet5"
         switches:
-          - RE-AVD-L2Leaf1A
+          - "RE-AVD-L2Leaf1A"
+          - "RE-AVD-L2Leaf1B"
+        endpoint_ports:
+          - "Ethernet1"
+          - "Ethernet2"
+        profile: "APP_ZONE_VL110_MLAG"
+
+  - name: "Host3"
+    rack: "RackA"
+    adapters:
+      - switch_ports:
+          - "Ethernet6"
+        switches:
+          - "RE-AVD-L2Leaf1A"
         endpoint_ports:
           - ens3
-        profile: TENANT_A_VL1191_SINGLE
+        profile: "OP_ZONE_VL120_SINGLE"
 
   # ----------------------------------------------------- #
   # Site1 RACKB Endpoints
   # ----------------------------------------------------- #
-  - name: avd-svr01
-    rack: RackB
+
+  - name: "avd-svr01"
+    rack: "RackB"
     adapters:
       - switch_ports:
-          - Ethernet5
-          - Ethernet5
+          - "Ethernet5"
+          - "Ethernet5"
         switches:
-          - RE-AVD-L2Leaf2A
-          - RE-AVD-L2Leaf2B
+          - "RE-AVD-L2Leaf2A"
+          - "RE-AVD-L2Leaf2B"
         endpoint_ports:
           - ens3
           - ens4
-        profile: TENANT_A_VL130_MLAG
+        profile: "OP_ZONE_VL121_MLAG"
 
-  - name: Host2
-    rack: RackB
+  - name: "Host2"
+    rack: "RackB"
     adapters:
       - switch_ports:
-          - Ethernet6
-          - Ethernet6
+          - "Ethernet6"
+          - "Ethernet6"
         switches:
-          - RE-AVD-L2Leaf2A
-          - RE-AVD-L2Leaf2B
+          - "RE-AVD-L2Leaf2A"
+          - "RE-AVD-L2Leaf2B"
         endpoint_ports:
-          - Ethernet1
-          - Ethernet2
-        profile: TENANT_A_VL110_MLAG
+          - "Ethernet1"
+          - "Ethernet2"
+        profile: "APP_ZONE_VL110_MLAG"

@@ -1,6 +1,11 @@
 ---
 all:
   children:
+
+    # --------------------------------------------------- #
+    # CloudVision Connectivity
+    # --------------------------------------------------- #
+
     CVaaS:
       hosts:
         cvaas:
@@ -28,7 +33,10 @@ all:
           # Configuration to get Virtual Env information
           ansible_python_interpreter: $(which python3)
 
+    # --------------------------------------------------- #
     # AVD_Lab Fabric
+    # --------------------------------------------------- #
+
     FABRIC:
       children:
         RE:
@@ -57,25 +65,26 @@ all:
                   ansible_host: 192.168.255.17
                 "RE-AVD-Leaf2B":
                   ansible_host: 192.168.255.18
-              children:
-                BorderLeafs:
-                  hosts:
-                    "RE-AVD-BrdrLeaf1A":
-                      ansible_host: 192.168.255.24
-                    "RE-AVD-BrdrLeaf1B":
-                      ansible-host: 192.168.255.25
+            BorderLeafs:
+              vars:
+                type: l3leaf
+              hosts:
+                "RE-AVD-BrdrLeaf1A":
+                  ansible_host: 192.168.255.19
+                "RE-AVD-BrdrLeaf1B":
+                  ansible-host: 192.168.255.20
             L2Leafs:
               vars:
                 type: l2leaf
               hosts:
                 "RE-AVD-L2Leaf1A":
-                  ansible_host: 192.168.255.19
-                "RE-AVD-L2Leaf1B":
-                  ansible_host: 192.168.255.20
-                "RE-AVD-L2Leaf2A":
                   ansible_host: 192.168.255.21
-                "RE-AVD-L2Leaf2B":
+                "RE-AVD-L2Leaf1B":
                   ansible_host: 192.168.255.22
+                "RE-AVD-L2Leaf2A":
+                  ansible_host: 192.168.255.23
+                "RE-AVD-L2Leaf2B":
+                  ansible_host: 192.168.255.24
 
     TENANTS_NETWORKS:
       children:

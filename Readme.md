@@ -8,6 +8,10 @@
 
 [ ... Can be found here](https://github.com/rwedmonds/avd-lab/blob/main/inventory/documentation/fabric/RE-documentation.md)
 
+## Device Documentation
+
+[ ... Can be found here](https://github.com/rwedmonds/avd-lab/tree/main/inventory/documentation/devices)
+
 ## Management Interfaces
 
 - Interface: Management1
@@ -114,3 +118,52 @@
   - IP Address Virtual: 192.168.120.1
 - Vlan121: 192.168.121.0/24
   - IP Address Virtual: 192.168.121.1
+
+## AVD Configuration Notes
+
+### global_vars
+
+- To use global_vars you must add the following to your ansible.cfg file:
+
+  ```ini
+  vars_plugins_enabled = arista.avd.global_vars, host_group_vars
+
+  [vars_global_vars]
+  paths = ../inventory/global_vars
+  ```
+
+### MANAGEMENT.yml
+
+- The following defines an alias for `custom_structured_configuration`:
+
+  `custom_structured_configuration_prefix: csc_`
+
+### FABRIC.yml
+
+- The BGP commnad `update wait-install` does not work on vEOS, so the following needs to be added:
+
+  `bgp_update_wait_install: false`
+
+- If running in EVE-NG you are not able to use jumbo frames, so this is also added:
+
+  `p2p_uplinks_mtu: 1500`
+
+### host_vars
+
+- EVE-NG doesn't always allow port-channel interfaces to come up properly, so the following is an example of a file create to set the port-channel mode to "on":
+
+  ```yaml
+  csc_ethernet_interfaces:
+  - name: "Ethernet1"
+    description: "RE-AVD-LEAF1A_Ethernet7"
+    shutdown: false
+    channel_group:
+      id: 1
+      mode: "on"
+  - name: "Ethernet2"
+    description: "RE-AVD-LEAF1B_Ethernet7"
+    shutdown: false
+    channel_group:
+      id: 1
+      mode: "on"
+  ```

@@ -46,7 +46,7 @@
 
 ## VTEP (Loopback1)
 
-!!! note Does not get applied to spine switches
+!!! note Does not get applied to spine or layer 2 leaf switches
 
 - IP Network: 192.168.253.0/24
 

@@ -6,11 +6,13 @@
 # ------------------------------------------------------- #
 # Prefix for custom_structured_configuration
 # ------------------------------------------------------- #
+
 custom_structured_configuration_prefix: csc_
 
 # ------------------------------------------------------- #
 # Management API HTTP
 # ------------------------------------------------------- #
+
 management_api_http:
   enable_http: True
 
@@ -20,8 +22,16 @@ management_api_http:
     - name: "MGMT"
 
 # ------------------------------------------------------- #
+# Management API HTTP
+# ------------------------------------------------------- #
+
+ip_ssh_client_source_interfaces:
+  - name: "Loopback0"
+
+# ------------------------------------------------------- #
 # Local Users
 # ------------------------------------------------------- #
+
 local_users:
   "admin":
     privilege: 15
@@ -47,6 +57,7 @@ local_users:
 # ------------------------------------------------------- #
 # Enable Password
 # ------------------------------------------------------- #
+
 enable_password:
   hash_algorithm: "sha512"
   key: "$6$Q5Pg0k.kTwgJ89NX$j0438CJoJx2RiuCsygN8GtpTrWPNWlZQIytcMQQRhLhv7oK0HNaXgbhDKsUUksrL22UDMx9tMfE9ufd0YJmkx1"
@@ -54,6 +65,7 @@ enable_password:
 # ------------------------------------------------------- #
 # TerminAttr Config
 # ------------------------------------------------------- #
+
 daemon_terminattr:
   # Address of the gRPC server on CloudVision
   # TCP 9910 is used for on-prem CV
@@ -73,6 +85,7 @@ daemon_terminattr:
 # ------------------------------------------------------- #
 # OOB Management
 # ------------------------------------------------------- #
+
 management_interfaces:
   - name: "Management1"
     shutdown: false
@@ -90,6 +103,7 @@ csc_static_routes:
 # ------------------------------------------------------- #
 # DNS Servers
 # ------------------------------------------------------- #
+
 ip_name_servers:
   - ip_address: "192.168.255.1"
     vrf: "MGMT"
@@ -119,6 +133,7 @@ clock:
 # ------------------------------------------------------- #
 # RADIUS
 # ------------------------------------------------------- #
+
 radius_server:
   hosts:
     - host: jumpbox.slacker.net
@@ -132,6 +147,7 @@ ip_radius_source_interfaces:
 # ------------------------------------------------------- #
 # AAA
 # ------------------------------------------------------- #
+
 aaa_server_groups:
   - name: FreeRadius
     type: radius
@@ -179,12 +195,14 @@ aaa_accounting:
 # ------------------------------------------------------- #
 # Raw EOS CLI commands
 # ------------------------------------------------------- #
+
 eos_cli:
   no schedule tech-support
 
 # ------------------------------------------------------- #
 # Banners
 # ------------------------------------------------------- #
+
 banners:
   login: |
     _________________________________________

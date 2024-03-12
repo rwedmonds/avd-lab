@@ -8,6 +8,7 @@
   - [IP Name Servers](#ip-name-servers)
   - [Clock Settings](#clock-settings)
   - [NTP](#ntp)
+  - [IP Client Source Interfaces](#ip-client-source-interfaces)
   - [Management API HTTP](#management-api-http)
 - [Authentication](#authentication)
   - [Local Users](#local-users)
@@ -141,6 +142,19 @@ ntp local-interface vrf MGMT Management1
 ntp server vrf MGMT 0.fr.pool.ntp.org prefer
 ntp server vrf MGMT 1.fr.pool.ntp.org
 ```
+
+### IP Client Source Interfaces
+
+| IP Client | VRF | Source Interface Name |
+| --------- | --- | --------------------- |
+| SSH | default | Loopback0 |
+
+#### IP Client Source Interfaces Device Configuration
+
+```eos
+!
+ip ssh client source-interface Loopback0
+ ```
 
 ### Management API HTTP
 

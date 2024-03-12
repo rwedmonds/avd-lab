@@ -29,6 +29,10 @@ csc_prefix_lists:
         action: "permit 192.168.121.0/24 le 32"
       - sequence: 30
         action: "permit 192.168.200.0/24 eq 32"
+  - name: "PL-LEAK-LOOPBACK0"
+    sequence_numbers:
+      - sequence: 10
+        action: "permit 192.168.254.0/24 eq 32"
 
 # ------------------------------------------------------- #
 # Route-maps
@@ -51,12 +55,20 @@ csc_route_maps:
         type: "permit"
         match:
           - "ip address prefix-list PL-LEAK-OP-ZONE"
+      - sequence: 30
+        type: "permit"
+        match:
+          - "ip address prefix-list PL-LEAK-LOOPBACK0"
 
 # ------------------------------------------------------- #
 # BGP
 # ------------------------------------------------------- #
 
 csc_router_bgp:
+  redistribute_routes:
+    - source_protocol: "static"
+      route_map: "RM-LEAK-DEFAULT"
+      include_leaked: true
   vrfs:
     - name: "App_Zone"
       redistribute_routes:
@@ -71,6 +83,7 @@ csc_router_bgp:
     - name: "Internet"
       redistribute_routes:
         - source_protocol: "static"
+          route_map: "RM-LEAK-VRFS"
 
 # ------------------------------------------------------- #
 # Router General
@@ -78,11 +91,17 @@ csc_router_bgp:
 
 csc_router_general:
   vrfs:
+    - name: "default"
+      leak_routes:
+        - source_vrf: "Internet"
+          subscribe_policy: "RM-LEAK-DEFAULT"
     - name: "Internet"
       leak_routes:
         - source_vrf: "App_Zone"
           subscribe_policy: "RM-LEAK-VRFS"
         - source_vrf: "Op_Zone"
+          subscribe_policy: "RM-LEAK-VRFS"
+        - source_vrf: "default"
           subscribe_policy: "RM-LEAK-VRFS"
     - name: "App_Zone"
       leak_routes:

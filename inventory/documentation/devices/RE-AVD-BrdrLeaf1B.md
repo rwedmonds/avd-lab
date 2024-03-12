@@ -8,6 +8,7 @@
   - [IP Name Servers](#ip-name-servers)
   - [Clock Settings](#clock-settings)
   - [NTP](#ntp)
+  - [IP Client Source Interfaces](#ip-client-source-interfaces)
   - [Management API HTTP](#management-api-http)
 - [Authentication](#authentication)
   - [Local Users](#local-users)
@@ -154,6 +155,19 @@ ntp local-interface vrf MGMT Management1
 ntp server vrf MGMT 0.fr.pool.ntp.org prefer
 ntp server vrf MGMT 1.fr.pool.ntp.org
 ```
+
+### IP Client Source Interfaces
+
+| IP Client | VRF | Source Interface Name |
+| --------- | --- | --------------------- |
+| SSH | default | Loopback0 |
+
+#### IP Client Source Interfaces Device Configuration
+
+```eos
+!
+ip ssh client source-interface Loopback0
+ ```
 
 ### Management API HTTP
 
@@ -850,7 +864,9 @@ ip route vrf MGMT 0.0.0.0/0 192.168.255.1
 
 | VRF | Source VRF | Route Map Policy |
 |-----|------------|------------------|
+| default | Internet | RM-LEAK-DEFAULT |
 | Internet | App_Zone | RM-LEAK-VRFS |
+| Internet | default | RM-LEAK-VRFS |
 | Internet | Op_Zone | RM-LEAK-VRFS |
 | App_Zone | Internet | RM-LEAK-DEFAULT |
 | Op_Zone | Internet | RM-LEAK-DEFAULT |
@@ -864,8 +880,13 @@ router general
       leak routes source-vrf Internet subscribe-policy RM-LEAK-DEFAULT
       exit
    !
+   vrf default
+      leak routes source-vrf Internet subscribe-policy RM-LEAK-DEFAULT
+      exit
+   !
    vrf Internet
       leak routes source-vrf App_Zone subscribe-policy RM-LEAK-VRFS
+      leak routes source-vrf default subscribe-policy RM-LEAK-VRFS
       leak routes source-vrf Op_Zone subscribe-policy RM-LEAK-VRFS
       exit
    !
@@ -1020,6 +1041,7 @@ router bgp 65103
    neighbor 192.168.254.14 remote-as 65001
    neighbor 192.168.254.14 description RE-AVD-Spine4
    redistribute connected route-map RM-CONN-2-BGP
+   redistribute static include leaked route-map RM-LEAK-DEFAULT
    !
    vlan-aware-bundle App_Zone
       rd 192.168.254.22:100
@@ -1057,7 +1079,7 @@ router bgp 65103
       router-id 192.168.254.22
       neighbor 192.168.251.36 peer group MLAG-IPv4-UNDERLAY-PEER
       redistribute connected
-      redistribute static
+      redistribute static route-map RM-LEAK-VRFS
    !
    vrf Op_Zone
       rd 192.168.254.22:200
@@ -1123,6 +1145,12 @@ router bfd
 | -------- | ------ |
 | 10 | permit 0.0.0.0/0 |
 
+##### PL-LEAK-LOOPBACK0
+
+| Sequence | Action |
+| -------- | ------ |
+| 10 | permit 192.168.254.0/24 eq 32 |
+
 ##### PL-LEAK-OP-ZONE
 
 | Sequence | Action |
@@ -1150,6 +1178,9 @@ ip prefix-list PL-LEAK-APP-ZONE
 !
 ip prefix-list PL-LEAK-DEFAULT
    seq 10 permit 0.0.0.0/0
+!
+ip prefix-list PL-LEAK-LOOPBACK0
+   seq 10 permit 192.168.254.0/24 eq 32
 !
 ip prefix-list PL-LEAK-OP-ZONE
    seq 10 permit 192.168.120.0/24 le 32
@@ -1183,6 +1214,7 @@ ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 | -------- | ---- | ----- | --- | ------------- | -------- |
 | 10 | permit | ip address prefix-list PL-LEAK-APP-ZONE | - | - | - |
 | 20 | permit | ip address prefix-list PL-LEAK-OP-ZONE | - | - | - |
+| 30 | permit | ip address prefix-list PL-LEAK-LOOPBACK0 | - | - | - |
 
 ##### RM-MLAG-PEER-IN
 
@@ -1205,6 +1237,9 @@ route-map RM-LEAK-VRFS permit 10
 !
 route-map RM-LEAK-VRFS permit 20
    match ip address prefix-list PL-LEAK-OP-ZONE
+!
+route-map RM-LEAK-VRFS permit 30
+   match ip address prefix-list PL-LEAK-LOOPBACK0
 !
 route-map RM-MLAG-PEER-IN permit 10
    description Make routes learned over MLAG Peer-link less preferred on spines to ensure optimal routing

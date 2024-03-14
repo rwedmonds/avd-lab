@@ -468,7 +468,7 @@ interface defaults
 | Ethernet2 | RE-AVD-LEAF2B_Ethernet7 | *trunk | *110-112,120-121 | *- | *- | 1 |
 | Ethernet3 | MLAG_PEER_RE-AVD-L2Leaf2B_Ethernet3 | *trunk | *- | *- | *['MLAG'] | 3 |
 | Ethernet4 | MLAG_PEER_RE-AVD-L2Leaf2B_Ethernet4 | *trunk | *- | *- | *['MLAG'] | 3 |
-| Ethernet5 | avd-svr01_ens3 | *access | *121 | *- | *- | 5 |
+| Ethernet5 | avd-svr01_ens4 | *access | *121 | *- | *- | 5 |
 | Ethernet6 | Host2_Ethernet1 | *access | *110 | *- | *- | 6 |
 
 *Inherited from Port-Channel Interface
@@ -490,15 +490,15 @@ interface Ethernet2
 interface Ethernet3
    description MLAG_PEER_RE-AVD-L2Leaf2B_Ethernet3
    no shutdown
-   channel-group 3 mode active
+   channel-group 3 mode on
 !
 interface Ethernet4
    description MLAG_PEER_RE-AVD-L2Leaf2B_Ethernet4
    no shutdown
-   channel-group 3 mode active
+   channel-group 3 mode on
 !
 interface Ethernet5
-   description avd-svr01_ens3
+   description avd-svr01_ens4
    no shutdown
    channel-group 5 mode on
 !

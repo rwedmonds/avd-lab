@@ -11,3 +11,27 @@ csc_ethernet_interfaces:
     channel_group:
       id: 1
       mode: "on"
+  - name: "Ethernet3"
+    description: "MLAG_PEER_RE-AVD-L2Leaf2A_Ethernet3"
+    shutdown: false
+    channel_group:
+      id: 3
+      mode: "on"
+  - name: "Ethernet4"
+    description: "MLAG_PEER_RE-AVD-L2Leaf2A_Ethernet4"
+    shutdown: false
+    channel_group:
+      id: 3
+      mode: "on"
+  - name: "Ethernet5"
+    description: "avd-svr01_ens5"
+    shutdown: false
+    channel_group:
+      id: 5
+      mode: "on"
+  - name: "Ethernet6"
+    description: "Host2_Ethernet2"
+    shutdown: false
+    channel_group:
+      id: 6
+      mode: "on"

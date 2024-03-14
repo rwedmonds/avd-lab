@@ -1,7 +1,6 @@
 .venv
 inventory/intended/structured_configs
 inventory/config_backup
-ansible.log
 *DS_Store
 ansible.log
 .*/

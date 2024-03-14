@@ -489,12 +489,12 @@ interface Ethernet2
 interface Ethernet3
    description MLAG_PEER_RE-AVD-L2Leaf1A_Ethernet3
    no shutdown
-   channel-group 3 mode active
+   channel-group 3 mode on
 !
 interface Ethernet4
    description MLAG_PEER_RE-AVD-L2Leaf1A_Ethernet4
    no shutdown
-   channel-group 3 mode active
+   channel-group 3 mode on
 !
 interface Ethernet5
    description Host1_Ethernet2
